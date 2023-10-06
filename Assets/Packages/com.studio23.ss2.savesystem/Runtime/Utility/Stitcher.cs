@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Studio23.SS2.SaveSystem.Core
+namespace Studio23.SS2.SaveSystem.Utilities
 {
     public class Stitcher
     {

@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using Newtonsoft.Json;
-using Studio23.SS2.SaveSystem.Core;
+using Studio23.SS2.SaveSystem.Utilities;
 using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Core
