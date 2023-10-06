@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 
-namespace Studio23.SS2.SaveSystem.Core
+namespace Studio23.SS2.SaveSystem.Utilities
 {
     public class AESEncryptor
     {

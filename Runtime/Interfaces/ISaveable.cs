@@ -1,4 +1,4 @@
-namespace Studio23.SS2.SaveSystem.Core
+namespace Studio23.SS2.SaveSystem.Interfaces
 {
     public interface ISaveable
     {
