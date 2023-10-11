@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.studio23.ss2.upmassistant": {
+      "version": "https://github.com/Studio-23-xyz/UPMAssistant.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "hash": "68aab0a1fbefb11f3f86a14b2af3a658f6dcc28c"
+    },
     "com.unity.collab-proxy": {
       "version": "2.0.7",
       "depth": 0,
@@ -55,6 +64,13 @@
     },
     "com.unity.ide.vscode": {
       "version": "1.2.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {},

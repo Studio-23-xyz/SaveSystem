@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.studio23.ss2.upmassistant": "https://github.com/Studio-23-xyz/UPMAssistant.git#upm",
     "com.unity.collab-proxy": "2.0.7",
     "com.unity.feature.development": "1.0.1",
     "com.unity.textmeshpro": "3.0.6",
