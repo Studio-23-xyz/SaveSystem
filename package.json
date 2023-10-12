@@ -1,6 +1,6 @@
 {
   "name": "com.studio23.ss2.savesystem",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "displayName": "Save System",
   "description": "Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves of Steam or Xbox and other platforms via extenstions",
   "unity": "2022.3",
@@ -8,27 +8,24 @@
   "documentationUrl": "https://openupm.com/packages/com.studio23.ss2.savesystem/",
   "changelogUrl": "https://openupm.com/packages/com.studio23.ss2.savesystem/",
   "licensesUrl": "https://opensource.org/license/mit/",
-  "scopedRegistries":  [
+  "scopedRegistries": [
     {
       "name": "Studio 23",
       "url": "https://package.openupm.com",
       "scopes": [
         "com.studio23.ss2"
       ]
-    }], 
+    }
+  ],
   "dependencies": {
-    "com.unity.nuget.newtonsoft-json": "3.2.1"
- },
- "keywords": [
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.cysharp.unitask": "2.4.1"
+  },
+  "keywords": [
     "Save",
     "Save System",
     "System"
-  ],  
-"repository": {
-    "type": "git",
-    "url": "https://github.com/Studio-23-xyz/SaveSystem.git"    
-  },
-  "license": "MIT",  
+  ],
   "author": {
     "name": "Studio 23",
     "email": "contact@studio-23.xyz",

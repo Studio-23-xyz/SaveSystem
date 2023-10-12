@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Cysharp.Threading.Tasks;
 using Studio23.SS2.SaveSystem.Utilities;
 using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
@@ -12,8 +13,8 @@ namespace Studio23.SS2.SaveSystem.Core
         private readonly bool _useEncryption;
         private readonly AESEncryptor _encryptor;
 
-        public LocalSaveManager(string saveFileName, bool enableEncryption = false, string encryptionKey = null,
-            string encryptionIV = null)
+        public LocalSaveManager(string saveFileName, bool enableEncryption = false, string encryptionKey = "null",
+            string encryptionIV = "null")
         {
             // Define the path where save files will be stored (e.g., in the Application.persistentDataPath).
             _saveFilePath = Path.Combine(Application.persistentDataPath, saveFileName);
@@ -24,7 +25,7 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
         // Save data to a local file using Newtonsoft.Json serialization.
-        public void Save<T>(T data)
+        public async UniTask Save<T>(T data)
         {
             try
             {
@@ -32,9 +33,9 @@ namespace Studio23.SS2.SaveSystem.Core
 
                 if (_useEncryption && _encryptor != null)
                     // Encrypt the JSON data before saving.
-                    json = _encryptor.Encrypt(json);
+                    json = await _encryptor.Encrypt(json);
 
-                File.WriteAllText(_saveFilePath, json);
+                await File.WriteAllTextAsync(_saveFilePath, json);
                 Debug.Log("Data saved locally.");
             }
             catch (Exception ex)
@@ -43,14 +44,14 @@ namespace Studio23.SS2.SaveSystem.Core
             }
         }
 
-        // Load data from a local file using Newtonsoft.Json deserialization.
-        public T Load<T>()
+        
+        public async UniTask<T> Load<T>()
         {
             try
             {
                 if (File.Exists(_saveFilePath))
                 {
-                    var json = File.ReadAllText(_saveFilePath);
+                    var json = await File.ReadAllTextAsync(_saveFilePath);
 
                     if (_useEncryption && _encryptor != null)
                         // Decrypt the JSON data before deserialization.

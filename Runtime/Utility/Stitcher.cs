@@ -1,17 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Cysharp.Threading.Tasks;
 
 namespace Studio23.SS2.SaveSystem.Utilities
 {
     public class Stitcher
     {
-        public void ArchiveFiles(string archiveFilePath, List<string> filesToArchive)
+        public async UniTask ArchiveFiles(string archiveFilePath, List<string> filesToArchive)
         {
             try
             {
-                using (var archiveStream = new FileStream(archiveFilePath, FileMode.Create))
-                using (var writer = new BinaryWriter(archiveStream))
+                await using (var archiveStream = new FileStream(archiveFilePath, FileMode.Create))
+                await using (var writer = new BinaryWriter(archiveStream))
                 {
                     foreach (var filePath in filesToArchive)
                         if (File.Exists(filePath))
@@ -23,7 +24,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
                             writer.Write(fileLength);
 
                             // Write the file content
-                            var fileBytes = File.ReadAllBytes(filePath);
+                            var fileBytes = await File.ReadAllBytesAsync(filePath);
                             writer.Write(fileBytes);
                         }
                 }
@@ -36,11 +37,11 @@ namespace Studio23.SS2.SaveSystem.Utilities
             }
         }
 
-        public void ExtractFiles(string archiveFilePath, string extractDirectory)
+        public async UniTask ExtractFiles(string archiveFilePath, string extractDirectory)
         {
             try
             {
-                using (var archiveStream = new FileStream(archiveFilePath, FileMode.Open))
+                await using (var archiveStream = new FileStream(archiveFilePath, FileMode.Open))
                 using (var reader = new BinaryReader(archiveStream))
                 {
                     while (reader.BaseStream.Position < reader.BaseStream.Length)
@@ -54,7 +55,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
 
                         // Write the file to the extraction directory
                         var filePath = Path.Combine(extractDirectory, fileName);
-                        File.WriteAllBytes(filePath, fileBytes);
+                       await File.WriteAllBytesAsync(filePath, fileBytes);
                     }
                 }
 
