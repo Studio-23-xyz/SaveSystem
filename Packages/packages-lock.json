@@ -1,13 +1,20 @@
 {
   "dependencies": {
-    "com.studio23.ss2.upmassistant": {
-      "version": "https://github.com/Studio-23-xyz/UPMAssistant.git#upm",
+    "com.cysharp.unitask": {
+      "version": "2.4.1",
       "depth": 0,
-      "source": "git",
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.studio23.ss2.upmassistant": {
+      "version": "1.0.2",
+      "depth": 0,
+      "source": "registry",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       },
-      "hash": "68aab0a1fbefb11f3f86a14b2af3a658f6dcc28c"
+      "url": "https://package.openupm.com"
     },
     "com.unity.collab-proxy": {
       "version": "2.0.7",
