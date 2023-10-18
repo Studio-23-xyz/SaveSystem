@@ -1,0 +1,38 @@
+name: Update and Publish UPM Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-and-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Find package.json
+      id: find-package-json
+      run: echo ::set-output name=package-json-path::$(find . -name "package.json" | head -n 1)
+
+    - name: Get Package Name from package.json
+      id: get-package-name
+      run: echo ::set-output name=package-name::$(jq -r .name ${{ steps.find-package-json.outputs.package-json-path }})
+
+    - name: Git Subtree Split
+      run: git subtree split -P Assets/Packages/${{ steps.get-package-name.outputs.package-name }}/ -b upm
+
+    - name: Get Version from package.json
+      id: get-version
+      run: echo ::set-output name=version::$(jq -r .version ${{ steps.find-package-json.outputs.package-json-path }})
+
+    - name: Create Git Tag
+      if: steps.get-version.outputs.version != ''
+      run: git tag v${{ steps.get-version.outputs.version }} upm
+
+    - name: Push Branch and Tags
+      run: |
+        git push -f -u origin upm
+        git push --tags
