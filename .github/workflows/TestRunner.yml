@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - ./Assets/Packages/com.studio23.ss2.[packageNamehere]
+          - ./Assets/Packages/com.studio23.ss2.savesystem
         unityVersion: ['2022.3.9f1'] 
         testMode:
           - playmode
