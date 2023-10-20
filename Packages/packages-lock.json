@@ -8,7 +8,7 @@
       "url": "https://package.openupm.com"
     },
     "com.studio23.ss2.upmassistant": {
-      "version": "1.0.2",
+      "version": "1.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
