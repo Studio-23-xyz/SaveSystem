@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Utilities
 {
-    public class Stitcher
+    internal class Stitcher
     {
-        public async UniTask ArchiveFiles(string archiveFilePath, List<string> filesToArchive)
+        internal async UniTask ArchiveFiles(string archiveFilePath, List<string> filesToArchive)
         {
             try
             {
@@ -15,11 +16,17 @@ namespace Studio23.SS2.SaveSystem.Utilities
                 await using (var writer = new BinaryWriter(archiveStream))
                 {
                     foreach (var filePath in filesToArchive)
+                    {
                         if (File.Exists(filePath))
                         {
-                            // Write the file name and length
+                            // Calculate the relative path based on the directory where the file is
+                            var directoryPath = Path.GetDirectoryName(filePath);
+                            string relativePath = directoryPath.Replace(Application.persistentDataPath,string.Empty);
+                            
+                            // Write the relative path, file name, and length
                             var fileName = Path.GetFileName(filePath);
                             var fileLength = new FileInfo(filePath).Length;
+                            writer.Write(relativePath);
                             writer.Write(fileName);
                             writer.Write(fileLength);
 
@@ -27,6 +34,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
                             var fileBytes = await File.ReadAllBytesAsync(filePath);
                             writer.Write(fileBytes);
                         }
+                    }
                 }
 
                 Console.WriteLine("Files archived successfully.");
@@ -37,7 +45,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
             }
         }
 
-        public async UniTask ExtractFiles(string archiveFilePath, string extractDirectory)
+        internal async UniTask ExtractFiles(string archiveFilePath, string extractDirectory)
         {
             try
             {
@@ -46,16 +54,22 @@ namespace Studio23.SS2.SaveSystem.Utilities
                 {
                     while (reader.BaseStream.Position < reader.BaseStream.Length)
                     {
-                        // Read the file name and length
+                        // Read the relative path, file name, and length
+                        var relativePath = reader.ReadString();
                         var fileName = reader.ReadString();
                         var fileLength = reader.ReadInt64();
+
+                        // Combine the relative path and extract directory to get the full path
+                        var filePath = Path.Combine(extractDirectory, relativePath, fileName);
+
+                        // Ensure the directory for the file exists
+                        Directory.CreateDirectory(Path.GetDirectoryName(filePath));
 
                         // Read the file content
                         var fileBytes = reader.ReadBytes((int)fileLength);
 
                         // Write the file to the extraction directory
-                        var filePath = Path.Combine(extractDirectory, fileName);
-                       await File.WriteAllBytesAsync(filePath, fileBytes);
+                        await File.WriteAllBytesAsync(filePath, fileBytes);
                     }
                 }
 
@@ -66,5 +80,9 @@ namespace Studio23.SS2.SaveSystem.Utilities
                 Console.WriteLine("Error extracting files: " + ex.Message);
             }
         }
+
+
+     
+
     }
 }
