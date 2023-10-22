@@ -1,3 +1,4 @@
+
 # Save System for Unity
 
 Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves for Steam or Xbox and other platforms via extensions.
@@ -5,39 +6,169 @@ Save System is a framework to manage local and cloud saves. It provides simple i
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Usage](#usage)
-   - [Using LocalSaveManager Script](#Using LocalSaveManager script)
-   - {About Sticher Script] (#About Sticher Script)
-3. [Example](#example)
-4. [License](#license)
+2. [Getting Started](#getting-started)
+   - [Initialization](#initialization)
+   - [Creating Save Slots](#creating-save-slots)
+3. [Saving and Loading Data](#saving-and-loading-data)
+   - [Save Data](#save-data)
+   - [Load Data](#load-data)
+4. [Managing Save Slots](#managing-save-slots)
+   - [Selecting a Slot](#selecting-a-slot)
+   - [Clearing Slots](#clearing-slots)
+5. [Cloud Save and Restore](#cloud-save-and-restore)
+   - [Bundle Save Files](#bundle-save-files)
+   - [Unbundle Save Files](#unbundle-save-files)
 
 ## Installation
+
 
 ### Install via Git URL
 You can also use the "Install from Git URL" option from Unity Package Manager to install the package.
 ```
 https://github.com/Studio-23-xyz/SaveSystem.git#upm
 ```
-## Usage
 
-### Using LocalSaveManager script
+## Getting Started
 
-1. In the LocalSaveManager class the constructor takes the path of the file.
+### Initialization
 
-2. enableEncryption = true will use encryption to the save file. It will also decrypt when the file will be loaded.
+Create An Empty GameObject and attach the SaveSystem MonoBehaviour to it. And you are all set to use the Save System.
+Or You can use the Installer From Top tool bar Studio-23/Save System/ Installer
 
-3. Save and Load functions are generic type parameters in case any content can be stored and load locally.
+### Creating Save Slots
+
+Save slots are used to organize saved game data. You can create and manage save slots as follows:
 
 ```csharp
-// Example code to use the Save and Load function
-LocalSaveManager Obj = new LocalSaveManager("savedata01",true,"encryptsampleKeyA","encryptIVkeyA")
-Obj.Save(savedata);
-var loaddata = Obj.Load()
+using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
 
+public class YourGameManager : MonoBehaviour
+{
+    private async void Start()
+    {
+        // Create save slots
+        await SaveSystem.Instance.CreateSlotsAsync();
+    }
+}
+```
 
-### About Sticher Script
+## Saving and Loading Data
 
-When trying to save if the directories do no exist it will attempt to create it then save it. If there will be numerous saveable files, it will combine into on directory and can also be extracted whenever 
-it needs to be extracted.
+### Save Data
 
+You can save game data using the `SaveData` method. Here's how to use it:
 
+```csharp
+using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void SaveGameData()
+    {
+        // Your game data
+        YourGameData data = ...
+
+        // Save the data to the selected slot
+        await SaveSystem.Instance.SaveData(data, "your_data_id");
+    }
+}
+```
+
+### Load Data
+
+To load saved game data, use the `LoadData` method as shown below:
+
+```csharp
+using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void LoadGameData()
+    {
+        // Load the data from the selected slot
+        YourGameData loadedData = await SaveSystem.Instance.LoadData<YourGameData>("your_data_id");
+
+        // Use the loaded data in your game
+        ...
+    }
+}
+```
+
+## Managing Save Slots
+
+### Selecting a Slot
+
+You can switch between save slots by using the `SelectSlot` method:
+
+```csharp
+using Studio23.SS2.SaveSystem.Core;
+
+public class YourGameManager : MonoBehaviour
+{
+    private void SwitchSaveSlot(int slotIndex)
+    {
+        SaveSystem.Instance.SelectSlot(slotIndex);
+    }
+}
+```
+
+### Clearing Slots
+
+To clear all save slots, you can use the `ClearSlotsAsync` method:
+
+```csharp
+using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void ClearAllSlots()
+    {
+        // Clear all save slots
+        await SaveSystem.Instance.ClearSlotsAsync();
+    }
+}
+```
+
+## Cloud Save and Restore
+
+### Bundle Save Files
+
+You can bundle save files for cloud storage with the `BundleSaveFiles` method:
+
+```csharp
+using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void BundleSaveFilesForCloud()
+    {
+        // Bundle save files for cloud storage
+        await SaveSystem.Instance.BundleSaveFiles();
+    }
+}
+```
+
+### Unbundle Save Files
+
+To restore save files from cloud storage, use the `UnBundleSaveFiles` method:
+
+```csharp
+using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void RestoreSaveFilesFromCloud()
+    {
+        // Restore save files from cloud storage
+        await SaveSystem.Instance.UnBundleSaveFiles();
+    }
+}
+```
+
+That's it! You now have the basic information you need to use the **Studio23.SS2.SaveSystem** library in your Unity project. Explore the library's features and customize it according to your game's needs.

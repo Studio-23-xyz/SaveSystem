@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Utilities
 {
@@ -18,9 +19,10 @@ namespace Studio23.SS2.SaveSystem.Utilities
                     {
                         if (File.Exists(filePath))
                         {
-                            // Calculate the relative path
-                            var relativePath = Path.GetRelativePath(Environment.CurrentDirectory, filePath);
-
+                            // Calculate the relative path based on the directory where the file is
+                            var directoryPath = Path.GetDirectoryName(filePath);
+                            string relativePath = directoryPath.Replace(Application.persistentDataPath,string.Empty);
+                            
                             // Write the relative path, file name, and length
                             var fileName = Path.GetFileName(filePath);
                             var fileLength = new FileInfo(filePath).Length;
@@ -78,6 +80,9 @@ namespace Studio23.SS2.SaveSystem.Utilities
                 Console.WriteLine("Error extracting files: " + ex.Message);
             }
         }
+
+
+     
 
     }
 }

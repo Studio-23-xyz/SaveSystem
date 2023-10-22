@@ -156,7 +156,7 @@ MonoBehaviour:
   _enableEncryption: 0
   _encryptionKey: 1234567891234567
   _encryptionIV: 0234567891234567
-  SaveRootFolder: SaveData
+  _saveRootFolderName: SaveData
 --- !u!4 &450460400
 Transform:
   m_ObjectHideFlags: 0
