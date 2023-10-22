@@ -1,13 +1,48 @@
 {
-  "api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html": {
-    "href": "api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html",
-    "title": "Class LocalSaveManager | |",
-    "keywords": "Class LocalSaveManager Namespace Studio23.SS2.SaveSystem.Core public class LocalSaveManager Inheritance object LocalSaveManager Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors LocalSaveManager(string, bool, string, string) public LocalSaveManager(string saveFileName, bool enableEncryption = false, string encryptionKey = \"null\", string encryptionIV = \"null\") Parameters saveFileName string enableEncryption bool encryptionKey string encryptionIV string Methods Load<T>() public UniTask<T> Load<T>() Returns UniTask<T> Type Parameters T Save<T>(T) public UniTask Save<T>(T data) Parameters data T Returns UniTask Type Parameters T"
+  "api/Global.BasicSaveLoadTests.html": {
+    "href": "api/Global.BasicSaveLoadTests.html",
+    "title": "Class BasicSaveLoadTests | |",
+    "keywords": "Class BasicSaveLoadTests Namespace Global public class BasicSaveLoadTests Inheritance object BasicSaveLoadTests Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods Bundle_Create_Test() public IEnumerator Bundle_Create_Test() Returns IEnumerator Bundle_Extrat_Test() public IEnumerator Bundle_Extrat_Test() Returns IEnumerator SaveSystem_Setup() public IEnumerator SaveSystem_Setup() Returns IEnumerator Save_Load_Test() public IEnumerator Save_Load_Test() Returns IEnumerator"
+  },
+  "api/Global.EncryptionTest.html": {
+    "href": "api/Global.EncryptionTest.html",
+    "title": "Class EncryptionTest | |",
+    "keywords": "Class EncryptionTest Namespace Global public class EncryptionTest Inheritance object EncryptionTest Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods Load_Test() public IEnumerator Load_Test() Returns IEnumerator SaveSystem_Setup() public IEnumerator SaveSystem_Setup() Returns IEnumerator Save_Test() public IEnumerator Save_Test() Returns IEnumerator"
+  },
+  "api/Global.ItemData.html": {
+    "href": "api/Global.ItemData.html",
+    "title": "Class ItemData | |",
+    "keywords": "Class ItemData Namespace Global public class ItemData Inheritance object ItemData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields itemName public string itemName Field Value string itemQuantity public int itemQuantity Field Value int"
+  },
+  "api/Global.PlayerData.html": {
+    "href": "api/Global.PlayerData.html",
+    "title": "Class PlayerData | |",
+    "keywords": "Class PlayerData Namespace Global public class PlayerData Inheritance object PlayerData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields playerLevel public int playerLevel Field Value int playerName public string playerName Field Value string"
+  },
+  "api/Global.html": {
+    "href": "api/Global.html",
+    "title": "Namespace | |",
+    "keywords": "Namespace Classes BasicSaveLoadTests EncryptionTest ItemData PlayerData"
+  },
+  "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html",
+    "title": "Class SaveSystem | |",
+    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem Methods BundleSaveFiles(string) public UniTask BundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Returns UniTask ClearSlotsAsync() public Task ClearSlotsAsync() Returns Task LoadData<T>(string) public UniTask<T> LoadData<T>(string id) Parameters id string Returns UniTask<T> Type Parameters T SaveData<T>(T, string) public UniTask SaveData<T>(T data, string id) Parameters data T id string Returns UniTask Type Parameters T SelectSlot(int) public void SelectSlot(int index) Parameters index int UnBundleSaveFiles(string) public UniTask UnBundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Returns UniTask"
   },
   "api/Studio23.SS2.SaveSystem.Core.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Core | |",
-    "keywords": "Namespace Studio23.SS2.SaveSystem.Core Classes LocalSaveManager"
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Core Classes SaveSystem"
+  },
+  "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html",
+    "title": "Class SaveSystemInstallerWindow | |",
+    "keywords": "Class SaveSystemInstallerWindow Namespace Studio23.SS2.SaveSystem.Editor public class SaveSystemInstallerWindow : EditorWindow Inheritance object SaveSystemInstallerWindow Methods ShowWindow() public static void ShowWindow()"
+  },
+  "api/Studio23.SS2.SaveSystem.Editor.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Editor.html",
+    "title": "Namespace Studio23.SS2.SaveSystem.Editor | |",
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Editor Classes SaveSystemInstallerWindow"
   },
   "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html": {
     "href": "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html",
@@ -19,25 +54,15 @@
     "title": "Namespace Studio23.SS2.SaveSystem.Interfaces | |",
     "keywords": "Namespace Studio23.SS2.SaveSystem.Interfaces Interfaces ISaveable"
   },
-  "api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html": {
-    "href": "api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html",
-    "title": "Class AESEncryptor | |",
-    "keywords": "Class AESEncryptor Namespace Studio23.SS2.SaveSystem.Utilities public class AESEncryptor Inheritance object AESEncryptor Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors AESEncryptor(string, string) public AESEncryptor(string key, string iv) Parameters key string iv string Methods Decrypt(string) public string Decrypt(string cipherText) Parameters cipherText string Returns string Encrypt(string) public UniTask<string> Encrypt(string plainText) Parameters plainText string Returns UniTask<string>"
-  },
-  "api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html": {
-    "href": "api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html",
-    "title": "Class Stitcher | |",
-    "keywords": "Class Stitcher Namespace Studio23.SS2.SaveSystem.Utilities public class Stitcher Inheritance object Stitcher Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods ArchiveFiles(string, List<string>) public UniTask ArchiveFiles(string archiveFilePath, List<string> filesToArchive) Parameters archiveFilePath string filesToArchive List<string> Returns UniTask ExtractFiles(string, string) public UniTask ExtractFiles(string archiveFilePath, string extractDirectory) Parameters archiveFilePath string extractDirectory string Returns UniTask"
-  },
-  "api/Studio23.SS2.SaveSystem.Utilities.html": {
-    "href": "api/Studio23.SS2.SaveSystem.Utilities.html",
-    "title": "Namespace Studio23.SS2.SaveSystem.Utilities | |",
-    "keywords": "Namespace Studio23.SS2.SaveSystem.Utilities Classes AESEncryptor Stitcher"
-  },
   "api/index.html": {
     "href": "api/index.html",
     "title": "| |",
     "keywords": "This is the documentation for the Scripting APIs of this package."
+  },
+  "changelog/CHANGELOG.html": {
+    "href": "changelog/CHANGELOG.html",
+    "title": "Changelog | |",
+    "keywords": "Changelog All notable changes to this Unity package will be documented in this file. [v1.0.1] - 2023-10-22 Added New SaveSystem Class added which will be the new entrypoint of using this library New Test Cases to ensure the library works as intented. Updated Updated how Bundling and unbundeling works. Fixed Now Bundling and unbundeling works properly Removed Bugs"
   },
   "index.html": {
     "href": "index.html",
@@ -47,11 +72,11 @@
   "license/LICENSE.html": {
     "href": "license/LICENSE.html",
     "title": "| |",
-    "keywords": "MIT License Copyright (c) 2023 zubEpty Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    "keywords": "MIT License Copyright (c) 2023 Studio-23 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   "manual/index.html": {
     "href": "manual/index.html",
     "title": "Save System for Unity | |",
-    "keywords": "Save System for Unity Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves for Steam or Xbox and other platforms via extensions. Table of Contents Installation Usage [Using LocalSaveManager Script](#Using LocalSaveManager script) {About Sticher Script] (#About Sticher Script) Example License Installation Install via Git URL You can also use the \"Install from Git URL\" option from Unity Package Manager to install the package. https://github.com/Studio-23-xyz/SaveSystem.git#upm Usage Using LocalSaveManager script In the LocalSaveManager class the constructor takes the path of the file. enableEncryption = true will use encryption to the save file. It will also decrypt when the file will be loaded. Save and Load functions are generic type parameters in case any content can be stored and load locally. // Example code to use the Save and Load function LocalSaveManager Obj = new LocalSaveManager(\"savedata01\",true,\"encryptsampleKeyA\",\"encryptIVkeyA\") Obj.Save(savedata); var loaddata = Obj.Load() ### About Sticher Script When trying to save if the directories do no exist it will attempt to create it then save it. If there will be numerous saveable files, it will combine into on directory and can also be extracted whenever it needs to be extracted."
+    "keywords": "Save System for Unity Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves for Steam or Xbox and other platforms via extensions. Table of Contents Installation Getting Started Initialization Creating Save Slots Saving and Loading Data Save Data Load Data Managing Save Slots Selecting a Slot Clearing Slots Cloud Save and Restore Bundle Save Files Unbundle Save Files Installation Install via Git URL You can also use the \"Install from Git URL\" option from Unity Package Manager to install the package. https://github.com/Studio-23-xyz/SaveSystem.git#upm Getting Started Initialization Create An Empty GameObject and attach the SaveSystem MonoBehaviour to it. And you are all set to use the Save System. Or You can use the Installer From Top tool bar Studio-23/Save System/ Installer Creating Save Slots Save slots are used to organize saved game data. You can create and manage save slots as follows: using Studio23.SS2.SaveSystem.Core; using Cysharp.Threading.Tasks; public class YourGameManager : MonoBehaviour { private async void Start() { // Create save slots await SaveSystem.Instance.CreateSlotsAsync(); } } Saving and Loading Data Save Data You can save game data using the SaveData method. Here's how to use it: using Studio23.SS2.SaveSystem.Core; using Cysharp.Threading.Tasks; public class YourGameManager : MonoBehaviour { private async void SaveGameData() { // Your game data YourGameData data = ... // Save the data to the selected slot await SaveSystem.Instance.SaveData(data, \"your_data_id\"); } } Load Data To load saved game data, use the LoadData method as shown below: using Studio23.SS2.SaveSystem.Core; using Cysharp.Threading.Tasks; public class YourGameManager : MonoBehaviour { private async void LoadGameData() { // Load the data from the selected slot YourGameData loadedData = await SaveSystem.Instance.LoadData<YourGameData>(\"your_data_id\"); // Use the loaded data in your game ... } } Managing Save Slots Selecting a Slot You can switch between save slots by using the SelectSlot method: using Studio23.SS2.SaveSystem.Core; public class YourGameManager : MonoBehaviour { private void SwitchSaveSlot(int slotIndex) { SaveSystem.Instance.SelectSlot(slotIndex); } } Clearing Slots To clear all save slots, you can use the ClearSlotsAsync method: using Studio23.SS2.SaveSystem.Core; using Cysharp.Threading.Tasks; public class YourGameManager : MonoBehaviour { private async void ClearAllSlots() { // Clear all save slots await SaveSystem.Instance.ClearSlotsAsync(); } } Cloud Save and Restore Bundle Save Files You can bundle save files for cloud storage with the BundleSaveFiles method: using Studio23.SS2.SaveSystem.Core; using Cysharp.Threading.Tasks; public class YourGameManager : MonoBehaviour { private async void BundleSaveFilesForCloud() { // Bundle save files for cloud storage await SaveSystem.Instance.BundleSaveFiles(); } } Unbundle Save Files To restore save files from cloud storage, use the UnBundleSaveFiles method: using Studio23.SS2.SaveSystem.Core; using Cysharp.Threading.Tasks; public class YourGameManager : MonoBehaviour { private async void RestoreSaveFilesFromCloud() { // Restore save files from cloud storage await SaveSystem.Instance.UnBundleSaveFiles(); } } That's it! You now have the basic information you need to use the Studio23.SS2.SaveSystem library in your Unity project. Explore the library's features and customize it according to your game's needs."
   }
 }

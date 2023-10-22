@@ -1,69 +1,284 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: Global
+  name: ''
+  href: api/Global.html
+- uid: Global.BasicSaveLoadTests
+  name: BasicSaveLoadTests
+  href: api/Global.BasicSaveLoadTests.html
+  commentId: T:Global.BasicSaveLoadTests
+  fullName: BasicSaveLoadTests
+  nameWithType: BasicSaveLoadTests
+- uid: Global.BasicSaveLoadTests.Bundle_Create_Test
+  name: Bundle_Create_Test()
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Create_Test
+  commentId: M:Global.BasicSaveLoadTests.Bundle_Create_Test
+  fullName: BasicSaveLoadTests.Bundle_Create_Test()
+  nameWithType: BasicSaveLoadTests.Bundle_Create_Test()
+- uid: Global.BasicSaveLoadTests.Bundle_Create_Test*
+  name: Bundle_Create_Test
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Create_Test_
+  commentId: Overload:Global.BasicSaveLoadTests.Bundle_Create_Test
+  isSpec: "True"
+  fullName: BasicSaveLoadTests.Bundle_Create_Test
+  nameWithType: BasicSaveLoadTests.Bundle_Create_Test
+- uid: Global.BasicSaveLoadTests.Bundle_Extrat_Test
+  name: Bundle_Extrat_Test()
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Extrat_Test
+  commentId: M:Global.BasicSaveLoadTests.Bundle_Extrat_Test
+  fullName: BasicSaveLoadTests.Bundle_Extrat_Test()
+  nameWithType: BasicSaveLoadTests.Bundle_Extrat_Test()
+- uid: Global.BasicSaveLoadTests.Bundle_Extrat_Test*
+  name: Bundle_Extrat_Test
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Extrat_Test_
+  commentId: Overload:Global.BasicSaveLoadTests.Bundle_Extrat_Test
+  isSpec: "True"
+  fullName: BasicSaveLoadTests.Bundle_Extrat_Test
+  nameWithType: BasicSaveLoadTests.Bundle_Extrat_Test
+- uid: Global.BasicSaveLoadTests.SaveSystem_Setup
+  name: SaveSystem_Setup()
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_SaveSystem_Setup
+  commentId: M:Global.BasicSaveLoadTests.SaveSystem_Setup
+  fullName: BasicSaveLoadTests.SaveSystem_Setup()
+  nameWithType: BasicSaveLoadTests.SaveSystem_Setup()
+- uid: Global.BasicSaveLoadTests.SaveSystem_Setup*
+  name: SaveSystem_Setup
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_SaveSystem_Setup_
+  commentId: Overload:Global.BasicSaveLoadTests.SaveSystem_Setup
+  isSpec: "True"
+  fullName: BasicSaveLoadTests.SaveSystem_Setup
+  nameWithType: BasicSaveLoadTests.SaveSystem_Setup
+- uid: Global.BasicSaveLoadTests.Save_Load_Test
+  name: Save_Load_Test()
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Save_Load_Test
+  commentId: M:Global.BasicSaveLoadTests.Save_Load_Test
+  fullName: BasicSaveLoadTests.Save_Load_Test()
+  nameWithType: BasicSaveLoadTests.Save_Load_Test()
+- uid: Global.BasicSaveLoadTests.Save_Load_Test*
+  name: Save_Load_Test
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Save_Load_Test_
+  commentId: Overload:Global.BasicSaveLoadTests.Save_Load_Test
+  isSpec: "True"
+  fullName: BasicSaveLoadTests.Save_Load_Test
+  nameWithType: BasicSaveLoadTests.Save_Load_Test
+- uid: Global.EncryptionTest
+  name: EncryptionTest
+  href: api/Global.EncryptionTest.html
+  commentId: T:Global.EncryptionTest
+  fullName: EncryptionTest
+  nameWithType: EncryptionTest
+- uid: Global.EncryptionTest.Load_Test
+  name: Load_Test()
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_Load_Test
+  commentId: M:Global.EncryptionTest.Load_Test
+  fullName: EncryptionTest.Load_Test()
+  nameWithType: EncryptionTest.Load_Test()
+- uid: Global.EncryptionTest.Load_Test*
+  name: Load_Test
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_Load_Test_
+  commentId: Overload:Global.EncryptionTest.Load_Test
+  isSpec: "True"
+  fullName: EncryptionTest.Load_Test
+  nameWithType: EncryptionTest.Load_Test
+- uid: Global.EncryptionTest.SaveSystem_Setup
+  name: SaveSystem_Setup()
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_SaveSystem_Setup
+  commentId: M:Global.EncryptionTest.SaveSystem_Setup
+  fullName: EncryptionTest.SaveSystem_Setup()
+  nameWithType: EncryptionTest.SaveSystem_Setup()
+- uid: Global.EncryptionTest.SaveSystem_Setup*
+  name: SaveSystem_Setup
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_SaveSystem_Setup_
+  commentId: Overload:Global.EncryptionTest.SaveSystem_Setup
+  isSpec: "True"
+  fullName: EncryptionTest.SaveSystem_Setup
+  nameWithType: EncryptionTest.SaveSystem_Setup
+- uid: Global.EncryptionTest.Save_Test
+  name: Save_Test()
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_Save_Test
+  commentId: M:Global.EncryptionTest.Save_Test
+  fullName: EncryptionTest.Save_Test()
+  nameWithType: EncryptionTest.Save_Test()
+- uid: Global.EncryptionTest.Save_Test*
+  name: Save_Test
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_Save_Test_
+  commentId: Overload:Global.EncryptionTest.Save_Test
+  isSpec: "True"
+  fullName: EncryptionTest.Save_Test
+  nameWithType: EncryptionTest.Save_Test
+- uid: Global.ItemData
+  name: ItemData
+  href: api/Global.ItemData.html
+  commentId: T:Global.ItemData
+  fullName: ItemData
+  nameWithType: ItemData
+- uid: Global.ItemData.itemName
+  name: itemName
+  href: api/Global.ItemData.html#Global_ItemData_itemName
+  commentId: F:Global.ItemData.itemName
+  fullName: ItemData.itemName
+  nameWithType: ItemData.itemName
+- uid: Global.ItemData.itemQuantity
+  name: itemQuantity
+  href: api/Global.ItemData.html#Global_ItemData_itemQuantity
+  commentId: F:Global.ItemData.itemQuantity
+  fullName: ItemData.itemQuantity
+  nameWithType: ItemData.itemQuantity
+- uid: Global.PlayerData
+  name: PlayerData
+  href: api/Global.PlayerData.html
+  commentId: T:Global.PlayerData
+  fullName: PlayerData
+  nameWithType: PlayerData
+- uid: Global.PlayerData.playerLevel
+  name: playerLevel
+  href: api/Global.PlayerData.html#Global_PlayerData_playerLevel
+  commentId: F:Global.PlayerData.playerLevel
+  fullName: PlayerData.playerLevel
+  nameWithType: PlayerData.playerLevel
+- uid: Global.PlayerData.playerName
+  name: playerName
+  href: api/Global.PlayerData.html#Global_PlayerData_playerName
+  commentId: F:Global.PlayerData.playerName
+  fullName: PlayerData.playerName
+  nameWithType: PlayerData.playerName
 - uid: Studio23.SS2.SaveSystem.Core
   name: Studio23.SS2.SaveSystem.Core
   href: api/Studio23.SS2.SaveSystem.Core.html
   commentId: N:Studio23.SS2.SaveSystem.Core
   fullName: Studio23.SS2.SaveSystem.Core
   nameWithType: Studio23.SS2.SaveSystem.Core
-- uid: Studio23.SS2.SaveSystem.Core.LocalSaveManager
-  name: LocalSaveManager
-  href: api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html
-  commentId: T:Studio23.SS2.SaveSystem.Core.LocalSaveManager
-  fullName: Studio23.SS2.SaveSystem.Core.LocalSaveManager
-  nameWithType: LocalSaveManager
-- uid: Studio23.SS2.SaveSystem.Core.LocalSaveManager.#ctor(System.String,System.Boolean,System.String,System.String)
-  name: LocalSaveManager(string, bool, string, string)
-  href: api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html#Studio23_SS2_SaveSystem_Core_LocalSaveManager__ctor_System_String_System_Boolean_System_String_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Core.LocalSaveManager.#ctor(System.String,System.Boolean,System.String,System.String)
-  name.vb: New(String, Boolean, String, String)
-  fullName: Studio23.SS2.SaveSystem.Core.LocalSaveManager.LocalSaveManager(string, bool, string, string)
-  fullName.vb: Studio23.SS2.SaveSystem.Core.LocalSaveManager.New(String, Boolean, String, String)
-  nameWithType: LocalSaveManager.LocalSaveManager(string, bool, string, string)
-  nameWithType.vb: LocalSaveManager.New(String, Boolean, String, String)
-- uid: Studio23.SS2.SaveSystem.Core.LocalSaveManager.#ctor*
-  name: LocalSaveManager
-  href: api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html#Studio23_SS2_SaveSystem_Core_LocalSaveManager__ctor_
-  commentId: Overload:Studio23.SS2.SaveSystem.Core.LocalSaveManager.#ctor
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem
+  name: SaveSystem
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html
+  commentId: T:Studio23.SS2.SaveSystem.Core.SaveSystem
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem
+  nameWithType: SaveSystem
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(System.String)
+  name: BundleSaveFiles(string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(System.String)
+  name.vb: BundleSaveFiles(String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(String)
+  nameWithType: SaveSystem.BundleSaveFiles(string)
+  nameWithType.vb: SaveSystem.BundleSaveFiles(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles*
+  name: BundleSaveFiles
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles
   isSpec: "True"
-  name.vb: New
-  fullName: Studio23.SS2.SaveSystem.Core.LocalSaveManager.LocalSaveManager
-  fullName.vb: Studio23.SS2.SaveSystem.Core.LocalSaveManager.New
-  nameWithType: LocalSaveManager.LocalSaveManager
-  nameWithType.vb: LocalSaveManager.New
-- uid: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Load*
-  name: Load
-  href: api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html#Studio23_SS2_SaveSystem_Core_LocalSaveManager_Load_
-  commentId: Overload:Studio23.SS2.SaveSystem.Core.LocalSaveManager.Load
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles
+  nameWithType: SaveSystem.BundleSaveFiles
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync
+  name: ClearSlotsAsync()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_ClearSlotsAsync
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync()
+  nameWithType: SaveSystem.ClearSlotsAsync()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync*
+  name: ClearSlotsAsync
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_ClearSlotsAsync_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync
   isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Load
-  nameWithType: LocalSaveManager.Load
-- uid: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Load``1
-  name: Load<T>()
-  href: api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html#Studio23_SS2_SaveSystem_Core_LocalSaveManager_Load__1
-  commentId: M:Studio23.SS2.SaveSystem.Core.LocalSaveManager.Load``1
-  name.vb: Load(Of T)()
-  fullName: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Load<T>()
-  fullName.vb: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Load(Of T)()
-  nameWithType: LocalSaveManager.Load<T>()
-  nameWithType.vb: LocalSaveManager.Load(Of T)()
-- uid: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Save*
-  name: Save
-  href: api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html#Studio23_SS2_SaveSystem_Core_LocalSaveManager_Save_
-  commentId: Overload:Studio23.SS2.SaveSystem.Core.LocalSaveManager.Save
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync
+  nameWithType: SaveSystem.ClearSlotsAsync
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Instance
+  name: Instance
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Instance
+  commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.Instance
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Instance
+  nameWithType: SaveSystem.Instance
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData*
+  name: LoadData
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_LoadData_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData
   isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Save
-  nameWithType: LocalSaveManager.Save
-- uid: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Save``1(``0)
-  name: Save<T>(T)
-  href: api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html#Studio23_SS2_SaveSystem_Core_LocalSaveManager_Save__1___0_
-  commentId: M:Studio23.SS2.SaveSystem.Core.LocalSaveManager.Save``1(``0)
-  name.vb: Save(Of T)(T)
-  fullName: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Save<T>(T)
-  fullName.vb: Studio23.SS2.SaveSystem.Core.LocalSaveManager.Save(Of T)(T)
-  nameWithType: LocalSaveManager.Save<T>(T)
-  nameWithType.vb: LocalSaveManager.Save(Of T)(T)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData
+  nameWithType: SaveSystem.LoadData
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData``1(System.String)
+  name: LoadData<T>(string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_LoadData__1_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData``1(System.String)
+  name.vb: LoadData(Of T)(String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData<T>(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData(Of T)(String)
+  nameWithType: SaveSystem.LoadData<T>(string)
+  nameWithType.vb: SaveSystem.LoadData(Of T)(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData*
+  name: SaveData
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveData_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData
+  nameWithType: SaveSystem.SaveData
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData``1(``0,System.String)
+  name: SaveData<T>(T, string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveData__1___0_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData``1(``0,System.String)
+  name.vb: SaveData(Of T)(T, String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData<T>(T, string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData(Of T)(T, String)
+  nameWithType: SaveSystem.SaveData<T>(T, string)
+  nameWithType.vb: SaveSystem.SaveData(Of T)(T, String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(System.Int32)
+  name: SelectSlot(int)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SelectSlot_System_Int32_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(System.Int32)
+  name.vb: SelectSlot(Integer)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(int)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(Integer)
+  nameWithType: SaveSystem.SelectSlot(int)
+  nameWithType.vb: SaveSystem.SelectSlot(Integer)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot*
+  name: SelectSlot
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SelectSlot_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot
+  nameWithType: SaveSystem.SelectSlot
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(System.String)
+  name: UnBundleSaveFiles(string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(System.String)
+  name.vb: UnBundleSaveFiles(String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(String)
+  nameWithType: SaveSystem.UnBundleSaveFiles(string)
+  nameWithType.vb: SaveSystem.UnBundleSaveFiles(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles*
+  name: UnBundleSaveFiles
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles
+  nameWithType: SaveSystem.UnBundleSaveFiles
+- uid: Studio23.SS2.SaveSystem.Editor
+  name: Studio23.SS2.SaveSystem.Editor
+  href: api/Studio23.SS2.SaveSystem.Editor.html
+  commentId: N:Studio23.SS2.SaveSystem.Editor
+  fullName: Studio23.SS2.SaveSystem.Editor
+  nameWithType: Studio23.SS2.SaveSystem.Editor
+- uid: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow
+  name: SaveSystemInstallerWindow
+  href: api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html
+  commentId: T:Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow
+  fullName: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow
+  nameWithType: SaveSystemInstallerWindow
+- uid: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
+  name: ShowWindow()
+  href: api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html#Studio23_SS2_SaveSystem_Editor_SaveSystemInstallerWindow_ShowWindow
+  commentId: M:Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
+  fullName: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow()
+  nameWithType: SaveSystemInstallerWindow.ShowWindow()
+- uid: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow*
+  name: ShowWindow
+  href: api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html#Studio23_SS2_SaveSystem_Editor_SaveSystemInstallerWindow_ShowWindow_
+  commentId: Overload:Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
+  nameWithType: SaveSystemInstallerWindow.ShowWindow
 - uid: Studio23.SS2.SaveSystem.Interfaces
   name: Studio23.SS2.SaveSystem.Interfaces
   href: api/Studio23.SS2.SaveSystem.Interfaces.html
@@ -118,104 +333,3 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData
   nameWithType: ISaveable.SaveData
-- uid: Studio23.SS2.SaveSystem.Utilities
-  name: Studio23.SS2.SaveSystem.Utilities
-  href: api/Studio23.SS2.SaveSystem.Utilities.html
-  commentId: N:Studio23.SS2.SaveSystem.Utilities
-  fullName: Studio23.SS2.SaveSystem.Utilities
-  nameWithType: Studio23.SS2.SaveSystem.Utilities
-- uid: Studio23.SS2.SaveSystem.Utilities.AESEncryptor
-  name: AESEncryptor
-  href: api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html
-  commentId: T:Studio23.SS2.SaveSystem.Utilities.AESEncryptor
-  fullName: Studio23.SS2.SaveSystem.Utilities.AESEncryptor
-  nameWithType: AESEncryptor
-- uid: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.#ctor(System.String,System.String)
-  name: AESEncryptor(string, string)
-  href: api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html#Studio23_SS2_SaveSystem_Utilities_AESEncryptor__ctor_System_String_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Utilities.AESEncryptor.#ctor(System.String,System.String)
-  name.vb: New(String, String)
-  fullName: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.AESEncryptor(string, string)
-  fullName.vb: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.New(String, String)
-  nameWithType: AESEncryptor.AESEncryptor(string, string)
-  nameWithType.vb: AESEncryptor.New(String, String)
-- uid: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.#ctor*
-  name: AESEncryptor
-  href: api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html#Studio23_SS2_SaveSystem_Utilities_AESEncryptor__ctor_
-  commentId: Overload:Studio23.SS2.SaveSystem.Utilities.AESEncryptor.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.AESEncryptor
-  fullName.vb: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.New
-  nameWithType: AESEncryptor.AESEncryptor
-  nameWithType.vb: AESEncryptor.New
-- uid: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Decrypt(System.String)
-  name: Decrypt(string)
-  href: api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html#Studio23_SS2_SaveSystem_Utilities_AESEncryptor_Decrypt_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Decrypt(System.String)
-  name.vb: Decrypt(String)
-  fullName: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Decrypt(string)
-  fullName.vb: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Decrypt(String)
-  nameWithType: AESEncryptor.Decrypt(string)
-  nameWithType.vb: AESEncryptor.Decrypt(String)
-- uid: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Decrypt*
-  name: Decrypt
-  href: api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html#Studio23_SS2_SaveSystem_Utilities_AESEncryptor_Decrypt_
-  commentId: Overload:Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Decrypt
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Decrypt
-  nameWithType: AESEncryptor.Decrypt
-- uid: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Encrypt(System.String)
-  name: Encrypt(string)
-  href: api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html#Studio23_SS2_SaveSystem_Utilities_AESEncryptor_Encrypt_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Encrypt(System.String)
-  name.vb: Encrypt(String)
-  fullName: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Encrypt(string)
-  fullName.vb: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Encrypt(String)
-  nameWithType: AESEncryptor.Encrypt(string)
-  nameWithType.vb: AESEncryptor.Encrypt(String)
-- uid: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Encrypt*
-  name: Encrypt
-  href: api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html#Studio23_SS2_SaveSystem_Utilities_AESEncryptor_Encrypt_
-  commentId: Overload:Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Encrypt
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Utilities.AESEncryptor.Encrypt
-  nameWithType: AESEncryptor.Encrypt
-- uid: Studio23.SS2.SaveSystem.Utilities.Stitcher
-  name: Stitcher
-  href: api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html
-  commentId: T:Studio23.SS2.SaveSystem.Utilities.Stitcher
-  fullName: Studio23.SS2.SaveSystem.Utilities.Stitcher
-  nameWithType: Stitcher
-- uid: Studio23.SS2.SaveSystem.Utilities.Stitcher.ArchiveFiles(System.String,System.Collections.Generic.List{System.String})
-  name: ArchiveFiles(string, List<string>)
-  href: api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html#Studio23_SS2_SaveSystem_Utilities_Stitcher_ArchiveFiles_System_String_System_Collections_Generic_List_System_String__
-  commentId: M:Studio23.SS2.SaveSystem.Utilities.Stitcher.ArchiveFiles(System.String,System.Collections.Generic.List{System.String})
-  name.vb: ArchiveFiles(String, List(Of String))
-  fullName: Studio23.SS2.SaveSystem.Utilities.Stitcher.ArchiveFiles(string, System.Collections.Generic.List<string>)
-  fullName.vb: Studio23.SS2.SaveSystem.Utilities.Stitcher.ArchiveFiles(String, System.Collections.Generic.List(Of String))
-  nameWithType: Stitcher.ArchiveFiles(string, List<string>)
-  nameWithType.vb: Stitcher.ArchiveFiles(String, List(Of String))
-- uid: Studio23.SS2.SaveSystem.Utilities.Stitcher.ArchiveFiles*
-  name: ArchiveFiles
-  href: api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html#Studio23_SS2_SaveSystem_Utilities_Stitcher_ArchiveFiles_
-  commentId: Overload:Studio23.SS2.SaveSystem.Utilities.Stitcher.ArchiveFiles
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Utilities.Stitcher.ArchiveFiles
-  nameWithType: Stitcher.ArchiveFiles
-- uid: Studio23.SS2.SaveSystem.Utilities.Stitcher.ExtractFiles(System.String,System.String)
-  name: ExtractFiles(string, string)
-  href: api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html#Studio23_SS2_SaveSystem_Utilities_Stitcher_ExtractFiles_System_String_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Utilities.Stitcher.ExtractFiles(System.String,System.String)
-  name.vb: ExtractFiles(String, String)
-  fullName: Studio23.SS2.SaveSystem.Utilities.Stitcher.ExtractFiles(string, string)
-  fullName.vb: Studio23.SS2.SaveSystem.Utilities.Stitcher.ExtractFiles(String, String)
-  nameWithType: Stitcher.ExtractFiles(string, string)
-  nameWithType.vb: Stitcher.ExtractFiles(String, String)
-- uid: Studio23.SS2.SaveSystem.Utilities.Stitcher.ExtractFiles*
-  name: ExtractFiles
-  href: api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html#Studio23_SS2_SaveSystem_Utilities_Stitcher_ExtractFiles_
-  commentId: Overload:Studio23.SS2.SaveSystem.Utilities.Stitcher.ExtractFiles
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Utilities.Stitcher.ExtractFiles
-  nameWithType: Stitcher.ExtractFiles

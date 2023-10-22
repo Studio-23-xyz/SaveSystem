@@ -15,10 +15,60 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.yml",
+      "source_relative_path": "api/Global.BasicSaveLoadTests.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.SaveSystem.Core.LocalSaveManager.html"
+          "relative_path": "api/Global.BasicSaveLoadTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EncryptionTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EncryptionTest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ItemData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ItemData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Core.SaveSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html"
         }
       },
       "version": ""
@@ -29,6 +79,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Studio23.SS2.SaveSystem.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Editor.html"
         }
       },
       "version": ""
@@ -54,36 +124,6 @@
       "version": ""
     },
     {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Studio23.SS2.SaveSystem.Utilities.AESEncryptor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.SaveSystem.Utilities.Stitcher.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Studio23.SS2.SaveSystem.Utilities.Stitcher.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.SaveSystem.Utilities.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Studio23.SS2.SaveSystem.Utilities.html"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
@@ -102,6 +142,29 @@
         },
         ".json": {
           "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "changelog/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "changelog/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/toc.html"
+        },
+        ".json": {
+          "relative_path": "changelog/toc.json"
         }
       },
       "version": ""

@@ -29,11 +29,7 @@
       <meta name="loc:copy" content="Copy">
   </head>
 
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
+  <script type="module" src="./../public/docfx.min.js"></script>
 
   <script>
     const theme = localStorage.getItem('theme') || 'auto'
@@ -93,50 +89,154 @@
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#installation">Installation</a></li>
-<li><a href="#usage">Usage</a>
+<li><a href="#getting-started">Getting Started</a>
 <ul>
-<li>[Using LocalSaveManager Script](#Using LocalSaveManager script)</li>
-<li>{About Sticher Script] (#About Sticher Script)</li>
+<li><a href="#initialization">Initialization</a></li>
+<li><a href="#creating-save-slots">Creating Save Slots</a></li>
 </ul>
 </li>
-<li><a href="#example">Example</a></li>
-<li><a href="#license">License</a></li>
+<li><a href="#saving-and-loading-data">Saving and Loading Data</a>
+<ul>
+<li><a href="#save-data">Save Data</a></li>
+<li><a href="#load-data">Load Data</a></li>
+</ul>
+</li>
+<li><a href="#managing-save-slots">Managing Save Slots</a>
+<ul>
+<li><a href="#selecting-a-slot">Selecting a Slot</a></li>
+<li><a href="#clearing-slots">Clearing Slots</a></li>
+</ul>
+</li>
+<li><a href="#cloud-save-and-restore">Cloud Save and Restore</a>
+<ul>
+<li><a href="#bundle-save-files">Bundle Save Files</a></li>
+<li><a href="#unbundle-save-files">Unbundle Save Files</a></li>
+</ul>
+</li>
 </ol>
 <h2 id="installation">Installation</h2>
 <h3 id="install-via-git-url">Install via Git URL</h3>
 <p>You can also use the &quot;Install from Git URL&quot; option from Unity Package Manager to install the package.</p>
 <pre><code>https://github.com/Studio-23-xyz/SaveSystem.git#upm
 </code></pre>
-<h2 id="usage">Usage</h2>
-<h3 id="using-localsavemanager-script">Using LocalSaveManager script</h3>
-<ol>
-<li><p>In the LocalSaveManager class the constructor takes the path of the file.</p>
-</li>
-<li><p>enableEncryption = true will use encryption to the save file. It will also decrypt when the file will be loaded.</p>
-</li>
-<li><p>Save and Load functions are generic type parameters in case any content can be stored and load locally.</p>
-</li>
-</ol>
-<pre><code class="lang-csharp">// Example code to use the Save and Load function
-LocalSaveManager Obj = new LocalSaveManager(&quot;savedata01&quot;,true,&quot;encryptsampleKeyA&quot;,&quot;encryptIVkeyA&quot;)
-Obj.Save(savedata);
-var loaddata = Obj.Load()
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="initialization">Initialization</h3>
+<p>Create An Empty GameObject and attach the SaveSystem MonoBehaviour to it. And you are all set to use the Save System.
+Or You can use the Installer From Top tool bar Studio-23/Save System/ Installer</p>
+<h3 id="creating-save-slots">Creating Save Slots</h3>
+<p>Save slots are used to organize saved game data. You can create and manage save slots as follows:</p>
+<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
 
-
-### About Sticher Script
-
-When trying to save if the directories do no exist it will attempt to create it then save it. If there will be numerous saveable files, it will combine into on directory and can also be extracted whenever 
-it needs to be extracted.
-
-
+public class YourGameManager : MonoBehaviour
+{
+    private async void Start()
+    {
+        // Create save slots
+        await SaveSystem.Instance.CreateSlotsAsync();
+    }
+}
 </code></pre>
+<h2 id="saving-and-loading-data">Saving and Loading Data</h2>
+<h3 id="save-data">Save Data</h3>
+<p>You can save game data using the <code>SaveData</code> method. Here's how to use it:</p>
+<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void SaveGameData()
+    {
+        // Your game data
+        YourGameData data = ...
+
+        // Save the data to the selected slot
+        await SaveSystem.Instance.SaveData(data, &quot;your_data_id&quot;);
+    }
+}
+</code></pre>
+<h3 id="load-data">Load Data</h3>
+<p>To load saved game data, use the <code>LoadData</code> method as shown below:</p>
+<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void LoadGameData()
+    {
+        // Load the data from the selected slot
+        YourGameData loadedData = await SaveSystem.Instance.LoadData&lt;YourGameData&gt;(&quot;your_data_id&quot;);
+
+        // Use the loaded data in your game
+        ...
+    }
+}
+</code></pre>
+<h2 id="managing-save-slots">Managing Save Slots</h2>
+<h3 id="selecting-a-slot">Selecting a Slot</h3>
+<p>You can switch between save slots by using the <code>SelectSlot</code> method:</p>
+<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
+
+public class YourGameManager : MonoBehaviour
+{
+    private void SwitchSaveSlot(int slotIndex)
+    {
+        SaveSystem.Instance.SelectSlot(slotIndex);
+    }
+}
+</code></pre>
+<h3 id="clearing-slots">Clearing Slots</h3>
+<p>To clear all save slots, you can use the <code>ClearSlotsAsync</code> method:</p>
+<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void ClearAllSlots()
+    {
+        // Clear all save slots
+        await SaveSystem.Instance.ClearSlotsAsync();
+    }
+}
+</code></pre>
+<h2 id="cloud-save-and-restore">Cloud Save and Restore</h2>
+<h3 id="bundle-save-files">Bundle Save Files</h3>
+<p>You can bundle save files for cloud storage with the <code>BundleSaveFiles</code> method:</p>
+<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void BundleSaveFilesForCloud()
+    {
+        // Bundle save files for cloud storage
+        await SaveSystem.Instance.BundleSaveFiles();
+    }
+}
+</code></pre>
+<h3 id="unbundle-save-files">Unbundle Save Files</h3>
+<p>To restore save files from cloud storage, use the <code>UnBundleSaveFiles</code> method:</p>
+<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
+using Cysharp.Threading.Tasks;
+
+public class YourGameManager : MonoBehaviour
+{
+    private async void RestoreSaveFilesFromCloud()
+    {
+        // Restore save files from cloud storage
+        await SaveSystem.Instance.UnBundleSaveFiles();
+    }
+}
+</code></pre>
+<p>That's it! You now have the basic information you need to use the <strong>Studio23.SS2.SaveSystem</strong> library in your Unity project. Explore the library's features and customize it according to your game's needs.</p>
+
 </article>
 
         <div class="contribution d-print-none">
           <a href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Documentation~/manual/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
-        
+
       </div>
 
       <div class="affix">
