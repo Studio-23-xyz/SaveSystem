@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> |  |  </title>
+      <title>Changelog |  |  </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" |  |  ">
+      <meta name="title" content="Changelog |  |  ">
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -15,7 +15,7 @@
       <meta name="docfx:rel" content="../">
       <meta name="docfx:disablenewtab" content="true">
       
-      <meta name="docfx:docurl" content="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Documentation~/license/LICENSE.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Documentation~/changelog/CHANGELOG.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -83,24 +83,39 @@
         </div>
 
         <article data-uid="">
+<h1 id="changelog">Changelog</h1>
 
-<p>MIT License</p>
-<p>Copyright (c) 2023 Studio-23</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
+<p>All notable changes to this Unity package will be documented in this file.</p>
+<h2 id="v111---2023-10-22">[v1.1.1] - 2023-10-22</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Added SaveEvent delegate and corresponding events for tracking save and load operations.</li>
+<li>Added methods to handle all components implementing the ISaveable interface, bundle save files into a single file, and extract bundled save files.</li>
+</ul>
+<h3 id="updated">Updated</h3>
+<ul>
+<li>Modified SaveSystem class to include new events and methods.</li>
+<li>Updated SaveData and LoadData methods to invoke events and return loaded data respectively.</li>
+<li>Updated bundleVersion field in the PlayerSettings structure from 1.1.0 to 1.1.1.</li>
+</ul>
+<h2 id="v110---2023-10-22">[v1.1.0] - 2023-10-22</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>New SaveSystem Class added which will be the new entrypoint of using this  library</li>
+<li>New Test Cases to ensure the library works as intented.</li>
+</ul>
+<h3 id="updated-1">Updated</h3>
+<ul>
+<li>Updated how Bundling and unbundeling works.</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Now Bundling and unbundeling works properly</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Bugs</li>
+</ul>
 
 </article>
 
