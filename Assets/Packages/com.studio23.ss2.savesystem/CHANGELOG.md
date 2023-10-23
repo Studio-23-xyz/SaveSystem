@@ -6,6 +6,12 @@ All notable changes to this Unity package will be documented in this file.
 
 ### Added
 
++  Added a new public property called SaveBundle Path. Which can be used by extentions to manage cloud save.
+
+## [v1.1.2] - 2023-10-22
+
+### Added
+
 +  New Method added to get save metadata to show UI.
 +  New Test Cases Added
 

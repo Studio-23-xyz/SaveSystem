@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -34,8 +33,17 @@ namespace Studio23.SS2.SaveSystem.Core
         [SerializeField] internal string _encryptionIV;
 
         [SerializeField] internal string _saveRootFolderName = "SaveData";
+        [SerializeField] internal string _bundleName = "cloudSave";
 
-        private string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
+        /// <summary>
+        /// Gives you the location of the SaveFolder
+        /// </summary>
+        public string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
+
+        /// <summary>
+        /// Gives you the location of the save bundle
+        /// </summary>
+        public string SaveBundlePath => Path.Combine(SavePath, $"{_bundleName}.sav");
         private string SelectedSlotPath => Path.Combine(SavePath, SelectedSlot.Name);
 
 
@@ -43,6 +51,8 @@ namespace Studio23.SS2.SaveSystem.Core
         public SaveEvent OnSaveComplete;
         public SaveEvent OnLoadComplete;
 
+
+   
         public SaveEvent OnBundleComplete;
         public SaveEvent OnUnbundleComplete;
 
@@ -234,13 +244,12 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <summary>
         /// Serializes all the files into one file for cloud save providers to work with
         /// </summary>
-        /// <param name="bundleName">Name of your file(Optional)</param>
         /// <returns>UniTask</returns>
-        public async UniTask BundleSaveFiles(string bundleName = "cloudSave")
+        public async UniTask BundleSaveFiles()
         {
             List<string> FilePaths = Directory.GetFiles(SavePath, "*.taz", SearchOption.AllDirectories).ToList();
             Stitcher stitcher = new Stitcher();
-            await stitcher.ArchiveFiles($"{SavePath}/{bundleName}.sav", FilePaths);
+            await stitcher.ArchiveFiles(SaveBundlePath, FilePaths);
 
             OnBundleComplete?.Invoke();
 
@@ -249,13 +258,12 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <summary>
         /// Extracts the bundled file into it's original state.
         /// </summary>
-        /// <param name="bundleName">Name of your file(Optional)</param>
         /// <returns>UniTask</returns>
-        public async UniTask UnBundleSaveFiles(string bundleName = "cloudSave")
+        public async UniTask UnBundleSaveFiles()
         {
             await ClearSlotsAsync();
             Stitcher stitcher = new Stitcher();
-            await stitcher.ExtractFiles($"{SavePath}/{bundleName}.sav", SavePath);
+            await stitcher.ExtractFiles(SaveBundlePath, SavePath);
 
             OnUnbundleComplete?.Invoke();
         }

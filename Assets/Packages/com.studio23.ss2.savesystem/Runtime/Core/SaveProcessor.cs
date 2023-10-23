@@ -41,8 +41,6 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
 
-
-
         public async UniTask<T> Load<T>()
         {
             string jsonData = await Load();
@@ -63,6 +61,5 @@ namespace Studio23.SS2.SaveSystem.Core
             }
             return string.Empty;
         }
-
     }
 }
