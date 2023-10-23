@@ -19,10 +19,15 @@
     "title": "Class PlayerData | |",
     "keywords": "Class PlayerData Namespace Global public class PlayerData Inheritance object PlayerData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields playerLevel public int playerLevel Field Value int playerName public string playerName Field Value string"
   },
+  "api/Global.SlotMetaDataTest.html": {
+    "href": "api/Global.SlotMetaDataTest.html",
+    "title": "Class SlotMetaDataTest | |",
+    "keywords": "Class SlotMetaDataTest Namespace Global public class SlotMetaDataTest Inheritance object SlotMetaDataTest Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods SaveSystem_LoadSlot() public IEnumerator SaveSystem_LoadSlot() Returns IEnumerator SaveSystem_SaveSlots() public IEnumerator SaveSystem_SaveSlots() Returns IEnumerator SaveSystem_Setup() public IEnumerator SaveSystem_Setup() Returns IEnumerator"
+  },
   "api/Global.html": {
     "href": "api/Global.html",
     "title": "Namespace | |",
-    "keywords": "Namespace Classes BasicSaveLoadTests EncryptionTest ItemData PlayerData"
+    "keywords": "Namespace Classes BasicSaveLoadTests EncryptionTest ItemData PlayerData SlotMetaDataTest"
   },
   "api/Studio23.SS2.SaveSystem.Core.SaveEvent.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.SaveEvent.html",
@@ -32,12 +37,22 @@
   "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html",
     "title": "Class SaveSystem | |",
-    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem OnBundleComplete public SaveEvent OnBundleComplete Field Value SaveEvent OnLoadComplete public SaveEvent OnLoadComplete Field Value SaveEvent OnSaveComplete public SaveEvent OnSaveComplete Field Value SaveEvent OnUnbundleComplete public SaveEvent OnUnbundleComplete Field Value SaveEvent Methods BundleSaveFiles(string) Serializes all the files into one file for cloud save providers to work with public UniTask BundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Name of your file(Optional) Returns UniTask UniTask ClearSlotsAsync() Delete all saved files public Task ClearSlotsAsync() Returns Task UniTask LoadAllSavable() Finds all Components that implements ISavable interface and loads data if it was saved before. You should implement a progress feedback as it will take some time. public UniTask LoadAllSavable() Returns UniTask LoadData<T>(string) Loads Data from select slot. This is for special cases idealy you would use LoadAll public UniTask<T> LoadData<T>(string id) Parameters id string Unique ID of the Object Returns UniTask<T> Saved Object Type Parameters T SaveAllSavable() Finds all Components that implements ISavable interface and saves them. You should implement a progress feedback as it will take some time. public UniTask SaveAllSavable() Returns UniTask UniTask SaveData<T>(T, string) Saves objects to selected slot. This is for special cases idealy you would use SaveALL public UniTask SaveData<T>(T data, string id) Parameters data T Your Object id string An Unique ID Returns UniTask UniTask Type Parameters T SelectSlot(int) public void SelectSlot(int index) Parameters index int UnBundleSaveFiles(string) Extracts the bundled file into it's original state. public UniTask UnBundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Name of your file(Optional) Returns UniTask UniTask"
+    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem OnBundleComplete public SaveEvent OnBundleComplete Field Value SaveEvent OnLoadComplete public SaveEvent OnLoadComplete Field Value SaveEvent OnSaveComplete public SaveEvent OnSaveComplete Field Value SaveEvent OnUnbundleComplete public SaveEvent OnUnbundleComplete Field Value SaveEvent Methods BundleSaveFiles(string) Serializes all the files into one file for cloud save providers to work with public UniTask BundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Name of your file(Optional) Returns UniTask UniTask ClearSlotsAsync() Delete all saved files public UniTask ClearSlotsAsync() Returns UniTask UniTask GetSaveSlotMetaData() public UniTask<List<SaveSlot>> GetSaveSlotMetaData() Returns UniTask<List<SaveSlot>> LoadAllSavable() Finds all Components that implements ISavable interface and loads data if it was saved before. You should implement a progress feedback as it will take some time. public UniTask LoadAllSavable() Returns UniTask LoadData<T>(string) Loads Data from select slot. This is for special cases idealy you would use LoadAll public UniTask<T> LoadData<T>(string id) Parameters id string Unique ID of the Object Returns UniTask<T> Saved Object Type Parameters T SaveAllSavable() Finds all Components that implements ISavable interface and saves them. You should implement a progress feedback as it will take some time. public UniTask SaveAllSavable() Returns UniTask UniTask SaveData<T>(T, string) Saves objects to selected slot. This is for special cases idealy you would use SaveALL public UniTask SaveData<T>(T data, string id) Parameters data T Your Object id string An Unique ID Returns UniTask UniTask Type Parameters T SelectSlot(int) public void SelectSlot(int index) Parameters index int UnBundleSaveFiles(string) Extracts the bundled file into it's original state. public UniTask UnBundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Name of your file(Optional) Returns UniTask UniTask UpdateSelectedSlotMetadata(string) You can update selected slot metadata description from here. public UniTask UpdateSelectedSlotMetadata(string description = \"\") Parameters description string Optional Parameter Returns UniTask"
   },
   "api/Studio23.SS2.SaveSystem.Core.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Core | |",
     "keywords": "Namespace Studio23.SS2.SaveSystem.Core Classes SaveSystem Delegates SaveEvent"
+  },
+  "api/Studio23.SS2.SaveSystem.Data.SaveSlot.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Data.SaveSlot.html",
+    "title": "Class SaveSlot | |",
+    "keywords": "Class SaveSlot Namespace Studio23.SS2.SaveSystem.Data public class SaveSlot Inheritance object SaveSlot Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors SaveSlot(string) public SaveSlot(string name) Parameters name string Fields Description public string Description Field Value string Id public int Id Field Value int Name public string Name Field Value string TimeStamp public DateTime TimeStamp Field Value DateTime"
+  },
+  "api/Studio23.SS2.SaveSystem.Data.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Data.html",
+    "title": "Namespace Studio23.SS2.SaveSystem.Data | |",
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Data Classes SaveSlot"
   },
   "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html": {
     "href": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html",

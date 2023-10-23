@@ -143,6 +143,51 @@ references:
   commentId: F:Global.PlayerData.playerName
   fullName: PlayerData.playerName
   nameWithType: PlayerData.playerName
+- uid: Global.SlotMetaDataTest
+  name: SlotMetaDataTest
+  href: api/Global.SlotMetaDataTest.html
+  commentId: T:Global.SlotMetaDataTest
+  fullName: SlotMetaDataTest
+  nameWithType: SlotMetaDataTest
+- uid: Global.SlotMetaDataTest.SaveSystem_LoadSlot
+  name: SaveSystem_LoadSlot()
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_SaveSystem_LoadSlot
+  commentId: M:Global.SlotMetaDataTest.SaveSystem_LoadSlot
+  fullName: SlotMetaDataTest.SaveSystem_LoadSlot()
+  nameWithType: SlotMetaDataTest.SaveSystem_LoadSlot()
+- uid: Global.SlotMetaDataTest.SaveSystem_LoadSlot*
+  name: SaveSystem_LoadSlot
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_SaveSystem_LoadSlot_
+  commentId: Overload:Global.SlotMetaDataTest.SaveSystem_LoadSlot
+  isSpec: "True"
+  fullName: SlotMetaDataTest.SaveSystem_LoadSlot
+  nameWithType: SlotMetaDataTest.SaveSystem_LoadSlot
+- uid: Global.SlotMetaDataTest.SaveSystem_SaveSlots
+  name: SaveSystem_SaveSlots()
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_SaveSystem_SaveSlots
+  commentId: M:Global.SlotMetaDataTest.SaveSystem_SaveSlots
+  fullName: SlotMetaDataTest.SaveSystem_SaveSlots()
+  nameWithType: SlotMetaDataTest.SaveSystem_SaveSlots()
+- uid: Global.SlotMetaDataTest.SaveSystem_SaveSlots*
+  name: SaveSystem_SaveSlots
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_SaveSystem_SaveSlots_
+  commentId: Overload:Global.SlotMetaDataTest.SaveSystem_SaveSlots
+  isSpec: "True"
+  fullName: SlotMetaDataTest.SaveSystem_SaveSlots
+  nameWithType: SlotMetaDataTest.SaveSystem_SaveSlots
+- uid: Global.SlotMetaDataTest.SaveSystem_Setup
+  name: SaveSystem_Setup()
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_SaveSystem_Setup
+  commentId: M:Global.SlotMetaDataTest.SaveSystem_Setup
+  fullName: SlotMetaDataTest.SaveSystem_Setup()
+  nameWithType: SlotMetaDataTest.SaveSystem_Setup()
+- uid: Global.SlotMetaDataTest.SaveSystem_Setup*
+  name: SaveSystem_Setup
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_SaveSystem_Setup_
+  commentId: Overload:Global.SlotMetaDataTest.SaveSystem_Setup
+  isSpec: "True"
+  fullName: SlotMetaDataTest.SaveSystem_Setup
+  nameWithType: SlotMetaDataTest.SaveSystem_Setup
 - uid: Studio23.SS2.SaveSystem.Core
   name: Studio23.SS2.SaveSystem.Core
   href: api/Studio23.SS2.SaveSystem.Core.html
@@ -190,6 +235,19 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync
   nameWithType: SaveSystem.ClearSlotsAsync
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData
+  name: GetSaveSlotMetaData()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_GetSaveSlotMetaData
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData()
+  nameWithType: SaveSystem.GetSaveSlotMetaData()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData*
+  name: GetSaveSlotMetaData
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_GetSaveSlotMetaData_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData
+  nameWithType: SaveSystem.GetSaveSlotMetaData
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Instance
   name: Instance
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Instance
@@ -310,6 +368,77 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles
   nameWithType: SaveSystem.UnBundleSaveFiles
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata(System.String)
+  name: UpdateSelectedSlotMetadata(string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UpdateSelectedSlotMetadata_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata(System.String)
+  name.vb: UpdateSelectedSlotMetadata(String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata(String)
+  nameWithType: SaveSystem.UpdateSelectedSlotMetadata(string)
+  nameWithType.vb: SaveSystem.UpdateSelectedSlotMetadata(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata*
+  name: UpdateSelectedSlotMetadata
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UpdateSelectedSlotMetadata_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata
+  nameWithType: SaveSystem.UpdateSelectedSlotMetadata
+- uid: Studio23.SS2.SaveSystem.Data
+  name: Studio23.SS2.SaveSystem.Data
+  href: api/Studio23.SS2.SaveSystem.Data.html
+  commentId: N:Studio23.SS2.SaveSystem.Data
+  fullName: Studio23.SS2.SaveSystem.Data
+  nameWithType: Studio23.SS2.SaveSystem.Data
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot
+  name: SaveSlot
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html
+  commentId: T:Studio23.SS2.SaveSystem.Data.SaveSlot
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot
+  nameWithType: SaveSlot
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.String)
+  name: SaveSlot(string)
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.SaveSlot(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Data.SaveSlot.New(String)
+  nameWithType: SaveSlot.SaveSlot(string)
+  nameWithType.vb: SaveSlot.New(String)
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor*
+  name: SaveSlot
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_
+  commentId: Overload:Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.SaveSlot
+  fullName.vb: Studio23.SS2.SaveSystem.Data.SaveSlot.New
+  nameWithType: SaveSlot.SaveSlot
+  nameWithType.vb: SaveSlot.New
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.Description
+  name: Description
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_Description
+  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.Description
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.Description
+  nameWithType: SaveSlot.Description
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.Id
+  name: Id
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_Id
+  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.Id
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.Id
+  nameWithType: SaveSlot.Id
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.Name
+  name: Name
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_Name
+  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.Name
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.Name
+  nameWithType: SaveSlot.Name
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.TimeStamp
+  name: TimeStamp
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_TimeStamp
+  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.TimeStamp
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.TimeStamp
+  nameWithType: SaveSlot.TimeStamp
 - uid: Studio23.SS2.SaveSystem.Editor
   name: Studio23.SS2.SaveSystem.Editor
   href: api/Studio23.SS2.SaveSystem.Editor.html
