@@ -5,13 +5,13 @@ using System.IO;
 
 namespace Studio23.SS2.SaveSystem.Core
 {
-    internal class SaveManager
+    internal class SaveProcessor
     {
         private readonly string _saveFilePath;
         private readonly bool _useEncryption;
         private readonly AESEncryptor _encryptor;
 
-        public SaveManager(string saveFileName, string savefilePath, string extention = ".taz", bool enableEncryption = false, string encryptionKey = "null",
+        public SaveProcessor(string saveFileName, string savefilePath, string extention = ".taz", bool enableEncryption = false, string encryptionKey = "null",
             string encryptionIV = "null")
         {
 

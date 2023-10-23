@@ -3,7 +3,7 @@ using System;
 
 namespace Studio23.SS2.SaveSystem.Data
 {
-    internal class SaveSlot
+    public class SaveSlot
     {
         public int Id;
         public string Name;
@@ -12,9 +12,8 @@ namespace Studio23.SS2.SaveSystem.Data
 
         public SaveSlot(string name)
         {
-            TimeStamp = DateTime.Now;
             Name = name;
-         
+            TimeStamp = DateTime.Now;
         }
 
     }
