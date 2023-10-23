@@ -49,19 +49,11 @@ namespace Studio23.SS2.SaveSystem.Core
         private void Awake()
         {
             Instance = this;
+            OnSaveComplete += async () => await UpdateSlotMetadata();
             CreateSlots();
         }
 
 
-        public void OnEnable()
-        {
-            OnSaveComplete += async () => await UpdateSlotMetadata();
-        }
-
-        public void OnDisable()
-        {
-            OnSaveComplete -= async () => await UpdateSlotMetadata();
-        }
 
         private void CreateSlots()
         {
