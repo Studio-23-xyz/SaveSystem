@@ -24,26 +24,34 @@ namespace Studio23.SS2.SaveSystem.Core
 
         public async UniTask Save<T>(T data)
         {
-
             var json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            await Save(json);
+        }
 
+        public async UniTask Save(string data)
+        {
             if (_useEncryption && _encryptor != null)
-                json = await _encryptor.Encrypt(json);
+                data = await _encryptor.Encrypt(data);
 
             if (File.Exists(_saveFilePath))
             {
                 File.Delete(_saveFilePath);
             }
-
-            await File.WriteAllTextAsync(_saveFilePath, json);
-
-
+            await File.WriteAllTextAsync(_saveFilePath, data);
         }
+
+
 
 
         public async UniTask<T> Load<T>()
         {
+            string jsonData = await Load();
+            return JsonConvert.DeserializeObject<T>(jsonData);
+        }
 
+
+        public async UniTask<string> Load()
+        {
             if (File.Exists(_saveFilePath))
             {
                 var json = await File.ReadAllTextAsync(_saveFilePath);
@@ -51,10 +59,9 @@ namespace Studio23.SS2.SaveSystem.Core
                 if (_useEncryption && _encryptor != null)
                     json = _encryptor.Decrypt(json);
 
-                return JsonConvert.DeserializeObject<T>(json);
+                return json;
             }
-
-            return default;
+            return string.Empty;
         }
 
     }

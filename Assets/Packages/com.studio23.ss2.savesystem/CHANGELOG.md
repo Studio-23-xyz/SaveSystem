@@ -2,7 +2,20 @@
 
 All notable changes to this Unity package will be documented in this file.
 
-## [v1.0.1] - 2023-10-22
+## [v1.1.1] - 2023-10-22
+
+### Added
+
+- ISavable Interface Added.
+- Now you can just add ISavable Interface to your own monobehaviours and implment them. The SaveSystem will save all ISavable Objects.
+
+### Updated
+
+- Added XML Documentation
+
+
+
+## [v1.1.0] - 2023-10-22
 
 ### Added
 
