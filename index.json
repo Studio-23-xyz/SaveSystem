@@ -24,15 +24,20 @@
     "title": "Namespace | |",
     "keywords": "Namespace Classes BasicSaveLoadTests EncryptionTest ItemData PlayerData"
   },
+  "api/Studio23.SS2.SaveSystem.Core.SaveEvent.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Core.SaveEvent.html",
+    "title": "Delegate SaveEvent | |",
+    "keywords": "Delegate SaveEvent Namespace Studio23.SS2.SaveSystem.Core public delegate void SaveEvent()"
+  },
   "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html",
     "title": "Class SaveSystem | |",
-    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem Methods BundleSaveFiles(string) public UniTask BundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Returns UniTask ClearSlotsAsync() public Task ClearSlotsAsync() Returns Task LoadData<T>(string) public UniTask<T> LoadData<T>(string id) Parameters id string Returns UniTask<T> Type Parameters T SaveData<T>(T, string) public UniTask SaveData<T>(T data, string id) Parameters data T id string Returns UniTask Type Parameters T SelectSlot(int) public void SelectSlot(int index) Parameters index int UnBundleSaveFiles(string) public UniTask UnBundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Returns UniTask"
+    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem OnBundleComplete public SaveEvent OnBundleComplete Field Value SaveEvent OnLoadComplete public SaveEvent OnLoadComplete Field Value SaveEvent OnSaveComplete public SaveEvent OnSaveComplete Field Value SaveEvent OnUnbundleComplete public SaveEvent OnUnbundleComplete Field Value SaveEvent Methods BundleSaveFiles(string) Serializes all the files into one file for cloud save providers to work with public UniTask BundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Name of your file(Optional) Returns UniTask UniTask ClearSlotsAsync() Delete all saved files public Task ClearSlotsAsync() Returns Task UniTask LoadAllSavable() Finds all Components that implements ISavable interface and loads data if it was saved before. You should implement a progress feedback as it will take some time. public UniTask LoadAllSavable() Returns UniTask LoadData<T>(string) Loads Data from select slot. This is for special cases idealy you would use LoadAll public UniTask<T> LoadData<T>(string id) Parameters id string Unique ID of the Object Returns UniTask<T> Saved Object Type Parameters T SaveAllSavable() Finds all Components that implements ISavable interface and saves them. You should implement a progress feedback as it will take some time. public UniTask SaveAllSavable() Returns UniTask UniTask SaveData<T>(T, string) Saves objects to selected slot. This is for special cases idealy you would use SaveALL public UniTask SaveData<T>(T data, string id) Parameters data T Your Object id string An Unique ID Returns UniTask UniTask Type Parameters T SelectSlot(int) public void SelectSlot(int index) Parameters index int UnBundleSaveFiles(string) Extracts the bundled file into it's original state. public UniTask UnBundleSaveFiles(string bundleName = \"cloudSave\") Parameters bundleName string Name of your file(Optional) Returns UniTask UniTask"
   },
   "api/Studio23.SS2.SaveSystem.Core.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Core | |",
-    "keywords": "Namespace Studio23.SS2.SaveSystem.Core Classes SaveSystem"
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Core Classes SaveSystem Delegates SaveEvent"
   },
   "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html": {
     "href": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html",
@@ -47,7 +52,7 @@
   "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html": {
     "href": "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html",
     "title": "Interface ISaveable | |",
-    "keywords": "Interface ISaveable Namespace Studio23.SS2.SaveSystem.Interfaces public interface ISaveable Methods GenerateUniqueID(string) string GenerateUniqueID(string name) Parameters name string Returns string LoadData() void LoadData() SaveData() void SaveData()"
+    "keywords": "Interface ISaveable Namespace Studio23.SS2.SaveSystem.Interfaces public interface ISaveable Properties UniqueID Must Return an Unique ID for save system to save file with this name string UniqueID { get; } Property Value string Methods AssignSerializedData(string) Implement how your component will adjust on data load void AssignSerializedData(string data) Parameters data string String data GetSerializedData() Return a serialized string for the save system to save string GetSerializedData() Returns string String Data"
   },
   "api/Studio23.SS2.SaveSystem.Interfaces.html": {
     "href": "api/Studio23.SS2.SaveSystem.Interfaces.html",
@@ -59,11 +64,6 @@
     "title": "| |",
     "keywords": "This is the documentation for the Scripting APIs of this package."
   },
-  "changelog/CHANGELOG.html": {
-    "href": "changelog/CHANGELOG.html",
-    "title": "Changelog | |",
-    "keywords": "Changelog All notable changes to this Unity package will be documented in this file. [v1.0.1] - 2023-10-22 Added New SaveSystem Class added which will be the new entrypoint of using this library New Test Cases to ensure the library works as intented. Updated Updated how Bundling and unbundeling works. Fixed Now Bundling and unbundeling works properly Removed Bugs"
-  },
   "index.html": {
     "href": "index.html",
     "title": "| |",
@@ -72,7 +72,7 @@
   "license/LICENSE.html": {
     "href": "license/LICENSE.html",
     "title": "| |",
-    "keywords": "MIT License Copyright (c) 2023 Studio-23 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    "keywords": "MIT License Copyright (c) 2023 zubEpty Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   "manual/index.html": {
     "href": "manual/index.html",

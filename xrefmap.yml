@@ -149,6 +149,12 @@ references:
   commentId: N:Studio23.SS2.SaveSystem.Core
   fullName: Studio23.SS2.SaveSystem.Core
   nameWithType: Studio23.SS2.SaveSystem.Core
+- uid: Studio23.SS2.SaveSystem.Core.SaveEvent
+  name: SaveEvent
+  href: api/Studio23.SS2.SaveSystem.Core.SaveEvent.html
+  commentId: T:Studio23.SS2.SaveSystem.Core.SaveEvent
+  fullName: Studio23.SS2.SaveSystem.Core.SaveEvent
+  nameWithType: SaveEvent
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem
   name: SaveSystem
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html
@@ -190,6 +196,19 @@ references:
   commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.Instance
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Instance
   nameWithType: SaveSystem.Instance
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadAllSavable
+  name: LoadAllSavable()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_LoadAllSavable
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.LoadAllSavable
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadAllSavable()
+  nameWithType: SaveSystem.LoadAllSavable()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadAllSavable*
+  name: LoadAllSavable
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_LoadAllSavable_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.LoadAllSavable
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadAllSavable
+  nameWithType: SaveSystem.LoadAllSavable
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData*
   name: LoadData
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_LoadData_
@@ -206,6 +225,43 @@ references:
   fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData(Of T)(String)
   nameWithType: SaveSystem.LoadData<T>(string)
   nameWithType.vb: SaveSystem.LoadData(Of T)(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.OnBundleComplete
+  name: OnBundleComplete
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_OnBundleComplete
+  commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.OnBundleComplete
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.OnBundleComplete
+  nameWithType: SaveSystem.OnBundleComplete
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.OnLoadComplete
+  name: OnLoadComplete
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_OnLoadComplete
+  commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.OnLoadComplete
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.OnLoadComplete
+  nameWithType: SaveSystem.OnLoadComplete
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.OnSaveComplete
+  name: OnSaveComplete
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_OnSaveComplete
+  commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.OnSaveComplete
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.OnSaveComplete
+  nameWithType: SaveSystem.OnSaveComplete
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.OnUnbundleComplete
+  name: OnUnbundleComplete
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_OnUnbundleComplete
+  commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.OnUnbundleComplete
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.OnUnbundleComplete
+  nameWithType: SaveSystem.OnUnbundleComplete
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable
+  name: SaveAllSavable()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveAllSavable
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable()
+  nameWithType: SaveSystem.SaveAllSavable()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable*
+  name: SaveAllSavable
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveAllSavable_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable
+  nameWithType: SaveSystem.SaveAllSavable
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData*
   name: SaveData
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveData_
@@ -291,45 +347,45 @@ references:
   commentId: T:Studio23.SS2.SaveSystem.Interfaces.ISaveable
   fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable
   nameWithType: ISaveable
-- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID(System.String)
-  name: GenerateUniqueID(string)
-  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_GenerateUniqueID_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID(System.String)
-  name.vb: GenerateUniqueID(String)
-  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID(string)
-  fullName.vb: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID(String)
-  nameWithType: ISaveable.GenerateUniqueID(string)
-  nameWithType.vb: ISaveable.GenerateUniqueID(String)
-- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID*
-  name: GenerateUniqueID
-  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_GenerateUniqueID_
-  commentId: Overload:Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData(System.String)
+  name: AssignSerializedData(string)
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_AssignSerializedData_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData(System.String)
+  name.vb: AssignSerializedData(String)
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData(String)
+  nameWithType: ISaveable.AssignSerializedData(string)
+  nameWithType.vb: ISaveable.AssignSerializedData(String)
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData*
+  name: AssignSerializedData
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_AssignSerializedData_
+  commentId: Overload:Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData
   isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID
-  nameWithType: ISaveable.GenerateUniqueID
-- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData
-  name: LoadData()
-  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_LoadData
-  commentId: M:Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData
-  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData()
-  nameWithType: ISaveable.LoadData()
-- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData*
-  name: LoadData
-  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_LoadData_
-  commentId: Overload:Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData
+  nameWithType: ISaveable.AssignSerializedData
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData
+  name: GetSerializedData()
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_GetSerializedData
+  commentId: M:Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData()
+  nameWithType: ISaveable.GetSerializedData()
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData*
+  name: GetSerializedData
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_GetSerializedData_
+  commentId: Overload:Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData
   isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData
-  nameWithType: ISaveable.LoadData
-- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData
-  name: SaveData()
-  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_SaveData
-  commentId: M:Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData
-  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData()
-  nameWithType: ISaveable.SaveData()
-- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData*
-  name: SaveData
-  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_SaveData_
-  commentId: Overload:Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData
+  nameWithType: ISaveable.GetSerializedData
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID
+  name: UniqueID
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_UniqueID
+  commentId: P:Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID
+  nameWithType: ISaveable.UniqueID
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID*
+  name: UniqueID
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_UniqueID_
+  commentId: Overload:Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID
   isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData
-  nameWithType: ISaveable.SaveData
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID
+  nameWithType: ISaveable.UniqueID

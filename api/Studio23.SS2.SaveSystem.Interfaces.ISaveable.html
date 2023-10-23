@@ -117,31 +117,30 @@
 
 
 
-  <h2 class="section" id="methods">Methods
+  <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_GenerateUniqueID_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID*"></a>
+  <a id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_UniqueID_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID*"></a>
 
-  <h3 id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_GenerateUniqueID_System_String_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.GenerateUniqueID(System.String)">
-  GenerateUniqueID(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Interfaces/ISaveable.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_UniqueID" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.UniqueID">
+  UniqueID
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Interfaces/ISaveable.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Must Return an Unique ID for save system to save file with this name</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string GenerateUniqueID(string name)</code></pre>
+    <pre><code class="lang-csharp hljs">string UniqueID { get; }</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
 
-  <h4 class="section">Returns</h4>
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
@@ -154,23 +153,31 @@
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
 
 
+  <a id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_AssignSerializedData_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData*"></a>
 
-  <a id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_LoadData_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData*"></a>
-
-  <h3 id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_LoadData" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.LoadData">
-  LoadData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Interfaces/ISaveable.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_AssignSerializedData_System_String_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.AssignSerializedData(System.String)">
+  AssignSerializedData(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Interfaces/ISaveable.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Implement how your component will adjust on data load</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void LoadData()</code></pre>
+    <pre><code class="lang-csharp hljs">void AssignSerializedData(string data)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>String data</p>
+</dd>
+  </dl>
 
 
 
@@ -183,21 +190,28 @@
 
 
 
-  <a id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_SaveData_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData*"></a>
+  <a id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_GetSerializedData_" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData*"></a>
 
-  <h3 id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_SaveData" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.SaveData">
-  SaveData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Interfaces/ISaveable.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Studio23_SS2_SaveSystem_Interfaces_ISaveable_GetSerializedData" data-uid="Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetSerializedData">
+  GetSerializedData()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Interfaces/ISaveable.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Return a serialized string for the save system to save</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void SaveData()</code></pre>
+    <pre><code class="lang-csharp hljs">string GetSerializedData()</code></pre>
   </div>
 
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>String Data</p>
+</dd>
+  </dl>
 
 
 
