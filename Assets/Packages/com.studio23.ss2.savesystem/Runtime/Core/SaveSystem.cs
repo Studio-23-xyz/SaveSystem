@@ -22,7 +22,8 @@ namespace Studio23.SS2.SaveSystem.Core
     {
         public static SaveSystem Instance;
 
-        private List<SaveSlot> _slot;
+
+        internal List<SaveSlot> _slot;
         private int _selectedSlotIndex;
         private SaveSlot SelectedSlot => _slot[_selectedSlotIndex];
 
@@ -49,15 +50,21 @@ namespace Studio23.SS2.SaveSystem.Core
         private void Awake()
         {
             Instance = this;
-            OnSaveComplete += async () => await UpdateSlotMetadata();
+            OnSaveComplete += async () => await UpdateSelectedSlotMetadata();
+            Initialize();
             CreateSlots();
         }
 
 
+        private void Initialize()
+        {
+            _slot = new List<SaveSlot>();
+        }
+
 
         private void CreateSlots()
         {
-            _slot = new List<SaveSlot>();
+
             for (int i = 0; i < _slotCount; i++)
             {
                 SaveSlot slot = new SaveSlot($"Save Slot {i}");
@@ -72,11 +79,40 @@ namespace Studio23.SS2.SaveSystem.Core
             }
         }
 
-        private async Task UpdateSlotMetadata()
+        /// <summary>
+        /// Returns the list of slot metadata. You can use this to show UI
+        /// </summary>
+        /// <returns>List<SaveSlot></returns>
+        public async UniTask<List<SaveSlot>> GetSaveSlotMetaData()
+        {
+            List<SaveSlot> tempList = new List<SaveSlot>();
+            foreach (SaveSlot slot in _slot)
+            {
+                string slotPath = Path.Combine(SavePath, slot.Name);
+                SaveProcessor saveSlotMetaData = new SaveProcessor($"{slot.Name}", slotPath, ".m23",
+                    true,
+                    "1234567891234567",
+                    "0234567891234567");
+
+                SaveSlot tempSlot = await saveSlotMetaData.Load<SaveSlot>();
+                tempList.Add(tempSlot);
+            }
+
+            return tempList;
+
+        }
+
+        /// <summary>
+        /// You can update selected slot metadata description from here.
+        /// </summary>
+        /// <param name="description">Optional Parameter</param>
+        /// <returns></returns>
+        public async UniTask UpdateSelectedSlotMetadata(string description = "")
         {
             SelectedSlot.TimeStamp = DateTime.Now;
+            SelectedSlot.Description = description;
             string slotPath = Path.Combine(SavePath, SelectedSlot.Name);
-            SaveManager saveSlotMetaData = new SaveManager($"{SelectedSlot.Name}", slotPath, ".m23",
+            SaveProcessor saveSlotMetaData = new SaveProcessor($"{SelectedSlot.Name}", slotPath, ".m23",
                 true,
                 "1234567891234567",
                 "0234567891234567");
@@ -88,7 +124,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// Delete all saved files
         /// </summary>
         /// <returns>UniTask</returns>
-        public async Task ClearSlotsAsync()
+        public async UniTask ClearSlotsAsync()
         {
 
             for (int i = 0; i < _slotCount; i++)
@@ -113,7 +149,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns>UniTask</returns>
         public async UniTask SaveData<T>(T data, string id)
         {
-            SaveManager saveManager = new SaveManager(id, SelectedSlotPath,
+            SaveProcessor saveManager = new SaveProcessor(id, SelectedSlotPath,
                 enableEncryption: _enableEncryption,
                 encryptionKey: _encryptionKey,
                 encryptionIV: _encryptionIV);
@@ -131,7 +167,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns>Saved Object</returns>
         public async UniTask<T> LoadData<T>(string id)
         {
-            SaveManager saveManager = new SaveManager(id, SelectedSlotPath,
+            SaveProcessor saveManager = new SaveProcessor(id, SelectedSlotPath,
                 enableEncryption: _enableEncryption,
                 encryptionKey: _encryptionKey,
                 encryptionIV: _encryptionIV);
@@ -147,14 +183,14 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns>UniTask</returns>
         public async UniTask SaveAllSavable()
         {
-            IEnumerable<ISaveable> savableComponents = FindObjectsOfType<MonoBehaviour>().OfType<ISaveable>();
+            IEnumerable<ISaveable> savableComponents = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>();
 
             foreach (var savableComponent in savableComponents)
             {
                 string uniqueID = savableComponent.UniqueID;
                 string data = savableComponent.GetSerializedData();
 
-                SaveManager saveManager = new SaveManager(uniqueID, SelectedSlotPath,
+                SaveProcessor saveManager = new SaveProcessor(uniqueID, SelectedSlotPath,
                 enableEncryption: _enableEncryption,
                 encryptionKey: _encryptionKey,
                 encryptionIV: _encryptionIV);
@@ -174,13 +210,13 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns></returns>
         public async UniTask LoadAllSavable()
         {
-            IEnumerable<ISaveable> savableComponents = FindObjectsOfType<MonoBehaviour>().OfType<ISaveable>();
+            IEnumerable<ISaveable> savableComponents = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>();
 
             foreach (var savableComponent in savableComponents)
             {
                 string uniqueID = savableComponent.UniqueID;
-               
-                SaveManager saveManager = new SaveManager(uniqueID, SelectedSlotPath,
+
+                SaveProcessor saveManager = new SaveProcessor(uniqueID, SelectedSlotPath,
                 enableEncryption: _enableEncryption,
                 encryptionKey: _encryptionKey,
                 encryptionIV: _encryptionIV);
