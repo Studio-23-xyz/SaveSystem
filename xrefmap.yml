@@ -206,12 +206,15 @@ references:
   commentId: T:Studio23.SS2.SaveSystem.Core.SaveSystem
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem
   nameWithType: SaveSystem
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles
-  name: BundleSaveFiles()
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles
-  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles()
-  nameWithType: SaveSystem.BundleSaveFiles()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(System.String)
+  name: BundleSaveFiles(string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(System.String)
+  name.vb: BundleSaveFiles(String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(String)
+  nameWithType: SaveSystem.BundleSaveFiles(string)
+  nameWithType.vb: SaveSystem.BundleSaveFiles(String)
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles*
   name: BundleSaveFiles
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles_
@@ -271,15 +274,15 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData
   nameWithType: SaveSystem.LoadData
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData``1(System.String)
-  name: LoadData<T>(string)
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_LoadData__1_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData``1(System.String)
-  name.vb: LoadData(Of T)(String)
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData<T>(string)
-  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData(Of T)(String)
-  nameWithType: SaveSystem.LoadData<T>(string)
-  nameWithType.vb: SaveSystem.LoadData(Of T)(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData``1(System.String,System.String,System.String,System.Boolean,System.String,System.String)
+  name: LoadData<T>(string, string, string, bool, string, string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_LoadData__1_System_String_System_String_System_String_System_Boolean_System_String_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData``1(System.String,System.String,System.String,System.Boolean,System.String,System.String)
+  name.vb: LoadData(Of T)(String, String, String, Boolean, String, String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData<T>(string, string, string, bool, string, string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData(Of T)(String, String, String, Boolean, String, String)
+  nameWithType: SaveSystem.LoadData<T>(string, string, string, bool, string, string)
+  nameWithType.vb: SaveSystem.LoadData(Of T)(String, String, String, Boolean, String, String)
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.OnBundleComplete
   name: OnBundleComplete
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_OnBundleComplete
@@ -317,19 +320,6 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable
   nameWithType: SaveSystem.SaveAllSavable
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveBundlePath
-  name: SaveBundlePath
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveBundlePath
-  commentId: P:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveBundlePath
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveBundlePath
-  nameWithType: SaveSystem.SaveBundlePath
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveBundlePath*
-  name: SaveBundlePath
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveBundlePath_
-  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveBundlePath
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveBundlePath
-  nameWithType: SaveSystem.SaveBundlePath
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData*
   name: SaveData
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveData_
@@ -337,28 +327,15 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData
   nameWithType: SaveSystem.SaveData
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData``1(``0,System.String)
-  name: SaveData<T>(T, string)
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveData__1___0_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData``1(``0,System.String)
-  name.vb: SaveData(Of T)(T, String)
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData<T>(T, string)
-  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData(Of T)(T, String)
-  nameWithType: SaveSystem.SaveData<T>(T, string)
-  nameWithType.vb: SaveSystem.SaveData(Of T)(T, String)
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
-  name: SavePath
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SavePath
-  commentId: P:Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
-  nameWithType: SaveSystem.SavePath
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath*
-  name: SavePath
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SavePath_
-  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
-  nameWithType: SaveSystem.SavePath
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData``1(``0,System.String,System.String,System.String,System.Boolean,System.String,System.String)
+  name: SaveData<T>(T, string, string, string, bool, string, string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SaveData__1___0_System_String_System_String_System_String_System_Boolean_System_String_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData``1(``0,System.String,System.String,System.String,System.Boolean,System.String,System.String)
+  name.vb: SaveData(Of T)(T, String, String, String, Boolean, String, String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData<T>(T, string, string, string, bool, string, string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData(Of T)(T, String, String, String, Boolean, String, String)
+  nameWithType: SaveSystem.SaveData<T>(T, string, string, string, bool, string, string)
+  nameWithType.vb: SaveSystem.SaveData(Of T)(T, String, String, String, Boolean, String, String)
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(System.Int32)
   name: SelectSlot(int)
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SelectSlot_System_Int32_
@@ -375,12 +352,15 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot
   nameWithType: SaveSystem.SelectSlot
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles
-  name: UnBundleSaveFiles()
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles
-  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles()
-  nameWithType: SaveSystem.UnBundleSaveFiles()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(System.String)
+  name: UnBundleSaveFiles(string)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles_System_String_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(System.String)
+  name.vb: UnBundleSaveFiles(String)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(string)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(String)
+  nameWithType: SaveSystem.UnBundleSaveFiles(string)
+  nameWithType.vb: SaveSystem.UnBundleSaveFiles(String)
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles*
   name: UnBundleSaveFiles
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles_

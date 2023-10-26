@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Save System for Unity |  |  </title>
+      <title>SaveSystem |  |  </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Save System for Unity |  |  ">
+      <meta name="title" content="SaveSystem |  |  ">
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -83,8 +83,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="save-system-for-unity">Save System for Unity</h1>
+<h1 align="center">SaveSystem</h1>
 
+<p align="center">
+<a href="https://openupm.com/packages/com.studio23.ss2.savesystem/"><img src="https://img.shields.io/npm/v/com.studio23.ss2.savesystem?label=openupm&amp;registry_uri=https://package.openupm.com"></a>
+</p>
+<h1 id="save-system-for-unity">Save System for Unity</h1>
 <p>Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves for Steam or Xbox and other platforms via extensions.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
@@ -97,8 +101,8 @@
 </li>
 <li><a href="#saving-and-loading-data">Saving and Loading Data</a>
 <ul>
-<li><a href="#save-data">Save Data</a></li>
-<li><a href="#load-data">Load Data</a></li>
+<li><a href="#saving-data">Save Data</a></li>
+<li><a href="#loading-data">Load Data</a></li>
 </ul>
 </li>
 <li><a href="#managing-save-slots">Managing Save Slots</a>
@@ -138,40 +142,38 @@ public class YourGameManager : MonoBehaviour
 }
 </code></pre>
 <h2 id="saving-and-loading-data">Saving and Loading Data</h2>
-<h3 id="save-data">Save Data</h3>
-<p>You can save game data using the <code>SaveData</code> method. Here's how to use it:</p>
-<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
-using Cysharp.Threading.Tasks;
+<h3 id="saving-data">Saving Data</h3>
+<p>To save data using the SaveSystem library, you can use the <code>SaveData</code> method. Here's how to use it:</p>
+<pre><code class="lang-Csharp">// Example code for saving data
+YourDataType yourData = // Your data here;
+string saveFileName = &quot;example_data&quot;; // Choose a unique name for your data
+string savefilePath = &quot;Your/Save/Path&quot;; // Choose a save directory path
+string extention = &quot;.dat&quot;; // Choose a file extension for your data
 
-public class YourGameManager : MonoBehaviour
-{
-    private async void SaveGameData()
-    {
-        // Your game data
-        YourGameData data = ...
-
-        // Save the data to the selected slot
-        await SaveSystem.Instance.SaveData(data, &quot;your_data_id&quot;);
-    }
-}
+await SaveSystem.Instance.SaveData(yourData, saveFileName, savefilePath, extention);
 </code></pre>
-<h3 id="load-data">Load Data</h3>
-<p>To load saved game data, use the <code>LoadData</code> method as shown below:</p>
-<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
-using Cysharp.Threading.Tasks;
+<ul>
+<li><code>yourData</code>: Replace this with the data you want to save.</li>
+<li><code>saveFileName</code>: Choose a unique name for your saved data.</li>
+<li><code>savefilePath</code>: Specify the directory path where you want to save the data.</li>
+<li><code>extention</code>: Choose a file extension for your data.</li>
+</ul>
+<h3 id="loading-data">Loading Data</h3>
+<p>To load data using the SaveSystem library, you can use the <code>LoadData</code> method. Here's how to use it:</p>
+<pre><code class="lang-Csharp">// Example code for loading data
+string saveFileName = &quot;example_data&quot;; // The same name used when saving
+string savefilePath = &quot;Your/Save/Path&quot;; // The directory where the data was saved
+string extention = &quot;.dat&quot;; // The file extension used for the saved data
 
-public class YourGameManager : MonoBehaviour
-{
-    private async void LoadGameData()
-    {
-        // Load the data from the selected slot
-        YourGameData loadedData = await SaveSystem.Instance.LoadData&lt;YourGameData&gt;(&quot;your_data_id&quot;);
-
-        // Use the loaded data in your game
-        ...
-    }
-}
+YourDataType loadedData = await SaveSystem.Instance.LoadData&lt;YourDataType&gt;(saveFileName, savefilePath, extention);
 </code></pre>
+<ul>
+<li><code>saveFileName</code>: Use the same name that was used when saving the data.</li>
+<li><code>savefilePath</code>: Specify the directory path where the data was saved.</li>
+<li><code>extention</code>: Use the same file extension that was used for saving the data.</li>
+<li><code>YourDataType</code>: Replace with the actual data type you're expecting to load.</li>
+</ul>
+<p>These methods allow you to save and load custom data types using the SaveSystem library.</p>
 <h2 id="managing-save-slots">Managing Save Slots</h2>
 <h3 id="selecting-a-slot">Selecting a Slot</h3>
 <p>You can switch between save slots by using the <code>SelectSlot</code> method:</p>
@@ -228,7 +230,7 @@ public class YourGameManager : MonoBehaviour
     }
 }
 </code></pre>
-<p>That's it! You now have the basic information you need to use the <strong>Studio23.SS2.SaveSystem</strong> library in your Unity project. Explore the library's features and customize it according to your game's needs.</p>
+<p>That's it! You now have the basic information you need to use the <strong>SaveSystem</strong> library in your Unity project. Explore the library's features and customize it according to your game's needs.</p>
 
 </article>
 
