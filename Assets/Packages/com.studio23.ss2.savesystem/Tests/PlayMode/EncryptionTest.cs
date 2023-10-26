@@ -65,8 +65,8 @@ public class EncryptionTest
     {
 
         _saveSystem.SelectSlot(0);
-        await _saveSystem.SaveData(_playerData, "playerSaveData");
-        await _saveSystem.SaveData(_itemData, "items");
+        await _saveSystem.SaveData(_playerData, "playerSaveData", _saveSystem.SelectedSlotPath, ".taz");
+        await _saveSystem.SaveData(_itemData, "items", _saveSystem.SelectedSlotPath, ".taz");
 
         string filePath=Path.Combine(Application.persistentDataPath, "SaveData", "Save Slot 0", "playerSaveData.taz");
         FileAssert.Exists(filePath);
@@ -77,7 +77,7 @@ public class EncryptionTest
 
 
         _saveSystem.SelectSlot(1);
-        await _saveSystem.SaveData(_playerData, "playerSaveData");
+        await _saveSystem.SaveData(_playerData, "playerSaveData", _saveSystem.SelectedSlotPath, ".taz");
         filePath = Path.Combine(Application.persistentDataPath, "SaveData", "Save Slot 1", "playerSaveData.taz");
         FileAssert.Exists(filePath);
 
@@ -91,12 +91,12 @@ public class EncryptionTest
     {
         _saveSystem.SelectSlot(0);
 
-        PlayerData loadedPlayerData = await _saveSystem.LoadData<PlayerData>("playerSaveData");
+        PlayerData loadedPlayerData = await _saveSystem.LoadData<PlayerData>("playerSaveData", _saveSystem.SelectedSlotPath, ".taz");
         Assert.AreEqual(_playerData.playerName, loadedPlayerData.playerName);
         Assert.AreEqual(_playerData.playerLevel, loadedPlayerData.playerLevel);
 
 
-        ItemData loadedItemData = await _saveSystem.LoadData<ItemData>("items");
+        ItemData loadedItemData = await _saveSystem.LoadData<ItemData>("items", _saveSystem.SelectedSlotPath, ".taz");
         Assert.AreEqual(_itemData.itemName, loadedItemData.itemName);
         Assert.AreEqual(_itemData.itemQuantity, loadedItemData.itemQuantity);
 

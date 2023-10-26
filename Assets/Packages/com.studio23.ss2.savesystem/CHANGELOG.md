@@ -1,6 +1,11 @@
 # Changelog
 
-All notable changes to this Unity package will be documented in this file.
+## [v1.1.3] - 2023-10-26
+
+### Updated
+
++  Updated How Save and Load Methods work.
+
 
 ## [v1.1.2] - 2023-10-22
 
