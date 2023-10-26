@@ -1,4 +1,10 @@
 
+<h1 align="center">SaveSystem</h1>
+
+<p align="center">
+<a href="https://openupm.com/packages/com.studio23.ss2.savesystem/"><img src="https://img.shields.io/npm/v/com.studio23.ss2.savesystem?label=openupm&amp;registry_uri=https://package.openupm.com" /></a>
+</p>
+
 # Save System for Unity
 
 Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves for Steam or Xbox and other platforms via extensions.
@@ -10,8 +16,8 @@ Save System is a framework to manage local and cloud saves. It provides simple i
    - [Initialization](#initialization)
    - [Creating Save Slots](#creating-save-slots)
 3. [Saving and Loading Data](#saving-and-loading-data)
-   - [Save Data](#save-data)
-   - [Load Data](#load-data)
+   - [Save Data](#saving-data)
+   - [Load Data](#loading-data)
 4. [Managing Save Slots](#managing-save-slots)
    - [Selecting a Slot](#selecting-a-slot)
    - [Clearing Slots](#clearing-slots)
@@ -55,47 +61,44 @@ public class YourGameManager : MonoBehaviour
 
 ## Saving and Loading Data
 
-### Save Data
+### Saving Data
 
-You can save game data using the `SaveData` method. Here's how to use it:
+To save data using the SaveSystem library, you can use the `SaveData` method. Here's how to use it:
 
-```csharp
-using Studio23.SS2.SaveSystem.Core;
-using Cysharp.Threading.Tasks;
+```Csharp
+// Example code for saving data
+YourDataType yourData = // Your data here;
+string saveFileName = "example_data"; // Choose a unique name for your data
+string savefilePath = "Your/Save/Path"; // Choose a save directory path
+string extention = ".dat"; // Choose a file extension for your data
 
-public class YourGameManager : MonoBehaviour
-{
-    private async void SaveGameData()
-    {
-        // Your game data
-        YourGameData data = ...
-
-        // Save the data to the selected slot
-        await SaveSystem.Instance.SaveData(data, "your_data_id");
-    }
-}
+await SaveSystem.Instance.SaveData(yourData, saveFileName, savefilePath, extention);
 ```
 
-### Load Data
+- `yourData`: Replace this with the data you want to save.
+- `saveFileName`: Choose a unique name for your saved data.
+- `savefilePath`: Specify the directory path where you want to save the data.
+- `extention`: Choose a file extension for your data.
 
-To load saved game data, use the `LoadData` method as shown below:
+### Loading Data
 
-```csharp
-using Studio23.SS2.SaveSystem.Core;
-using Cysharp.Threading.Tasks;
+To load data using the SaveSystem library, you can use the `LoadData` method. Here's how to use it:
 
-public class YourGameManager : MonoBehaviour
-{
-    private async void LoadGameData()
-    {
-        // Load the data from the selected slot
-        YourGameData loadedData = await SaveSystem.Instance.LoadData<YourGameData>("your_data_id");
+```Csharp
+// Example code for loading data
+string saveFileName = "example_data"; // The same name used when saving
+string savefilePath = "Your/Save/Path"; // The directory where the data was saved
+string extention = ".dat"; // The file extension used for the saved data
 
-        // Use the loaded data in your game
-        ...
-    }
-}
+YourDataType loadedData = await SaveSystem.Instance.LoadData<YourDataType>(saveFileName, savefilePath, extention);
 ```
+
+- `saveFileName`: Use the same name that was used when saving the data.
+- `savefilePath`: Specify the directory path where the data was saved.
+- `extention`: Use the same file extension that was used for saving the data.
+- `YourDataType`: Replace with the actual data type you're expecting to load.
+
+These methods allow you to save and load custom data types using the SaveSystem library.
 
 ## Managing Save Slots
 
@@ -171,4 +174,4 @@ public class YourGameManager : MonoBehaviour
 }
 ```
 
-That's it! You now have the basic information you need to use the **Studio23.SS2.SaveSystem** library in your Unity project. Explore the library's features and customize it according to your game's needs.
+That's it! You now have the basic information you need to use the **SaveSystem** library in your Unity project. Explore the library's features and customize it according to your game's needs.

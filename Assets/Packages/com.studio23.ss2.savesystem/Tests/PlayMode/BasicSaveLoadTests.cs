@@ -63,9 +63,9 @@ public class BasicSaveLoadTests
         };
 
 
-        await _saveSystem.SaveData(_playerData, "playerSaveData");
+        await _saveSystem.SaveData(_playerData, "playerSaveData",_saveSystem.SelectedSlotPath,".taz");
 
-        PlayerData loadedPlayerData = await _saveSystem.LoadData<PlayerData>("playerSaveData");
+        PlayerData loadedPlayerData = await _saveSystem.LoadData<PlayerData>("playerSaveData",_saveSystem.SelectedSlotPath,".taz");
 
 
         Assert.AreEqual(_playerData.playerName, loadedPlayerData.playerName);
@@ -92,7 +92,7 @@ public class BasicSaveLoadTests
     {
 
         await _saveSystem.UnBundleSaveFiles();
-        PlayerData loadedPlayerData = await _saveSystem.LoadData<PlayerData>("playerSaveData");
+        PlayerData loadedPlayerData = await _saveSystem.LoadData<PlayerData>("playerSaveData", _saveSystem.SelectedSlotPath, ".taz");
 
         Assert.AreEqual(_playerData.playerName, loadedPlayerData.playerName);
         Assert.AreEqual(_playerData.playerLevel, loadedPlayerData.playerLevel);

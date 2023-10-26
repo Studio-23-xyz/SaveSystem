@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -35,9 +34,8 @@ namespace Studio23.SS2.SaveSystem.Core
 
         [SerializeField] internal string _saveRootFolderName = "SaveData";
 
-        private string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
-        private string SelectedSlotPath => Path.Combine(SavePath, SelectedSlot.Name);
-
+        internal string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
+        internal string SelectedSlotPath => Path.Combine(SavePath, SelectedSlot.Name);
 
 
         public SaveEvent OnSaveComplete;
@@ -140,34 +138,60 @@ namespace Studio23.SS2.SaveSystem.Core
             _selectedSlotIndex = index;
         }
 
+
         /// <summary>
-        /// Saves objects to selected slot. This is for special cases idealy you would use SaveALL
+        /// Use this method to save files from other systems. Essentially create new folders as you see fit
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="data">Your Object</param>
-        /// <param name="id">An Unique ID</param>
-        /// <returns>UniTask</returns>
-        public async UniTask SaveData<T>(T data, string id)
+        /// <param name="data">Data of any type. It will automatically be parsed to JSON</param>
+        /// <param name="saveFileName">Name of the file. It should be unique</param>
+        /// <param name="savefilePath">Path of the directory where the file should be saved</param>
+        /// <param name="extention">Give your file an extetion for filter</param>
+        /// <param name="enableEncryption">Optional Encryption Enable</param>
+        /// <param name="encryptionKey">Optional 16 byte key</param>
+        /// <param name="encryptionIV">Optional 16 byte key</param>
+        /// <returns>Unitask Use this to impliment progress</returns>
+        public async UniTask SaveData<T>(T data, 
+            string saveFileName, 
+            string savefilePath, 
+            string extention,
+            bool enableEncryption = false, 
+            string encryptionKey = "1234567812345678",
+            string encryptionIV = "8765432156785432" )
         {
-            SaveProcessor saveManager = new SaveProcessor(id, SelectedSlotPath,
+            SaveProcessor saveManager = new SaveProcessor(saveFileName, 
+                savefilePath,
+                extention,
                 enableEncryption: _enableEncryption,
                 encryptionKey: _encryptionKey,
                 encryptionIV: _encryptionIV);
 
             await saveManager.Save(data);
-
-            OnSaveComplete?.Invoke();
         }
 
+
         /// <summary>
-        /// Loads Data from select slot. This is for special cases idealy you would use LoadAll
+        /// Use this method to load external files that was saved by the save method
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="id">Unique ID of the Object</param>
-        /// <returns>Saved Object</returns>
-        public async UniTask<T> LoadData<T>(string id)
+        /// <param name="saveFileName">Name of the file.Make sure you used the same key when saving</param>
+        /// <param name="savefilePath">Folder path, Make sure this was used when saving</param>
+        /// <param name="extention">Extention parameter for filtering</param>
+        /// <param name="enableEncryption">Optional Encryption Enable</param>
+        /// <param name="encryptionKey">Optional 16 byte key</param>
+        /// <param name="encryptionIV">Optional 16 byte key</param>
+        /// <returns>Unitask Use this to impliment progress</returns>
+        public async UniTask<T> LoadData<T>(
+            string saveFileName,
+            string savefilePath,
+            string extention,
+            bool enableEncryption = false,
+            string encryptionKey = "1234567812345678",
+            string encryptionIV = "8765432156785432" )
         {
-            SaveProcessor saveManager = new SaveProcessor(id, SelectedSlotPath,
+            SaveProcessor saveManager = new SaveProcessor(saveFileName,
+                savefilePath, 
+                extention,
                 enableEncryption: _enableEncryption,
                 encryptionKey: _encryptionKey,
                 encryptionIV: _encryptionIV);
