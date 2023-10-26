@@ -1,18 +1,17 @@
 # Changelog
 
+## [v1.1.5] - 2023-10-26
+
+### Updated
+
++  Save Method will now check if directory exists otherwise create it.
+
+
 ## [v1.1.3] - 2023-10-26
 
 ### Updated
 
 +  Updated How Save and Load Methods work.
-
-
-## [v1.1.2] - 2023-10-22
-
-### Added
-
-+  New Method added to get save metadata to show UI.
-+  New Test Cases Added
 
 
 ## [v1.1.2] - 2023-10-22
