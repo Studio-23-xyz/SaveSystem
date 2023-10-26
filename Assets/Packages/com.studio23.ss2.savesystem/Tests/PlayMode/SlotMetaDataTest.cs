@@ -65,7 +65,11 @@ public class SlotMetaDataTest
 
     });
 
-
+    [OneTimeTearDown]
+    public void TearDown()
+    {
+        Directory.Delete(_saveSystem.SavePath, true);
+    }
 
 
 }

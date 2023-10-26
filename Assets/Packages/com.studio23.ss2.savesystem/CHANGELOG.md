@@ -1,5 +1,12 @@
 # Changelog
 
+
+## [v1.1.6] - 2023-10-26
+
+### Fixed
+
++  Fixed a bug regarding enabling encryption
+
 ## [v1.1.5] - 2023-10-26
 
 ### Updated
