@@ -62,6 +62,19 @@ references:
   isSpec: "True"
   fullName: BasicSaveLoadTests.Save_Load_Test
   nameWithType: BasicSaveLoadTests.Save_Load_Test
+- uid: Global.BasicSaveLoadTests.TearDown
+  name: TearDown()
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_TearDown
+  commentId: M:Global.BasicSaveLoadTests.TearDown
+  fullName: BasicSaveLoadTests.TearDown()
+  nameWithType: BasicSaveLoadTests.TearDown()
+- uid: Global.BasicSaveLoadTests.TearDown*
+  name: TearDown
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_TearDown_
+  commentId: Overload:Global.BasicSaveLoadTests.TearDown
+  isSpec: "True"
+  fullName: BasicSaveLoadTests.TearDown
+  nameWithType: BasicSaveLoadTests.TearDown
 - uid: Global.EncryptionTest
   name: EncryptionTest
   href: api/Global.EncryptionTest.html
@@ -107,6 +120,19 @@ references:
   isSpec: "True"
   fullName: EncryptionTest.Save_Test
   nameWithType: EncryptionTest.Save_Test
+- uid: Global.EncryptionTest.TearDown
+  name: TearDown()
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_TearDown
+  commentId: M:Global.EncryptionTest.TearDown
+  fullName: EncryptionTest.TearDown()
+  nameWithType: EncryptionTest.TearDown()
+- uid: Global.EncryptionTest.TearDown*
+  name: TearDown
+  href: api/Global.EncryptionTest.html#Global_EncryptionTest_TearDown_
+  commentId: Overload:Global.EncryptionTest.TearDown
+  isSpec: "True"
+  fullName: EncryptionTest.TearDown
+  nameWithType: EncryptionTest.TearDown
 - uid: Global.ItemData
   name: ItemData
   href: api/Global.ItemData.html
@@ -188,6 +214,19 @@ references:
   isSpec: "True"
   fullName: SlotMetaDataTest.SaveSystem_Setup
   nameWithType: SlotMetaDataTest.SaveSystem_Setup
+- uid: Global.SlotMetaDataTest.TearDown
+  name: TearDown()
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_TearDown
+  commentId: M:Global.SlotMetaDataTest.TearDown
+  fullName: SlotMetaDataTest.TearDown()
+  nameWithType: SlotMetaDataTest.TearDown()
+- uid: Global.SlotMetaDataTest.TearDown*
+  name: TearDown
+  href: api/Global.SlotMetaDataTest.html#Global_SlotMetaDataTest_TearDown_
+  commentId: Overload:Global.SlotMetaDataTest.TearDown
+  isSpec: "True"
+  fullName: SlotMetaDataTest.TearDown
+  nameWithType: SlotMetaDataTest.TearDown
 - uid: Studio23.SS2.SaveSystem.Core
   name: Studio23.SS2.SaveSystem.Core
   href: api/Studio23.SS2.SaveSystem.Core.html
