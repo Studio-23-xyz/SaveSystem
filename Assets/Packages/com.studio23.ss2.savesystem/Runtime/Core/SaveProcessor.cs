@@ -15,6 +15,11 @@ namespace Studio23.SS2.SaveSystem.Core
             string encryptionIV = "null")
         {
 
+            if (!Directory.Exists(savefilePath))
+            {
+                _ = Directory.CreateDirectory(savefilePath);
+            }
+
             _saveFilePath = Path.Combine(savefilePath, $"{saveFileName}{ extention}");
             _useEncryption = enableEncryption;
 
