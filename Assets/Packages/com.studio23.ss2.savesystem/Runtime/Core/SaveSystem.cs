@@ -162,9 +162,9 @@ namespace Studio23.SS2.SaveSystem.Core
             SaveProcessor saveManager = new SaveProcessor(saveFileName, 
                 savefilePath,
                 extention,
-                enableEncryption: _enableEncryption,
-                encryptionKey: _encryptionKey,
-                encryptionIV: _encryptionIV);
+                enableEncryption: enableEncryption,
+                encryptionKey: encryptionKey,
+                encryptionIV: encryptionIV);
 
             await saveManager.Save(data);
         }
@@ -192,9 +192,9 @@ namespace Studio23.SS2.SaveSystem.Core
             SaveProcessor saveManager = new SaveProcessor(saveFileName,
                 savefilePath, 
                 extention,
-                enableEncryption: _enableEncryption,
-                encryptionKey: _encryptionKey,
-                encryptionIV: _encryptionIV);
+                enableEncryption: enableEncryption,
+                encryptionKey: encryptionKey,
+                encryptionIV: encryptionIV);
 
             return await saveManager.Load<T>();
         }
