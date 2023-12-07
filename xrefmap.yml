@@ -23,19 +23,19 @@ references:
   isSpec: "True"
   fullName: BasicSaveLoadTests.Bundle_Create_Test
   nameWithType: BasicSaveLoadTests.Bundle_Create_Test
-- uid: Global.BasicSaveLoadTests.Bundle_Extrat_Test
-  name: Bundle_Extrat_Test()
-  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Extrat_Test
-  commentId: M:Global.BasicSaveLoadTests.Bundle_Extrat_Test
-  fullName: BasicSaveLoadTests.Bundle_Extrat_Test()
-  nameWithType: BasicSaveLoadTests.Bundle_Extrat_Test()
-- uid: Global.BasicSaveLoadTests.Bundle_Extrat_Test*
-  name: Bundle_Extrat_Test
-  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Extrat_Test_
-  commentId: Overload:Global.BasicSaveLoadTests.Bundle_Extrat_Test
+- uid: Global.BasicSaveLoadTests.Bundle_Extract_Test
+  name: Bundle_Extract_Test()
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Extract_Test
+  commentId: M:Global.BasicSaveLoadTests.Bundle_Extract_Test
+  fullName: BasicSaveLoadTests.Bundle_Extract_Test()
+  nameWithType: BasicSaveLoadTests.Bundle_Extract_Test()
+- uid: Global.BasicSaveLoadTests.Bundle_Extract_Test*
+  name: Bundle_Extract_Test
+  href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_Bundle_Extract_Test_
+  commentId: Overload:Global.BasicSaveLoadTests.Bundle_Extract_Test
   isSpec: "True"
-  fullName: BasicSaveLoadTests.Bundle_Extrat_Test
-  nameWithType: BasicSaveLoadTests.Bundle_Extrat_Test
+  fullName: BasicSaveLoadTests.Bundle_Extract_Test
+  nameWithType: BasicSaveLoadTests.Bundle_Extract_Test
 - uid: Global.BasicSaveLoadTests.SaveSystem_Setup
   name: SaveSystem_Setup()
   href: api/Global.BasicSaveLoadTests.html#Global_BasicSaveLoadTests_SaveSystem_Setup
@@ -245,15 +245,12 @@ references:
   commentId: T:Studio23.SS2.SaveSystem.Core.SaveSystem
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem
   nameWithType: SaveSystem
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(System.String)
-  name: BundleSaveFiles(string)
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(System.String)
-  name.vb: BundleSaveFiles(String)
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(string)
-  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles(String)
-  nameWithType: SaveSystem.BundleSaveFiles(string)
-  nameWithType.vb: SaveSystem.BundleSaveFiles(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles
+  name: BundleSaveFiles()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles()
+  nameWithType: SaveSystem.BundleSaveFiles()
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles*
   name: BundleSaveFiles
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles_
@@ -391,15 +388,12 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot
   nameWithType: SaveSystem.SelectSlot
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(System.String)
-  name: UnBundleSaveFiles(string)
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(System.String)
-  name.vb: UnBundleSaveFiles(String)
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(string)
-  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles(String)
-  nameWithType: SaveSystem.UnBundleSaveFiles(string)
-  nameWithType.vb: SaveSystem.UnBundleSaveFiles(String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles
+  name: UnBundleSaveFiles()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles()
+  nameWithType: SaveSystem.UnBundleSaveFiles()
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles*
   name: UnBundleSaveFiles
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles_
