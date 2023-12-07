@@ -33,8 +33,10 @@ namespace Studio23.SS2.SaveSystem.Core
         [SerializeField] internal string _encryptionIV;
 
         [SerializeField] internal string _saveRootFolderName = "SaveData";
+        [SerializeField] internal string _cloudsaveFileName = "cloud.sav";
 
         internal string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
+        internal string CloudSavePath => Path.Combine(Application.persistentDataPath, _cloudsaveFileName);
         internal string SelectedSlotPath => Path.Combine(SavePath, SelectedSlot.Name);
 
 
@@ -260,11 +262,11 @@ namespace Studio23.SS2.SaveSystem.Core
         /// </summary>
         /// <param name="bundleName">Name of your file(Optional)</param>
         /// <returns>UniTask</returns>
-        public async UniTask BundleSaveFiles(string bundleName = "cloudSave")
+        public async UniTask BundleSaveFiles()
         {
-            List<string> FilePaths = Directory.GetFiles(SavePath, "*.taz", SearchOption.AllDirectories).ToList();
+            
             Stitcher stitcher = new Stitcher();
-            await stitcher.ArchiveFiles($"{SavePath}/{bundleName}.sav", FilePaths);
+            await stitcher.ArchiveFiles(CloudSavePath, SavePath);
 
             OnBundleComplete?.Invoke();
 
@@ -275,11 +277,11 @@ namespace Studio23.SS2.SaveSystem.Core
         /// </summary>
         /// <param name="bundleName">Name of your file(Optional)</param>
         /// <returns>UniTask</returns>
-        public async UniTask UnBundleSaveFiles(string bundleName = "cloudSave")
+        public async UniTask UnBundleSaveFiles()
         {
             await ClearSlotsAsync();
             Stitcher stitcher = new Stitcher();
-            await stitcher.ExtractFiles($"{SavePath}/{bundleName}.sav", SavePath);
+            await stitcher.ExtractFiles(CloudSavePath, SavePath);
 
             OnUnbundleComplete?.Invoke();
         }
