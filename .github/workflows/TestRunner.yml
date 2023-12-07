@@ -14,8 +14,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        projectPath:
-          - ./Assets/Packages/com.studio23.ss2.savesystem
         unityVersion: ['2022.3.9f1'] 
         testMode:
           - playmode
@@ -31,7 +29,6 @@ jobs:
            UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
            UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
-          packageMode: true
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           testMode: ${{ matrix.testMode }}
