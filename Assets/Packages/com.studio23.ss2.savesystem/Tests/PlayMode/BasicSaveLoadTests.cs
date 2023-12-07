@@ -81,14 +81,14 @@ public class BasicSaveLoadTests
     {
 
         await _saveSystem.BundleSaveFiles();
-        string bundlePath = Path.Combine(Application.persistentDataPath, "SaveData", "cloudSave.sav");
+        string bundlePath = Path.Combine(Application.persistentDataPath, "cloud.sav");
         FileAssert.Exists(bundlePath);
 
     });
 
     [UnityTest]
     [Order(3)]
-    public IEnumerator Bundle_Extrat_Test() => UniTask.ToCoroutine(async () =>
+    public IEnumerator Bundle_Extract_Test() => UniTask.ToCoroutine(async () =>
     {
 
         await _saveSystem.UnBundleSaveFiles();

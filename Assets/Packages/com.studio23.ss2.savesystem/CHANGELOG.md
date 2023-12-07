@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [v1.1.7] - 2023-12-7
+
+### Updated
+
++  Now Bundling and Unbundling is based on SharpZipLib from unity
+
 ## [v1.1.6] - 2023-10-26
 
 ### Fixed
