@@ -28,7 +28,7 @@ public class SlotMetaDataTest
     [Order(1)]
     public IEnumerator SaveSystem_SaveSlots() => UniTask.ToCoroutine(async () =>
     {
-        _saveSystem = new GameObject().AddComponent<SaveSystem>();
+        
         _saveSystem.SelectSlot(0);
         await _saveSystem.UpdateSelectedSlotMetadata();
 

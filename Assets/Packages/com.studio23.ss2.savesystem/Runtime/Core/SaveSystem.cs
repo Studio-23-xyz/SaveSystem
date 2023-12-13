@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
-[assembly: InternalsVisibleTo("PlayMode")]
+[assembly: InternalsVisibleTo("com.studio23.ss2.savesystem.playmodetest")]
 [assembly: InternalsVisibleTo("com.studio23.ss2.savesystem.editor")]
 namespace Studio23.SS2.SaveSystem.Core
 {
@@ -35,8 +35,8 @@ namespace Studio23.SS2.SaveSystem.Core
         [SerializeField] internal string _saveRootFolderName = "SaveData";
         [SerializeField] internal string _cloudsaveFileName = "cloud.sav";
 
-        internal string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
-        internal string CloudSavePath => Path.Combine(Application.persistentDataPath, _cloudsaveFileName);
+        public string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
+        public string CloudSavePath => Path.Combine(Application.persistentDataPath, _cloudsaveFileName);
         internal string SelectedSlotPath => Path.Combine(SavePath, SelectedSlot.Name);
 
 
@@ -51,6 +51,11 @@ namespace Studio23.SS2.SaveSystem.Core
         {
             Instance = this;
             OnSaveComplete += async () => await UpdateSelectedSlotMetadata();
+            
+        }
+
+        private void Start()
+        {
             Initialize();
             CreateSlots();
         }

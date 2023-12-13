@@ -47,7 +47,6 @@ public class BasicSaveLoadTests
     public IEnumerator Save_Load_Test() => UniTask.ToCoroutine(async () =>
     {
 
-        _saveSystem = new GameObject().AddComponent<SaveSystem>();
 
         await UniTask.Delay(TimeSpan.FromSeconds(1), ignoreTimeScale: false);
 
