@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [v1.1.8] - 2023-12-13
+
+### Updated
+
++  Made two internal paths public for extention libraries
+
+
 ## [v1.1.7] - 2023-12-7
 
 ### Updated

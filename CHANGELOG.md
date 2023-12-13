@@ -1,5 +1,25 @@
 # Changelog
 
+
+## [v1.1.8] - 2023-12-13
+
+### Updated
+
++  Made two internal paths public for extention libraries
+
+
+## [v1.1.7] - 2023-12-7
+
+### Updated
+
++  Now Bundling and Unbundling is based on SharpZipLib from unity
+
+## [v1.1.6] - 2023-10-26
+
+### Fixed
+
++  Fixed a bug regarding enabling encryption
+
 ## [v1.1.5] - 2023-10-26
 
 ### Updated
