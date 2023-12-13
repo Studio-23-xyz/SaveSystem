@@ -279,6 +279,72 @@
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Studio23_SS2_SaveSystem_Core_SaveSystem_CloudSavePath_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath*"></a>
+
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_CloudSavePath" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath">
+  CloudSavePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CloudSavePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Studio23_SS2_SaveSystem_Core_SaveSystem_SavePath_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath*"></a>
+
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_SavePath" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath">
+  SavePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SavePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -287,7 +353,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_BundleSaveFiles" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.BundleSaveFiles">
   BundleSaveFiles()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L270"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes all the files into one file for cloud save providers to work with</p>
@@ -320,7 +386,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_ClearSlotsAsync" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync">
   ClearSlotsAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Delete all saved files</p>
@@ -353,7 +419,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_GetSaveSlotMetaData" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData">
   GetSaveSlotMetaData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -384,7 +450,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_LoadAllSavable" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.LoadAllSavable">
   LoadAllSavable()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all Components that implements ISavable interface and loads data if it was saved before.
@@ -417,7 +483,7 @@ You should implement a progress feedback as it will take some time.</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_LoadData__1_System_String_System_String_System_String_System_Boolean_System_String_System_String_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.LoadData``1(System.String,System.String,System.String,System.Boolean,System.String,System.String)">
   LoadData&lt;T&gt;(string, string, string, bool, string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L191"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use this method to load external files that was saved by the save method</p>
@@ -476,7 +542,7 @@ You should implement a progress feedback as it will take some time.</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_SaveAllSavable" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SaveAllSavable">
   SaveAllSavable()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L215"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all Components that implements ISavable interface and saves them.
@@ -510,7 +576,7 @@ You should implement a progress feedback as it will take some time.</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_SaveData__1___0_System_String_System_String_System_String_System_Boolean_System_String_System_String_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData``1(``0,System.String,System.String,System.String,System.Boolean,System.String,System.String)">
   SaveData&lt;T&gt;(T, string, string, string, bool, string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Use this method to save files from other systems. Essentially create new folders as you see fit</p>
@@ -572,7 +638,7 @@ You should implement a progress feedback as it will take some time.</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_SelectSlot_System_Int32_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(System.Int32)">
   SelectSlot(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -603,7 +669,7 @@ You should implement a progress feedback as it will take some time.</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_UnBundleSaveFiles" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.UnBundleSaveFiles">
   UnBundleSaveFiles()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L280"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L285"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Extracts the bundled file into it's original state.</p>
@@ -636,7 +702,7 @@ You should implement a progress feedback as it will take some time.</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_UpdateSelectedSlotMetadata_System_String_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.UpdateSelectedSlotMetadata(System.String)">
   UpdateSelectedSlotMetadata(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>You can update selected slot metadata description from here.</p>

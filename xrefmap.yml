@@ -271,6 +271,19 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSlotsAsync
   nameWithType: SaveSystem.ClearSlotsAsync
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath
+  name: CloudSavePath
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_CloudSavePath
+  commentId: P:Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath
+  nameWithType: SaveSystem.CloudSavePath
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath*
+  name: CloudSavePath
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_CloudSavePath_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.CloudSavePath
+  nameWithType: SaveSystem.CloudSavePath
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.GetSaveSlotMetaData
   name: GetSaveSlotMetaData()
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_GetSaveSlotMetaData
@@ -372,6 +385,19 @@ references:
   fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.SaveData(Of T)(T, String, String, String, Boolean, String, String)
   nameWithType: SaveSystem.SaveData<T>(T, string, string, string, bool, string, string)
   nameWithType.vb: SaveSystem.SaveData(Of T)(T, String, String, String, Boolean, String, String)
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
+  name: SavePath
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SavePath
+  commentId: P:Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
+  nameWithType: SaveSystem.SavePath
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath*
+  name: SavePath
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SavePath_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SavePath
+  nameWithType: SaveSystem.SavePath
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(System.Int32)
   name: SelectSlot(int)
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SelectSlot_System_Int32_
