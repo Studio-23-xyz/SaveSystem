@@ -322,15 +322,21 @@ namespace Studio23.SS2.SaveSystem.Core
             OnUnbundleComplete?.Invoke();
         }
 
+        /// <summary>
+        /// Saves file to cloud if provider exists
+        /// </summary>
         public void SaveToCloud()
         {
-            _cloudsaveProvider.UploadToCloud("CloudData",CloudSavePath);
+            _cloudsaveProvider?.UploadToCloud("CloudData",CloudSavePath);
         }
 
+        /// <summary>
+        /// Downloads From Cloud if provider exists
+        /// </summary>
         public void LoadFromCloud()
         {
             
-            _cloudsaveProvider.DownloadFromCloud("CloudData",CloudSavePath);
+            _cloudsaveProvider?.DownloadFromCloud("CloudData",CloudSavePath);
         }
 
 
