@@ -327,7 +327,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// </summary>
         public void SaveToCloud()
         {
-            _cloudsaveProvider?.Upload("CloudData",CloudSavePath);
+            _cloudsaveProvider?.UploadToCloud("CloudData",CloudSavePath);
         }
 
         /// <summary>
@@ -336,7 +336,7 @@ namespace Studio23.SS2.SaveSystem.Core
         public void LoadFromCloud()
         {
             
-            _cloudsaveProvider?.Download("CloudData",CloudSavePath);
+            _cloudsaveProvider?.DownloadFromCloud("CloudData",CloudSavePath);
         }
 
 

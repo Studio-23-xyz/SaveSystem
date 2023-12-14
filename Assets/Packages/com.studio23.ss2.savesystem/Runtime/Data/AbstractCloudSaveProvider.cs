@@ -5,21 +5,23 @@ public abstract class AbstractCloudSaveProvider : MonoBehaviour
     public delegate void CloudSaveEvent();
     public CloudSaveEvent OnUploadSuccess;
     public CloudSaveEvent OnDownloadSuccess;
-    protected abstract void UploadToCloud(string key,string filepath);
-    protected abstract void DownloadFromCloud(string key,string downloadLocation);
+
+    /// <summary>
+    /// You should fire OnUploadSuccess in the implementation.
+    /// </summary>
+    /// <param name="key"></param>
+    /// <param name="filepath"></param>
+    public abstract void UploadToCloud(string key,string filepath);
+
+    /// <summary>
+    /// You should fire OnDownloadSuccess in the implementation
+    /// </summary>
+    /// <param name="key"></param>
+    /// <param name="downloadLocation"></param>
+    public abstract void DownloadFromCloud(string key,string downloadLocation);
 
 
-    public void Upload(string key, string filepath)
-    {
-        UploadToCloud(key,filepath);
-        OnUploadSuccess?.Invoke();
-    }
-
-    public void Download(string key, string downloadLocation)
-    {
-        DownloadFromCloud(key, downloadLocation);
-        OnDownloadSuccess?.Invoke();
-    }
+    
 
 
 
