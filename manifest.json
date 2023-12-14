@@ -15,6 +15,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.AbstractCloudSaveProvider.CloudSaveEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AbstractCloudSaveProvider.CloudSaveEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AbstractCloudSaveProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AbstractCloudSaveProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.BasicSaveLoadTests.yml",
       "output": {
         ".html": {
