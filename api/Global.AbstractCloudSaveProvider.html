@@ -193,51 +193,19 @@
 </h2>
 
 
-  <a id="Global_AbstractCloudSaveProvider_Download_" data-uid="Global.AbstractCloudSaveProvider.Download*"></a>
-
-  <h3 id="Global_AbstractCloudSaveProvider_Download_System_String_System_String_" data-uid="Global.AbstractCloudSaveProvider.Download(System.String,System.String)">
-  Download(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/AbstractCloudSaveProvider.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Download(string key, string downloadLocation)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>downloadLocation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Global_AbstractCloudSaveProvider_DownloadFromCloud_" data-uid="Global.AbstractCloudSaveProvider.DownloadFromCloud*"></a>
 
   <h3 id="Global_AbstractCloudSaveProvider_DownloadFromCloud_System_String_System_String_" data-uid="Global.AbstractCloudSaveProvider.DownloadFromCloud(System.String,System.String)">
   DownloadFromCloud(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/AbstractCloudSaveProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/AbstractCloudSaveProvider.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>You should fire OnDownloadSuccess in the implementation</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract void DownloadFromCloud(string key, string downloadLocation)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract void DownloadFromCloud(string key, string downloadLocation)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -245,39 +213,6 @@
     <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
     <dt><code>downloadLocation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Global_AbstractCloudSaveProvider_Upload_" data-uid="Global.AbstractCloudSaveProvider.Upload*"></a>
-
-  <h3 id="Global_AbstractCloudSaveProvider_Upload_System_String_System_String_" data-uid="Global.AbstractCloudSaveProvider.Upload(System.String,System.String)">
-  Upload(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/AbstractCloudSaveProvider.cs/#L12"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Upload(string key, string filepath)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>filepath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -296,14 +231,15 @@
 
   <h3 id="Global_AbstractCloudSaveProvider_UploadToCloud_System_String_System_String_" data-uid="Global.AbstractCloudSaveProvider.UploadToCloud(System.String,System.String)">
   UploadToCloud(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/AbstractCloudSaveProvider.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/AbstractCloudSaveProvider.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>You should fire OnUploadSuccess in the implementation.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract void UploadToCloud(string key, string filepath)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract void UploadToCloud(string key, string filepath)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

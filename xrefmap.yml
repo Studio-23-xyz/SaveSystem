@@ -16,22 +16,6 @@ references:
   commentId: T:Global.AbstractCloudSaveProvider.CloudSaveEvent
   fullName: AbstractCloudSaveProvider.CloudSaveEvent
   nameWithType: AbstractCloudSaveProvider.CloudSaveEvent
-- uid: Global.AbstractCloudSaveProvider.Download(System.String,System.String)
-  name: Download(string, string)
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_Download_System_String_System_String_
-  commentId: M:Global.AbstractCloudSaveProvider.Download(System.String,System.String)
-  name.vb: Download(String, String)
-  fullName: AbstractCloudSaveProvider.Download(string, string)
-  fullName.vb: AbstractCloudSaveProvider.Download(String, String)
-  nameWithType: AbstractCloudSaveProvider.Download(string, string)
-  nameWithType.vb: AbstractCloudSaveProvider.Download(String, String)
-- uid: Global.AbstractCloudSaveProvider.Download*
-  name: Download
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_Download_
-  commentId: Overload:Global.AbstractCloudSaveProvider.Download
-  isSpec: "True"
-  fullName: AbstractCloudSaveProvider.Download
-  nameWithType: AbstractCloudSaveProvider.Download
 - uid: Global.AbstractCloudSaveProvider.DownloadFromCloud(System.String,System.String)
   name: DownloadFromCloud(string, string)
   href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_DownloadFromCloud_System_String_System_String_
@@ -60,22 +44,6 @@ references:
   commentId: F:Global.AbstractCloudSaveProvider.OnUploadSuccess
   fullName: AbstractCloudSaveProvider.OnUploadSuccess
   nameWithType: AbstractCloudSaveProvider.OnUploadSuccess
-- uid: Global.AbstractCloudSaveProvider.Upload(System.String,System.String)
-  name: Upload(string, string)
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_Upload_System_String_System_String_
-  commentId: M:Global.AbstractCloudSaveProvider.Upload(System.String,System.String)
-  name.vb: Upload(String, String)
-  fullName: AbstractCloudSaveProvider.Upload(string, string)
-  fullName.vb: AbstractCloudSaveProvider.Upload(String, String)
-  nameWithType: AbstractCloudSaveProvider.Upload(string, string)
-  nameWithType.vb: AbstractCloudSaveProvider.Upload(String, String)
-- uid: Global.AbstractCloudSaveProvider.Upload*
-  name: Upload
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_Upload_
-  commentId: Overload:Global.AbstractCloudSaveProvider.Upload
-  isSpec: "True"
-  fullName: AbstractCloudSaveProvider.Upload
-  nameWithType: AbstractCloudSaveProvider.Upload
 - uid: Global.AbstractCloudSaveProvider.UploadToCloud(System.String,System.String)
   name: UploadToCloud(string, string)
   href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_UploadToCloud_System_String_System_String_
