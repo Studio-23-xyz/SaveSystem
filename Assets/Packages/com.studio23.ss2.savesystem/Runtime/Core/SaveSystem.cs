@@ -26,14 +26,6 @@ namespace Studio23.SS2.SaveSystem.Core
         private int _selectedSlotIndex;
         private SaveSlot SelectedSlot => _slot[_selectedSlotIndex];
 
-        [Header("Config")]
-        [SerializeField] internal int _slotCount = 3;
-        [SerializeField] internal bool _enableEncryption;
-        [SerializeField] internal string _encryptionKey;
-        [SerializeField] internal string _encryptionIV;
-
-        [SerializeField] internal string _saveRootFolderName = "SaveData";
-        [SerializeField] internal string _cloudsaveFileName = "cloud.sav";
 
         public string SavePath => Path.Combine(Application.persistentDataPath, _saveRootFolderName);
         public string CloudSavePath => Path.Combine(Application.persistentDataPath, _cloudsaveFileName);
@@ -47,15 +39,43 @@ namespace Studio23.SS2.SaveSystem.Core
         public SaveEvent OnUnbundleComplete;
 
 
+        [Header("Config")]
+        [SerializeField] internal int _slotCount = 3;
+        [SerializeField] internal bool _enableEncryption;
+        [SerializeField] internal string _encryptionKey;
+        [SerializeField] internal string _encryptionIV;
+
+        [SerializeField] internal string _saveRootFolderName = "SaveData";
+        [SerializeField] internal string _cloudsaveFileName = "cloud.sav";
+
+        [SerializeField] internal bool EnableCloudSave=false;
+        [SerializeField] internal AbstractCloudSaveProvider _cloudsaveProvider;
+
+
+
+
+
         private void Awake()
         {
             Instance = this;
             OnSaveComplete += async () => await UpdateSelectedSlotMetadata();
-            
+
         }
 
         private void Start()
         {
+            _cloudsaveProvider = GetComponent<AbstractCloudSaveProvider>();
+            if (_cloudsaveProvider != null)
+            {
+                _cloudsaveProvider.OnDownloadSuccess += async () => await UnBundleSaveFiles();
+                OnBundleComplete += SaveToCloud;
+            }
+            else
+            {
+                //Sanity Check. Even if config is true make it false if provider is null
+                EnableCloudSave= false;
+            }
+
             Initialize();
             CreateSlots();
         }
@@ -75,11 +95,11 @@ namespace Studio23.SS2.SaveSystem.Core
                 SaveSlot slot = new SaveSlot($"Save Slot {i}");
 
                 string slotPath = Path.Combine(SavePath, slot.Name);
-                if (!Directory.Exists(slotPath))
+                if (Directory.Exists(slotPath))
                 {
-                    Directory.CreateDirectory(slotPath);
+                    continue;
                 }
-
+                Directory.CreateDirectory(slotPath);
                 _slot.Add(slot);
             }
         }
@@ -140,6 +160,19 @@ namespace Studio23.SS2.SaveSystem.Core
             CreateSlots();
         }
 
+        /// <summary>
+        /// Delete Selected Slot data
+        /// </summary>
+        /// <returns>UniTask</returns>
+        public async UniTask ClearSelectedSlotAsync()
+        {
+            string filepath = Path.Combine(SavePath, _slot[_selectedSlotIndex].Name);
+            await UniTask.RunOnThreadPool(() => Directory.Delete(filepath, true));
+            CreateSlots();
+        }
+
+
+
         public void SelectSlot(int index)
         {
             _selectedSlotIndex = index;
@@ -158,15 +191,15 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <param name="encryptionKey">Optional 16 byte key</param>
         /// <param name="encryptionIV">Optional 16 byte key</param>
         /// <returns>Unitask Use this to impliment progress</returns>
-        public async UniTask SaveData<T>(T data, 
-            string saveFileName, 
-            string savefilePath, 
+        public async UniTask SaveData<T>(T data,
+            string saveFileName,
+            string savefilePath,
             string extention,
-            bool enableEncryption = false, 
+            bool enableEncryption = false,
             string encryptionKey = "1234567812345678",
-            string encryptionIV = "8765432156785432" )
+            string encryptionIV = "8765432156785432")
         {
-            SaveProcessor saveManager = new SaveProcessor(saveFileName, 
+            SaveProcessor saveManager = new SaveProcessor(saveFileName,
                 savefilePath,
                 extention,
                 enableEncryption: enableEncryption,
@@ -194,10 +227,10 @@ namespace Studio23.SS2.SaveSystem.Core
             string extention,
             bool enableEncryption = false,
             string encryptionKey = "1234567812345678",
-            string encryptionIV = "8765432156785432" )
+            string encryptionIV = "8765432156785432")
         {
             SaveProcessor saveManager = new SaveProcessor(saveFileName,
-                savefilePath, 
+                savefilePath,
                 extention,
                 enableEncryption: enableEncryption,
                 encryptionKey: encryptionKey,
@@ -269,10 +302,9 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns>UniTask</returns>
         public async UniTask BundleSaveFiles()
         {
-            
+
             Stitcher stitcher = new Stitcher();
             await stitcher.ArchiveFiles(CloudSavePath, SavePath);
-
             OnBundleComplete?.Invoke();
 
         }
@@ -287,10 +319,19 @@ namespace Studio23.SS2.SaveSystem.Core
             await ClearSlotsAsync();
             Stitcher stitcher = new Stitcher();
             await stitcher.ExtractFiles(CloudSavePath, SavePath);
-
             OnUnbundleComplete?.Invoke();
         }
 
+        public void SaveToCloud()
+        {
+            _cloudsaveProvider.UploadToCloud("CloudData",CloudSavePath);
+        }
+
+        public void LoadFromCloud()
+        {
+            
+            _cloudsaveProvider.DownloadFromCloud("CloudData",CloudSavePath);
+        }
 
 
     }

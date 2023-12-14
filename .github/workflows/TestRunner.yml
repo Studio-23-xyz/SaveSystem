@@ -14,10 +14,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        unityVersion: ['2022.3.9f1'] 
         testMode:
           - playmode
-          - editmode
     steps:
       - uses: actions/checkout@v2
         with:
@@ -29,8 +27,6 @@ jobs:
            UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
            UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
-          projectPath: ${{ matrix.projectPath }}
-          unityVersion: ${{ matrix.unityVersion }}
           testMode: ${{ matrix.testMode }}
           artifactsPath: ${{ matrix.testMode }}-artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
