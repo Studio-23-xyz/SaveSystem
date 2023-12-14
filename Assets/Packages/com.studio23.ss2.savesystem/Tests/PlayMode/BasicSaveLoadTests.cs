@@ -4,6 +4,7 @@ using Studio23.SS2.SaveSystem.Core;
 using System;
 using System.Collections;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -22,7 +23,7 @@ public class BasicSaveLoadTests
 
         await UniTask.Delay(TimeSpan.FromSeconds(1), ignoreTimeScale: false);
 
-        await _saveSystem.ClearSlotsAsync();//Tear Down
+   
         _saveSystem.SelectSlot(0);
 
         _saveSystem.enabled = false;
@@ -99,10 +100,32 @@ public class BasicSaveLoadTests
 
     });
 
+
+
+    [UnityTest]
+    [Order(4)]
+    public IEnumerator Delete_SelectedSlot_Test() => UniTask.ToCoroutine(async () =>
+    {
+
+        Assert.IsFalse(!Directory.EnumerateFileSystemEntries(_saveSystem.SelectedSlotPath).Any());
+        await _saveSystem.ClearSelectedSlotAsync();
+        _saveSystem.SelectSlot(0);
+
+        _saveSystem.enabled = false;
+
+        DirectoryAssert.Exists(_saveSystem.SelectedSlotPath);
+        Assert.IsTrue(!Directory.EnumerateFileSystemEntries(_saveSystem.SelectedSlotPath).Any());
+
+
+    });
+
+
     [OneTimeTearDown]
     public void TearDown()
     {
         Directory.Delete(_saveSystem.SavePath, true);
+        string bundlePath = Path.Combine(Application.persistentDataPath, "cloud.sav");
+        File.Delete(bundlePath);
     }
 
 
