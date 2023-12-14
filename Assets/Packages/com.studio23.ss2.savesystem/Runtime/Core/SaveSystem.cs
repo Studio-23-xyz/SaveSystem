@@ -65,7 +65,7 @@ namespace Studio23.SS2.SaveSystem.Core
         private void Start()
         {
             _cloudsaveProvider = GetComponent<AbstractCloudSaveProvider>();
-            if (_cloudsaveProvider != null)
+            if (_cloudsaveProvider != null && EnableCloudSave)
             {
                 _cloudsaveProvider.OnDownloadSuccess += async () => await UnBundleSaveFiles();
                 OnBundleComplete += SaveToCloud;
@@ -327,7 +327,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// </summary>
         public void SaveToCloud()
         {
-            _cloudsaveProvider?.UploadToCloud("CloudData",CloudSavePath);
+            _cloudsaveProvider?.Upload("CloudData",CloudSavePath);
         }
 
         /// <summary>
@@ -336,7 +336,7 @@ namespace Studio23.SS2.SaveSystem.Core
         public void LoadFromCloud()
         {
             
-            _cloudsaveProvider?.DownloadFromCloud("CloudData",CloudSavePath);
+            _cloudsaveProvider?.Download("CloudData",CloudSavePath);
         }
 
 
