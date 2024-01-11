@@ -1,6 +1,17 @@
 # Changelog
 
 
+## [v1.2.0] - 2023-12-14
+
+### Added
+
++  Added Cloud Save Provider
++  Cloud Save Provider Has methods to upload and download files and events to be subscribed
+
+### Updated
++  New API added: Delete Selected Slot
++  New Test added for the new API
+
 ## [v1.1.8] - 2023-12-13
 
 ### Updated
