@@ -106,7 +106,7 @@ public class EncryptionTest
     [OneTimeTearDown]
     public void TearDown()
     {
-        Directory.Delete(_saveSystem.SavePath, true);
+        Directory.Delete(_saveSystem.SavePathRoot, true);
     }
 
 }

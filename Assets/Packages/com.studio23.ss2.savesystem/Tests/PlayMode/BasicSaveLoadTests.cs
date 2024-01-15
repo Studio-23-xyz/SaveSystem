@@ -123,7 +123,7 @@ public class BasicSaveLoadTests
     [OneTimeTearDown]
     public void TearDown()
     {
-        Directory.Delete(_saveSystem.SavePath, true);
+        Directory.Delete(_saveSystem.SavePathRoot, true);
         string bundlePath = Path.Combine(Application.persistentDataPath, "cloud.sav");
         File.Delete(bundlePath);
     }
