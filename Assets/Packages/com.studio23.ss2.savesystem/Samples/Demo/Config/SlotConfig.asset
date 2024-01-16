@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99cad02bd1c0b9c40a584b3c8ca809d4, type: 3}
-  m_Name: SaveConfig
+  m_Name: SlotConfig
   m_EditorClassIdentifier: 
   _slotCount: 10
   _enableBackups: 1
-  _slotdatafolderName: Data
+  _slotDatafolderName: Data
   _slotDataBackupFileName: Data.bak
   _slotMetafileName: data.meta
   saveFileExtention: .taz

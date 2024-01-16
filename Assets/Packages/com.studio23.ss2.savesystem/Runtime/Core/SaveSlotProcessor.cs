@@ -6,9 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using UnityEditor.Graphs;
 using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Core
@@ -18,7 +15,7 @@ namespace Studio23.SS2.SaveSystem.Core
     internal class SaveSlotProcessor : MonoBehaviour
     {
 
-        private SaveSlot _selectedSlot;
+        [SerializeField] internal SaveSlot _selectedSlot;
 
         [SerializeField] internal SlotConfiguration _slotConfiguration;
         [SerializeField] internal FileProcessor _fileProcessor;
@@ -31,7 +28,7 @@ namespace Studio23.SS2.SaveSystem.Core
             await SelectSlot(0);
         }
 
-        internal async Task SelectSlot(int index)
+        internal async UniTask SelectSlot(int index)
         {
             _selectedSlot= await GetSaveSlotMetaData(index);
         }
@@ -48,7 +45,7 @@ namespace Studio23.SS2.SaveSystem.Core
             {
                 SaveSlot slot = new SaveSlot($"Save Slot {i}");
 
-                string slotPath = Path.Combine(_slotConfiguration.SavePathRoot, slot.Name,_slotConfiguration._slotdatafolderName);
+                string slotPath = Path.Combine(_slotConfiguration.SavePathRoot, slot.Name,_slotConfiguration._slotDatafolderName);
                 if (Directory.Exists(slotPath))
                 {
                     continue;
@@ -86,7 +83,11 @@ namespace Studio23.SS2.SaveSystem.Core
             for (int i = 0; i < _slotConfiguration._slotCount; i++)
             {
                 string filepath = Path.Combine(_slotConfiguration.SavePathRoot, $"Save Slot {i}");
-                await UniTask.RunOnThreadPool(() => Directory.Delete(filepath, true));
+                if(Directory.Exists(filepath))
+                {
+                    await UniTask.RunOnThreadPool(() => Directory.Delete(filepath, true));
+                }
+              
             }
             CreateSlotFolders();
         }
@@ -109,10 +110,10 @@ namespace Studio23.SS2.SaveSystem.Core
             _selectedSlot.fileKeys.Clear();
             foreach (var savableComponent in savableComponents)
             {
-                string key = savableComponent.UniqueID;
+                string key = savableComponent.GetUniqueID();
                 string data = savableComponent.GetSerializedData();
 
-                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration._slotdatafolderName, $"{key}{_slotConfiguration.saveFileExtention}");
+                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration._slotDatafolderName, $"{key}{_slotConfiguration.saveFileExtention}");
 
                 await _fileProcessor.Save(data, filepath);
                 _selectedSlot.fileKeys.Add($"{key}{_slotConfiguration.saveFileExtention}");
@@ -128,8 +129,8 @@ namespace Studio23.SS2.SaveSystem.Core
 
             foreach (var savableComponent in savableComponents)
             {
-                string key = savableComponent.UniqueID;
-                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration._slotdatafolderName, $"{key}{_slotConfiguration.saveFileExtention}");
+                string key = savableComponent.GetUniqueID();
+                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration._slotDatafolderName, $"{key}{_slotConfiguration.saveFileExtention}");
                 if (!File.Exists(filepath))
                 {
                     throw new Exception($"{key} Not found");
@@ -140,7 +141,7 @@ namespace Studio23.SS2.SaveSystem.Core
 
             if (_slotConfiguration._enableBackups)
             {
-                _ = CreateBackup(); //Don't wait for backup being created  
+                _= CreateBackup();  
             }
 
         }
@@ -148,7 +149,7 @@ namespace Studio23.SS2.SaveSystem.Core
 
         internal async UniTask CreateBackup()
         {
-            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotdatafolderName);
+            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDatafolderName);
             string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDataBackupFileName);
            
 
@@ -163,9 +164,14 @@ namespace Studio23.SS2.SaveSystem.Core
 
         internal async UniTask RestoreBackup()
         {
-            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotdatafolderName);
+            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDatafolderName);
             string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDataBackupFileName);
 
+            if(!File.Exists(backupFilePath))
+            {
+                Debug.LogWarning("Backup File not found");
+                return;
+            }
             await archiverBase.ExtractFiles(backupFilePath, dataFolderPath,true);
 
         }

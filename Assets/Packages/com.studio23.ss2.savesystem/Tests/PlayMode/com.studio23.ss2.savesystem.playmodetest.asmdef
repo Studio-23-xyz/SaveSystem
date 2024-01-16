@@ -7,9 +7,7 @@
         "com.studio23.ss2.savesystem",
         "UniTask"
     ],
-    "includePlatforms": [
-        "GameCoreXboxOne"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,

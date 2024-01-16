@@ -9,7 +9,7 @@ namespace Studio23.SS2.SaveSystem.Core
     public class FileProcessor : MonoBehaviour
     {
 
-        [SerializeField]private EncryptorBase _encryptor;
+        [SerializeField]internal EncryptorBase _encryptor;
 
         public async UniTask Save<T>(T data,string _saveFilePath)
         {

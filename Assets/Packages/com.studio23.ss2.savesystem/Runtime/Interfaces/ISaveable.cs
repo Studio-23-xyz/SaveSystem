@@ -5,7 +5,7 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         /// <summary>
         /// Must Return an Unique ID for save system to save file with this name
         /// </summary>
-        public string UniqueID { get; }
+        public string GetUniqueID();
 
         /// <summary>
         /// Return a serialized string for the save system to save

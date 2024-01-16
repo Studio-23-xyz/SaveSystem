@@ -9,7 +9,7 @@ public class SlotConfiguration : ScriptableObject
     [SerializeField] public bool _enableBackups = true;
 
 
-    public string _slotdatafolderName = "Data";
+    public string _slotDatafolderName = "Data";
     public string _slotDataBackupFileName = "Data.bak";
     public string _slotMetafileName = "data.meta";
 
