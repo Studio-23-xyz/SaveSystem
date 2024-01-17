@@ -9,7 +9,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
     internal class ZipUtilityArchiver : ArchiverBase
     {
 
-        internal override async UniTask ArchiveFiles(string archiveFilePath, string FolderToArchive)
+        public override async UniTask ArchiveFiles(string archiveFilePath, string FolderToArchive)
         {
             await UniTask.RunOnThreadPool(() =>
             {
@@ -18,7 +18,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
         }
 
 
-        internal override async UniTask ExtractFiles(string archiveFilePath, string extractDirectory, bool cleanDirectory = true)
+        public override async UniTask ExtractFiles(string archiveFilePath, string extractDirectory, bool cleanDirectory = true)
         {
             await UniTask.RunOnThreadPool(() =>
             {

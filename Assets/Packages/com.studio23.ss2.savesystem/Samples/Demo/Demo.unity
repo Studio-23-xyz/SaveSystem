@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: _encryptor
       value: 
       objectReference: {fileID: 11400000, guid: 2f062481109ba4340a29b03f8d6089fc, type: 2}
+    - target: {fileID: 6347601490776773402, guid: 6293dd07ab1b27c42837dba27ee34c0c, type: 3}
+      propertyPath: _slotConfiguration
+      value: 
+      objectReference: {fileID: 11400000, guid: 689e14cf99d18c3498b11d6065308b0f, type: 2}
     - target: {fileID: 8593265685411450474, guid: 6293dd07ab1b27c42837dba27ee34c0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

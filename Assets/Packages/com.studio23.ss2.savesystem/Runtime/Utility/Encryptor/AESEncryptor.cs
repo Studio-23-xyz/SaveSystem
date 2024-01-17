@@ -21,7 +21,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
 
         }
 
-        internal async override UniTask<string> Encrypt(string plainText)
+        public async override UniTask<string> Encrypt(string plainText)
         {
             using var aesAlg = Aes.Create();
             aesAlg.Key = Encoding.UTF8.GetBytes(key);
@@ -41,7 +41,7 @@ namespace Studio23.SS2.SaveSystem.Utilities
             return Convert.ToBase64String(msEncrypt.ToArray());
         }
 
-        internal async override UniTask<string> Decrypt(string cipherText)
+        public async override UniTask<string> Decrypt(string cipherText)
         {
             using var aesAlg = Aes.Create();
             aesAlg.Key = Encoding.UTF8.GetBytes(key);

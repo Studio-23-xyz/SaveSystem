@@ -1,21 +1,20 @@
 using Cysharp.Threading.Tasks;
-using Studio23.SS2.SaveSystem.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace Studio23.SS2.SaveSystem.Core
+namespace Studio23.SS2.SaveSystem.Editor
 {
-    [CustomEditor(typeof(SaveSystem))]
+    [CustomEditor(typeof(Core.SaveSystem))]
     public class SaveSystemEditor : UnityEditor.Editor
     {
         private int slotIndex = 0; // Default slot index
         private bool showDebugTools = true;
 
-        public override async void OnInspectorGUI()
+        public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            SaveSystem saveSystem = (SaveSystem)target;
+            Core.SaveSystem saveSystem = (Core.SaveSystem)target;
 
             // Start Debug Tools foldout section
             showDebugTools = EditorGUILayout.BeginFoldoutHeaderGroup(showDebugTools, "Debug Tools");

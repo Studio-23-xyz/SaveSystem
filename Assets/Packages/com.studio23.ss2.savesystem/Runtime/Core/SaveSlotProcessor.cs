@@ -6,8 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
+[assembly:InternalsVisibleTo("com.studio23.ss2.savesystem.editor")]
 namespace Studio23.SS2.SaveSystem.Core
 {
 
@@ -17,9 +19,9 @@ namespace Studio23.SS2.SaveSystem.Core
 
         [SerializeField] internal SaveSlot _selectedSlot;
 
-        [SerializeField] internal SlotConfiguration _slotConfiguration;
         [SerializeField] internal FileProcessor _fileProcessor;
         [SerializeField] internal ArchiverBase archiverBase;
+        [SerializeField] internal SlotConfiguration _slotConfiguration;
 
         private async void Start()
         {
@@ -41,11 +43,11 @@ namespace Studio23.SS2.SaveSystem.Core
         internal void CreateSlotFolders()
         {
 
-            for (int i = 0; i < _slotConfiguration._slotCount; i++)
+            for (int i = 0; i < _slotConfiguration.SlotCount; i++)
             {
-                SaveSlot slot = new SaveSlot($"Save Slot {i}");
+                SaveSlot slot = new SaveSlot($"Save_Slot_{i}");
 
-                string slotPath = Path.Combine(_slotConfiguration.SavePathRoot, slot.Name,_slotConfiguration._slotDatafolderName);
+                string slotPath = Path.Combine(_slotConfiguration.SavePathRoot, slot.Name,_slotConfiguration.SlotDatafolderName);
                 if (Directory.Exists(slotPath))
                 {
                     continue;
@@ -57,9 +59,9 @@ namespace Studio23.SS2.SaveSystem.Core
 
         internal async UniTask<SaveSlot> GetSaveSlotMetaData(int index)
         {
-            SaveSlot slotMeta=new SaveSlot($"Save Slot {index}");
+            SaveSlot slotMeta=new SaveSlot($"Save_Slot_{index}");
 
-            string slotMetaPath = Path.Combine(_slotConfiguration.SavePathRoot, $"Save Slot {index}", _slotConfiguration._slotMetafileName);
+            string slotMetaPath = Path.Combine(_slotConfiguration.SavePathRoot, $"Save_Slot_{index}", _slotConfiguration.SlotMetafileName);
             if (File.Exists(slotMetaPath))
             {
                 slotMeta = await _fileProcessor.Load<SaveSlot>(slotMetaPath);
@@ -72,7 +74,7 @@ namespace Studio23.SS2.SaveSystem.Core
         private async UniTask SaveSelectedSlotMetadata()
         {
             _selectedSlot.TimeStamp = DateTime.Now;
-            string slotPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotMetafileName);
+            string slotPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotMetafileName);
             await _fileProcessor.Save(_selectedSlot, slotPath);
         }
 
@@ -80,9 +82,9 @@ namespace Studio23.SS2.SaveSystem.Core
         internal async UniTask ClearAllSlotsAsync()
         {
 
-            for (int i = 0; i < _slotConfiguration._slotCount; i++)
+            for (int i = 0; i < _slotConfiguration.SlotCount; i++)
             {
-                string filepath = Path.Combine(_slotConfiguration.SavePathRoot, $"Save Slot {i}");
+                string filepath = Path.Combine(_slotConfiguration.SavePathRoot, $"Save_Slot_{i}");
                 if(Directory.Exists(filepath))
                 {
                     await UniTask.RunOnThreadPool(() => Directory.Delete(filepath, true));
@@ -113,10 +115,10 @@ namespace Studio23.SS2.SaveSystem.Core
                 string key = savableComponent.GetUniqueID();
                 string data = savableComponent.GetSerializedData();
 
-                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration._slotDatafolderName, $"{key}{_slotConfiguration.saveFileExtention}");
+                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration.SlotDatafolderName, $"{key}{_slotConfiguration.SaveFileExtention}");
 
                 await _fileProcessor.Save(data, filepath);
-                _selectedSlot.fileKeys.Add($"{key}{_slotConfiguration.saveFileExtention}");
+                _selectedSlot.fileKeys.Add($"{key}{_slotConfiguration.SaveFileExtention}");
             }
 
             await SaveSelectedSlotMetadata();
@@ -130,7 +132,7 @@ namespace Studio23.SS2.SaveSystem.Core
             foreach (var savableComponent in savableComponents)
             {
                 string key = savableComponent.GetUniqueID();
-                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration._slotDatafolderName, $"{key}{_slotConfiguration.saveFileExtention}");
+                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration.SlotDatafolderName, $"{key}{_slotConfiguration.SaveFileExtention}");
                 if (!File.Exists(filepath))
                 {
                     throw new Exception($"{key} Not found");
@@ -139,7 +141,7 @@ namespace Studio23.SS2.SaveSystem.Core
                 savableComponent.AssignSerializedData(data);
             }
 
-            if (_slotConfiguration._enableBackups)
+            if (_slotConfiguration.EnableBackups)
             {
                 _= CreateBackup();  
             }
@@ -149,8 +151,8 @@ namespace Studio23.SS2.SaveSystem.Core
 
         internal async UniTask CreateBackup()
         {
-            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDatafolderName);
-            string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDataBackupFileName);
+            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName);
+            string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDataBackupFileName);
            
 
             await archiverBase.ArchiveFiles(backupFilePath, dataFolderPath);
@@ -164,8 +166,8 @@ namespace Studio23.SS2.SaveSystem.Core
 
         internal async UniTask RestoreBackup()
         {
-            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDatafolderName);
-            string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration._slotDataBackupFileName);
+            string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName);
+            string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDataBackupFileName);
 
             if(!File.Exists(backupFilePath))
             {

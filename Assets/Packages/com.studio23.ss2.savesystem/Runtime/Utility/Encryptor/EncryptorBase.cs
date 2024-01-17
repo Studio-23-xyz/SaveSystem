@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Utilities
 {
-    internal abstract class EncryptorBase:ScriptableObject
+    public abstract class EncryptorBase:ScriptableObject
     {
-        internal abstract UniTask<string> Decrypt(string cipherText);
-        internal abstract UniTask<string> Encrypt(string plainText);
+        public abstract UniTask<string> Decrypt(string cipherText);
+        public abstract UniTask<string> Encrypt(string plainText);
     }
 }
