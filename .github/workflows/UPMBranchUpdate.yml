@@ -74,4 +74,3 @@ jobs:
       - uses: FrontEndDev-org/publish-node-package-action@v1
         with:
           target: github
-   
