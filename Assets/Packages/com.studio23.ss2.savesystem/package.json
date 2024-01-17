@@ -1,6 +1,6 @@
 {
     "name": "com.studio23.ss2.savesystem",
-    "version": "1.2.1",
+    "version": "2.0.0",
     "displayName": "Save System",
     "description": "Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves of Steam or Xbox and other platforms via extenstions",
     "unity": "2022.3",
@@ -14,7 +14,6 @@
             "url": "https://package.openupm.com",
             "scopes": [
                 "com.studio23.ss2",
-                "com.cysharp.unitask"
             ]
         }
     ],
@@ -23,6 +22,14 @@
     "com.cysharp.unitask": "2.4.1",
     "com.unity.sharp-zip-lib": "1.3.4-preview"
   },
+  "samples": [
+    {
+      "displayName": "Functional Example",
+      "description": "A small sample to demonstrate the abilities of the package.",
+      "path": "Samples~/Demo"
+    } 
+  ],  
+
     "keywords": [
         "Save",
         "Save System",
