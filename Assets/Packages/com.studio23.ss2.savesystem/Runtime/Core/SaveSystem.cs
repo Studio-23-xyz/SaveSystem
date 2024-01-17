@@ -1,11 +1,10 @@
 
 using Cysharp.Threading.Tasks;
-using System.Runtime.CompilerServices;
+using Studio23.SS2.SaveSystem.Data;
 using UnityEngine;
 
 
-[assembly: InternalsVisibleTo("com.studio23.ss2.savesystem.playmodetest")]
-[assembly: InternalsVisibleTo("com.studio23.ss2.savesystem.editor")]
+
 namespace Studio23.SS2.SaveSystem.Core
 {
 
@@ -43,10 +42,24 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <summary>
         /// Restores Backup if available
         /// </summary>
+        [ContextMenu("Restore Backup")]
         public async UniTask RestoreBackup()
         {
             await _slotProcessor.RestoreBackup();
         }
+
+        /// <summary>
+        /// Returns Slot metadata for the given index.
+        /// If it exists locally then returns that.
+        /// If it doesn't exists creates a new slot meta and returns that
+        /// </summary>
+        /// <param name="index">Index starts from 0</param>
+        /// <returns></returns>
+        public async UniTask<SaveSlot> GetSlotMeta(int index)
+        {
+            return await _slotProcessor.GetSaveSlotMetaData(index);
+        }
+
 
         /// <summary>
         /// Selects Save Slot
@@ -75,6 +88,9 @@ namespace Studio23.SS2.SaveSystem.Core
         {
             await _slotProcessor.ClearAllSlotsAsync();
         }
+
+
+
 
 
 

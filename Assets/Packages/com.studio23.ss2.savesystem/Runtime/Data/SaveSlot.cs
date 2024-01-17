@@ -10,7 +10,7 @@ namespace Studio23.SS2.SaveSystem.Data
     {
         public int Id;
 
-        public string Name {  get; private set; }
+        public string Name { get; private set; }
         public Texture Thumbnail;
         public string Description;
 
@@ -27,9 +27,6 @@ namespace Studio23.SS2.SaveSystem.Data
             TimeStamp = DateTime.Now;
             fileKeys = new List<string>();
         }
-
-       
-
 
     }
 
