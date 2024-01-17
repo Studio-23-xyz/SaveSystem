@@ -1,0 +1,19 @@
+{
+    "name": "com.studio23.ss2.savesystem",
+    "rootNamespace": "",
+    "references": [
+        "UniTask",
+        "Unity.SharpZipLib.Utils"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
