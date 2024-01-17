@@ -20,7 +20,7 @@ namespace Studio23.SS2.SaveSystem.Core
         [SerializeField] internal SaveSlot _selectedSlot;
 
         [SerializeField] internal FileProcessor _fileProcessor;
-        [SerializeField] internal ArchiverBase archiverBase;
+        [SerializeField] internal ArchiverBase _archiverBase;
         [SerializeField] internal SlotConfiguration _slotConfiguration;
 
         private async void Start()
@@ -155,7 +155,7 @@ namespace Studio23.SS2.SaveSystem.Core
             string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDataBackupFileName);
            
 
-            await archiverBase.ArchiveFiles(backupFilePath, dataFolderPath);
+            await _archiverBase.ArchiveFiles(backupFilePath, dataFolderPath);
 
             _selectedSlot.HasBackup = true;
             _selectedSlot.BackupStamp = DateTime.Now;
@@ -174,7 +174,7 @@ namespace Studio23.SS2.SaveSystem.Core
                 Debug.LogWarning("Backup File not found");
                 return;
             }
-            await archiverBase.ExtractFiles(backupFilePath, dataFolderPath,true);
+            await _archiverBase.ExtractFiles(backupFilePath, dataFolderPath,true);
 
         }
 

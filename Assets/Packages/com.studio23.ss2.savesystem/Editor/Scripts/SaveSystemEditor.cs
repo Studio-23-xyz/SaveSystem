@@ -7,8 +7,8 @@ namespace Studio23.SS2.SaveSystem.Editor
     [CustomEditor(typeof(Core.SaveSystem))]
     public class SaveSystemEditor : UnityEditor.Editor
     {
-        private int slotIndex = 0; // Default slot index
-        private bool showDebugTools = true;
+        private int _slotIndex = 0; // Default slot index
+        private bool _showDebugTools = true;
 
         public override void OnInspectorGUI()
         {
@@ -17,21 +17,21 @@ namespace Studio23.SS2.SaveSystem.Editor
             Core.SaveSystem saveSystem = (Core.SaveSystem)target;
 
             // Start Debug Tools foldout section
-            showDebugTools = EditorGUILayout.BeginFoldoutHeaderGroup(showDebugTools, "Debug Tools");
+            _showDebugTools = EditorGUILayout.BeginFoldoutHeaderGroup(_showDebugTools, "Debug Tools");
 
-            if (showDebugTools)
+            if (_showDebugTools)
             {
                 EditorGUILayout.BeginVertical(EditorStyles.helpBox);
 
                 EditorGUILayout.BeginHorizontal();
 
                 // Add an integer input field for slot index
-                slotIndex = EditorGUILayout.IntField("Slot Index", slotIndex);
+                _slotIndex = EditorGUILayout.IntField("Slot Index", _slotIndex);
 
 
                 if (GUILayout.Button("Select Slot"))
                 {
-                    saveSystem.SelectSlot(slotIndex).Forget();
+                    saveSystem.SelectSlot(_slotIndex).Forget();
                 }
 
                 EditorGUILayout.EndHorizontal();
