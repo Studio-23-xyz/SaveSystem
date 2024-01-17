@@ -35,30 +35,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.BasicSaveLoadTests.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.BasicSaveLoadTests.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.EncryptionTest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.EncryptionTest.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.ItemData.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.ItemData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ItemDataBehaviour.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ItemDataBehaviour.html"
         }
       },
       "version": ""
@@ -75,10 +65,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.SlotMetaDataTest.yml",
+      "source_relative_path": "api/Global.PlayerDataBehaviour.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.SlotMetaDataTest.html"
+          "relative_path": "api/Global.PlayerDataBehaviour.html"
         }
       },
       "version": ""
@@ -95,10 +85,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.SaveSystem.Core.SaveEvent.yml",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Core.FileProcessor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.SaveSystem.Core.SaveEvent.html"
+          "relative_path": "api/Studio23.SS2.SaveSystem.Core.FileProcessor.html"
         }
       },
       "version": ""
@@ -135,10 +125,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Studio23.SS2.SaveSystem.Data.yml",
       "output": {
         ".html": {
           "relative_path": "api/Studio23.SS2.SaveSystem.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemEditor.html"
         }
       },
       "version": ""
@@ -179,6 +199,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Studio23.SS2.SaveSystem.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Utilities.ArchiverBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Utilities.ArchiverBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Utilities.EncryptorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Utilities.EncryptorBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.SaveSystem.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.SaveSystem.Utilities.html"
         }
       },
       "version": ""

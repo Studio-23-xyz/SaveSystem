@@ -9,60 +9,70 @@
     "title": "Class AbstractCloudSaveProvider | |",
     "keywords": "Class AbstractCloudSaveProvider Namespace Global public abstract class AbstractCloudSaveProvider : MonoBehaviour Inheritance object AbstractCloudSaveProvider Fields OnDownloadSuccess public AbstractCloudSaveProvider.CloudSaveEvent OnDownloadSuccess Field Value AbstractCloudSaveProvider.CloudSaveEvent OnUploadSuccess public AbstractCloudSaveProvider.CloudSaveEvent OnUploadSuccess Field Value AbstractCloudSaveProvider.CloudSaveEvent Methods DownloadFromCloud(string, string) You should fire OnDownloadSuccess in the implementation public abstract void DownloadFromCloud(string key, string downloadLocation) Parameters key string downloadLocation string UploadToCloud(string, string) You should fire OnUploadSuccess in the implementation. public abstract void UploadToCloud(string key, string filepath) Parameters key string filepath string"
   },
-  "api/Global.BasicSaveLoadTests.html": {
-    "href": "api/Global.BasicSaveLoadTests.html",
-    "title": "Class BasicSaveLoadTests | |",
-    "keywords": "Class BasicSaveLoadTests Namespace Global public class BasicSaveLoadTests Inheritance object BasicSaveLoadTests Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods Bundle_Create_Test() public IEnumerator Bundle_Create_Test() Returns IEnumerator Bundle_Extract_Test() public IEnumerator Bundle_Extract_Test() Returns IEnumerator Delete_SelectedSlot_Test() public IEnumerator Delete_SelectedSlot_Test() Returns IEnumerator SaveSystem_Setup() public IEnumerator SaveSystem_Setup() Returns IEnumerator Save_Load_Test() public IEnumerator Save_Load_Test() Returns IEnumerator TearDown() public void TearDown()"
-  },
-  "api/Global.EncryptionTest.html": {
-    "href": "api/Global.EncryptionTest.html",
-    "title": "Class EncryptionTest | |",
-    "keywords": "Class EncryptionTest Namespace Global public class EncryptionTest Inheritance object EncryptionTest Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods Load_Test() public IEnumerator Load_Test() Returns IEnumerator SaveSystem_Setup() public IEnumerator SaveSystem_Setup() Returns IEnumerator Save_Test() public IEnumerator Save_Test() Returns IEnumerator TearDown() public void TearDown()"
-  },
   "api/Global.ItemData.html": {
     "href": "api/Global.ItemData.html",
     "title": "Class ItemData | |",
-    "keywords": "Class ItemData Namespace Global public class ItemData Inheritance object ItemData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields itemName public string itemName Field Value string itemQuantity public int itemQuantity Field Value int"
+    "keywords": "Class ItemData Namespace Global [Serializable] public class ItemData Inheritance object ItemData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields itemName public string itemName Field Value string itemQuantity public int itemQuantity Field Value int"
+  },
+  "api/Global.ItemDataBehaviour.html": {
+    "href": "api/Global.ItemDataBehaviour.html",
+    "title": "Class ItemDataBehaviour | |",
+    "keywords": "Class ItemDataBehaviour Namespace Global public class ItemDataBehaviour : MonoBehaviour, ISaveable Inheritance object ItemDataBehaviour Implements ISaveable Fields _uniqueID public string _uniqueID Field Value string itemData public ItemData itemData Field Value ItemData Methods AssignSerializedData(string) Implement how your component will adjust on data load public void AssignSerializedData(string data) Parameters data string String data GetSerializedData() Return a serialized string for the save system to save public string GetSerializedData() Returns string String Data GetUniqueID() Must Return an Unique ID for save system to save file with this name public string GetUniqueID() Returns string"
   },
   "api/Global.PlayerData.html": {
     "href": "api/Global.PlayerData.html",
     "title": "Class PlayerData | |",
-    "keywords": "Class PlayerData Namespace Global public class PlayerData Inheritance object PlayerData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields playerLevel public int playerLevel Field Value int playerName public string playerName Field Value string"
+    "keywords": "Class PlayerData Namespace Global [Serializable] public class PlayerData Inheritance object PlayerData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields playerLevel public int playerLevel Field Value int playerName public string playerName Field Value string"
   },
-  "api/Global.SlotMetaDataTest.html": {
-    "href": "api/Global.SlotMetaDataTest.html",
-    "title": "Class SlotMetaDataTest | |",
-    "keywords": "Class SlotMetaDataTest Namespace Global public class SlotMetaDataTest Inheritance object SlotMetaDataTest Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods SaveSystem_LoadSlot() public IEnumerator SaveSystem_LoadSlot() Returns IEnumerator SaveSystem_SaveSlots() public IEnumerator SaveSystem_SaveSlots() Returns IEnumerator SaveSystem_Setup() public IEnumerator SaveSystem_Setup() Returns IEnumerator TearDown() public void TearDown()"
+  "api/Global.PlayerDataBehaviour.html": {
+    "href": "api/Global.PlayerDataBehaviour.html",
+    "title": "Class PlayerDataBehaviour | |",
+    "keywords": "Class PlayerDataBehaviour Namespace Global public class PlayerDataBehaviour : MonoBehaviour, ISaveable Inheritance object PlayerDataBehaviour Implements ISaveable Fields _uniqueID public string _uniqueID Field Value string playerData public PlayerData playerData Field Value PlayerData Methods AssignSerializedData(string) Implement how your component will adjust on data load public void AssignSerializedData(string data) Parameters data string String data GetSerializedData() Return a serialized string for the save system to save public string GetSerializedData() Returns string String Data GetUniqueID() Must Return an Unique ID for save system to save file with this name public string GetUniqueID() Returns string"
   },
   "api/Global.html": {
     "href": "api/Global.html",
     "title": "Namespace | |",
-    "keywords": "Namespace Classes AbstractCloudSaveProvider BasicSaveLoadTests EncryptionTest ItemData PlayerData SlotMetaDataTest Delegates AbstractCloudSaveProvider.CloudSaveEvent"
+    "keywords": "Namespace Classes AbstractCloudSaveProvider ItemData ItemDataBehaviour PlayerData PlayerDataBehaviour Delegates AbstractCloudSaveProvider.CloudSaveEvent"
   },
-  "api/Studio23.SS2.SaveSystem.Core.SaveEvent.html": {
-    "href": "api/Studio23.SS2.SaveSystem.Core.SaveEvent.html",
-    "title": "Delegate SaveEvent | |",
-    "keywords": "Delegate SaveEvent Namespace Studio23.SS2.SaveSystem.Core public delegate void SaveEvent()"
+  "api/Studio23.SS2.SaveSystem.Core.FileProcessor.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Core.FileProcessor.html",
+    "title": "Class FileProcessor | |",
+    "keywords": "Class FileProcessor Namespace Studio23.SS2.SaveSystem.Core public class FileProcessor : MonoBehaviour Inheritance object FileProcessor Methods Load<T>(string) public UniTask<T> Load<T>(string _saveFilePath) Parameters _saveFilePath string Returns UniTask<T> Type Parameters T Save<T>(T, string) public UniTask Save<T>(T data, string _saveFilePath) Parameters data T _saveFilePath string Returns UniTask Type Parameters T"
   },
   "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html",
     "title": "Class SaveSystem | |",
-    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem OnBundleComplete public SaveEvent OnBundleComplete Field Value SaveEvent OnLoadComplete public SaveEvent OnLoadComplete Field Value SaveEvent OnSaveComplete public SaveEvent OnSaveComplete Field Value SaveEvent OnUnbundleComplete public SaveEvent OnUnbundleComplete Field Value SaveEvent Properties CloudSavePath public string CloudSavePath { get; } Property Value string SavePath public string SavePath { get; } Property Value string Methods BundleSaveFiles() Serializes all the files into one file for cloud save providers to work with public UniTask BundleSaveFiles() Returns UniTask UniTask ClearSelectedSlotAsync() Delete Selected Slot data public UniTask ClearSelectedSlotAsync() Returns UniTask UniTask ClearSlotsAsync() Delete all saved files public UniTask ClearSlotsAsync() Returns UniTask UniTask GetSaveSlotMetaData() public UniTask<List<SaveSlot>> GetSaveSlotMetaData() Returns UniTask<List<SaveSlot>> LoadAllSavable() Finds all Components that implements ISavable interface and loads data if it was saved before. You should implement a progress feedback as it will take some time. public UniTask LoadAllSavable() Returns UniTask LoadData<T>(string, string, string, bool, string, string) Use this method to load external files that was saved by the save method public UniTask<T> LoadData<T>(string saveFileName, string savefilePath, string extention, bool enableEncryption = false, string encryptionKey = \"1234567812345678\", string encryptionIV = \"8765432156785432\") Parameters saveFileName string Name of the file.Make sure you used the same key when saving savefilePath string Folder path, Make sure this was used when saving extention string Extention parameter for filtering enableEncryption bool Optional Encryption Enable encryptionKey string Optional 16 byte key encryptionIV string Optional 16 byte key Returns UniTask<T> Unitask Use this to impliment progress Type Parameters T LoadFromCloud() Downloads From Cloud if provider exists public void LoadFromCloud() SaveAllSavable() Finds all Components that implements ISavable interface and saves them. You should implement a progress feedback as it will take some time. public UniTask SaveAllSavable() Returns UniTask UniTask SaveData<T>(T, string, string, string, bool, string, string) Use this method to save files from other systems. Essentially create new folders as you see fit public UniTask SaveData<T>(T data, string saveFileName, string savefilePath, string extention, bool enableEncryption = false, string encryptionKey = \"1234567812345678\", string encryptionIV = \"8765432156785432\") Parameters data T Data of any type. It will automatically be parsed to JSON saveFileName string Name of the file. It should be unique savefilePath string Path of the directory where the file should be saved extention string Give your file an extetion for filter enableEncryption bool Optional Encryption Enable encryptionKey string Optional 16 byte key encryptionIV string Optional 16 byte key Returns UniTask Unitask Use this to impliment progress Type Parameters T SaveToCloud() Saves file to cloud if provider exists public void SaveToCloud() SelectSlot(int) public void SelectSlot(int index) Parameters index int UnBundleSaveFiles() Extracts the bundled file into it's original state. public UniTask UnBundleSaveFiles() Returns UniTask UniTask UpdateSelectedSlotMetadata(string) You can update selected slot metadata description from here. public UniTask UpdateSelectedSlotMetadata(string description = \"\") Parameters description string Optional Parameter Returns UniTask"
+    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem Methods ClearAllSlots() Clears All Slots public UniTask ClearAllSlots() Returns UniTask ClearSelectedSlot() Clears Selected Slot public UniTask ClearSelectedSlot() Returns UniTask GetSlotMeta(int) Returns Slot metadata for the given index. If it exists locally then returns that. If it doesn't exists creates a new slot meta and returns that public UniTask<SaveSlot> GetSlotMeta(int index) Parameters index int Index starts from 0 Returns UniTask<SaveSlot> Load() Loads All ISavable public UniTask Load() Returns UniTask RestoreBackup() Restores Backup if available public UniTask RestoreBackup() Returns UniTask Save() Saves All ISavable public UniTask Save() Returns UniTask SelectSlot(int) Selects Save Slot public UniTask SelectSlot(int index) Parameters index int Starts from 0 Returns UniTask"
   },
   "api/Studio23.SS2.SaveSystem.Core.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Core | |",
-    "keywords": "Namespace Studio23.SS2.SaveSystem.Core Classes SaveSystem Delegates SaveEvent"
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Core Classes FileProcessor SaveSystem"
   },
   "api/Studio23.SS2.SaveSystem.Data.SaveSlot.html": {
     "href": "api/Studio23.SS2.SaveSystem.Data.SaveSlot.html",
     "title": "Class SaveSlot | |",
-    "keywords": "Class SaveSlot Namespace Studio23.SS2.SaveSystem.Data public class SaveSlot Inheritance object SaveSlot Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors SaveSlot(string) public SaveSlot(string name) Parameters name string Fields Description public string Description Field Value string Id public int Id Field Value int Name public string Name Field Value string TimeStamp public DateTime TimeStamp Field Value DateTime"
+    "keywords": "Class SaveSlot Namespace Studio23.SS2.SaveSystem.Data [Serializable] public class SaveSlot Inheritance object SaveSlot Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors SaveSlot(string) public SaveSlot(string name) Parameters name string Fields BackupStamp public DateTime BackupStamp Field Value DateTime Description public string Description Field Value string HasBackup public bool HasBackup Field Value bool Id public int Id Field Value int Thumbnail public Texture Thumbnail Field Value Texture TimeStamp public DateTime TimeStamp Field Value DateTime fileKeys public List<string> fileKeys Field Value List<string> Properties Name public string Name { get; } Property Value string"
+  },
+  "api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html",
+    "title": "Class SlotConfiguration | |",
+    "keywords": "Class SlotConfiguration Namespace Studio23.SS2.SaveSystem.Data public class SlotConfiguration : ScriptableObject Inheritance object SlotConfiguration Fields EnableBackups public bool EnableBackups Field Value bool SaveFileExtention public string SaveFileExtention Field Value string SaveRootFolderName public string SaveRootFolderName Field Value string SlotCount public int SlotCount Field Value int SlotDataBackupFileName public string SlotDataBackupFileName Field Value string SlotDatafolderName public string SlotDatafolderName Field Value string SlotMetafileName public string SlotMetafileName Field Value string Properties SavePathRoot public string SavePathRoot { get; } Property Value string"
   },
   "api/Studio23.SS2.SaveSystem.Data.html": {
     "href": "api/Studio23.SS2.SaveSystem.Data.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Data | |",
-    "keywords": "Namespace Studio23.SS2.SaveSystem.Data Classes SaveSlot"
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Data Classes SaveSlot SlotConfiguration"
+  },
+  "api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.html",
+    "title": "Class SaveSlotProcessorEditor | |",
+    "keywords": "Class SaveSlotProcessorEditor Namespace Studio23.SS2.SaveSystem.Editor public class SaveSlotProcessorEditor : UnityEditor.Editor Inheritance object SaveSlotProcessorEditor Methods OnInspectorGUI() public override void OnInspectorGUI()"
+  },
+  "api/Studio23.SS2.SaveSystem.Editor.SaveSystemEditor.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemEditor.html",
+    "title": "Class SaveSystemEditor | |",
+    "keywords": "Class SaveSystemEditor Namespace Studio23.SS2.SaveSystem.Editor public class SaveSystemEditor : UnityEditor.Editor Inheritance object SaveSystemEditor Methods OnInspectorGUI() public override void OnInspectorGUI()"
   },
   "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html": {
     "href": "api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html",
@@ -72,17 +82,32 @@
   "api/Studio23.SS2.SaveSystem.Editor.html": {
     "href": "api/Studio23.SS2.SaveSystem.Editor.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Editor | |",
-    "keywords": "Namespace Studio23.SS2.SaveSystem.Editor Classes SaveSystemInstallerWindow"
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Editor Classes SaveSlotProcessorEditor SaveSystemEditor SaveSystemInstallerWindow"
   },
   "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html": {
     "href": "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html",
     "title": "Interface ISaveable | |",
-    "keywords": "Interface ISaveable Namespace Studio23.SS2.SaveSystem.Interfaces public interface ISaveable Properties UniqueID Must Return an Unique ID for save system to save file with this name string UniqueID { get; } Property Value string Methods AssignSerializedData(string) Implement how your component will adjust on data load void AssignSerializedData(string data) Parameters data string String data GetSerializedData() Return a serialized string for the save system to save string GetSerializedData() Returns string String Data"
+    "keywords": "Interface ISaveable Namespace Studio23.SS2.SaveSystem.Interfaces public interface ISaveable Methods AssignSerializedData(string) Implement how your component will adjust on data load void AssignSerializedData(string data) Parameters data string String data GetSerializedData() Return a serialized string for the save system to save string GetSerializedData() Returns string String Data GetUniqueID() Must Return an Unique ID for save system to save file with this name string GetUniqueID() Returns string"
   },
   "api/Studio23.SS2.SaveSystem.Interfaces.html": {
     "href": "api/Studio23.SS2.SaveSystem.Interfaces.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Interfaces | |",
     "keywords": "Namespace Studio23.SS2.SaveSystem.Interfaces Interfaces ISaveable"
+  },
+  "api/Studio23.SS2.SaveSystem.Utilities.ArchiverBase.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Utilities.ArchiverBase.html",
+    "title": "Class ArchiverBase | |",
+    "keywords": "Class ArchiverBase Namespace Studio23.SS2.SaveSystem.Utilities public abstract class ArchiverBase : ScriptableObject Inheritance object ArchiverBase Methods ArchiveFiles(string, string) public abstract UniTask ArchiveFiles(string archiveFilePath, string FolderToArchive) Parameters archiveFilePath string FolderToArchive string Returns UniTask ExtractFiles(string, string, bool) public abstract UniTask ExtractFiles(string archiveFilePath, string extractDirectory, bool cleanDirectory = true) Parameters archiveFilePath string extractDirectory string cleanDirectory bool Returns UniTask"
+  },
+  "api/Studio23.SS2.SaveSystem.Utilities.EncryptorBase.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Utilities.EncryptorBase.html",
+    "title": "Class EncryptorBase | |",
+    "keywords": "Class EncryptorBase Namespace Studio23.SS2.SaveSystem.Utilities public abstract class EncryptorBase : ScriptableObject Inheritance object EncryptorBase Methods Decrypt(string) public abstract UniTask<string> Decrypt(string cipherText) Parameters cipherText string Returns UniTask<string> Encrypt(string) public abstract UniTask<string> Encrypt(string plainText) Parameters plainText string Returns UniTask<string>"
+  },
+  "api/Studio23.SS2.SaveSystem.Utilities.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Utilities.html",
+    "title": "Namespace Studio23.SS2.SaveSystem.Utilities | |",
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Utilities Classes ArchiverBase EncryptorBase"
   },
   "api/index.html": {
     "href": "api/index.html",

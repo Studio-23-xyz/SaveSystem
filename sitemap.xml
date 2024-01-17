@@ -2,133 +2,163 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.AbstractCloudSaveProvider.CloudSaveEvent.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.AbstractCloudSaveProvider.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.BasicSaveLoadTests.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.EncryptionTest.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.ItemData.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.ItemDataBehaviour.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.PlayerData.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.SlotMetaDataTest.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.PlayerDataBehaviour.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Global.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Core.SaveEvent.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Core.FileProcessor.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Core.SaveSystem.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Core.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Data.SaveSlot.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Data.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Editor.SaveSystemEditor.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Editor.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Interfaces.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Utilities.ArchiverBase.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Utilities.EncryptorBase.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-23-xyz.github.io/SaveSystem/api/Studio23.SS2.SaveSystem.Utilities.html</loc>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/api/index.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/changelog/CHANGELOG.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/index.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/license/LICENSE.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-23-xyz.github.io/SaveSystem/manual/index.html</loc>
-    <lastmod>2024-01-11T10:03:45+00:00</lastmod>
+    <lastmod>2024-01-17T10:05:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
