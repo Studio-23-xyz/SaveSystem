@@ -7,6 +7,19 @@ public class PlayerDataBehaviour : MonoBehaviour,ISaveable
     public string _uniqueID;
     public PlayerData playerData;
 
+    private bool _isDirty;
+
+    public bool IsDirty { 
+        get 
+        { 
+            return _isDirty;
+        } 
+        set 
+        {
+            _isDirty = value;
+        } 
+    }
+
     public string GetUniqueID()
     {
         return _uniqueID;

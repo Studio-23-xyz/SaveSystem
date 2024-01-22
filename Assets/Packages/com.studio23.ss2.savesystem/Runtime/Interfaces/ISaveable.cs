@@ -8,6 +8,11 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         public string GetUniqueID();
 
         /// <summary>
+        /// Save System Would Only save files that are Dirty in short has changes to submit
+        /// </summary>
+        public bool IsDirty { get; set; }
+
+        /// <summary>
         /// Return a serialized string for the save system to save
         /// </summary>
         /// <returns>String Data</returns>

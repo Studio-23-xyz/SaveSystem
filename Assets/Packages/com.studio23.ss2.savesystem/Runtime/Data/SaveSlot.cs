@@ -8,9 +8,9 @@ namespace Studio23.SS2.SaveSystem.Data
     [Serializable]
     public class SaveSlot
     {
-        public int Id;
+        public int Index;
 
-        public string Name { get; private set; }
+        public string Name => $"Save_Slot_{Index}";
         public Texture Thumbnail;
         public string Description;
 
@@ -19,15 +19,17 @@ namespace Studio23.SS2.SaveSystem.Data
 
         public bool HasBackup;
 
-        public List<string> fileKeys;
+        public Dictionary<string,int> FileKeys;
 
-        public SaveSlot(string name)
+        public SaveSlot(int index)
         {
-            Name = name;
+            Index = index;
             TimeStamp = DateTime.Now;
-            fileKeys = new List<string>();
+            FileKeys = new Dictionary<string,int>();
         }
 
     }
+
+
 
 }

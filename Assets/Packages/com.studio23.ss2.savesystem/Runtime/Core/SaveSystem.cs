@@ -1,9 +1,7 @@
-
 using Cysharp.Threading.Tasks;
 using Studio23.SS2.SaveSystem.Data;
 using UnityEngine;
-
-
+using UnityEngine.Events;
 
 namespace Studio23.SS2.SaveSystem.Core
 {
@@ -14,35 +12,50 @@ namespace Studio23.SS2.SaveSystem.Core
 
         [SerializeField] internal SaveSlotProcessor _slotProcessor;
 
+        public UnityEvent OnSaveComplete;
+        public UnityEvent OnLoadComplete;
+
         void Awake()
         {
             Instance = this;
         }
 
-        /// <summary>
-        /// Saves All ISavable
-        /// </summary>
-        /// <returns></returns>
-        [ContextMenu("Save")]
-        public async UniTask Save()
+
+        public async UniTask Initialize()
         {
-           await _slotProcessor.SaveAllSavable();
+            await _slotProcessor.Initialize();
+        }
+
+        /// <summary>
+        /// By Default it saves all savable regardless of it's state
+        /// If DirtyOnly is passed then it only saves Those who's state is dirty
+        /// On Save All ISavable's IsDirty is set to false
+        /// And attempts to save the files to cloud accordingly with the given provider
+        /// </summary>
+        /// <param name="dirtyOnly">default is false</param>
+        /// <returns></returns>
+        public async UniTask Save(bool dirtyOnly=false)
+        {
+           await _slotProcessor.SaveAllSavable(dirtyOnly);
+           OnSaveComplete?.Invoke();
         }
 
         /// <summary>
         /// Loads All ISavable
         /// </summary>
         /// <returns></returns>
-        [ContextMenu("Load")]
         public async UniTask Load()
         {
             await _slotProcessor.LoadAllSavable();
+            OnLoadComplete?.Invoke();
         }
 
         /// <summary>
         /// Restores Backup if available
+        /// If not available locally attempts to restore from cloud
+        /// if still fails then throws error
+        /// Wrap in try catch and show proper UI
         /// </summary>
-        [ContextMenu("Restore Backup")]
         public async UniTask RestoreBackup()
         {
             await _slotProcessor.RestoreBackup();
@@ -57,7 +70,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns></returns>
         public async UniTask<SaveSlot> GetSlotMeta(int index)
         {
-            return await _slotProcessor.GetSaveSlotMetaData(index);
+            return await _slotProcessor.GetSaveSlotMetaDataLocal(index);
         }
 
 
@@ -69,6 +82,21 @@ namespace Studio23.SS2.SaveSystem.Core
         public async UniTask SelectSlot(int index)
         {
             await _slotProcessor.SelectSlot(index);
+        }
+
+        /// <summary>
+        /// Selects Last Selected Slot from PlayerPrefs.
+        /// If not found selects 0 index
+        /// </summary>
+        /// <returns></returns>
+        public async UniTask SelectLastSelectedSlot()
+        {
+            await _slotProcessor.SelectLastSelectedSlot();
+        }
+
+        public async UniTask SyncSelectedSlotData()
+        {
+            await _slotProcessor.SyncSelectedSlotData();
         }
 
         /// <summary>

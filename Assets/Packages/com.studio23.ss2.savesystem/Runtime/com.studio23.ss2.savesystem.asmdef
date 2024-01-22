@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "UniTask",
-        "Unity.SharpZipLib.Utils"
+        "Unity.SharpZipLib.Utils",
+        "com.studio23.ss2.cloudsave"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

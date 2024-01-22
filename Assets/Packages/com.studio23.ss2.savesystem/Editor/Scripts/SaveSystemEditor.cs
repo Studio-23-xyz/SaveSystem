@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Studio23.SS2.SaveSystem.Data;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Studio23.SS2.SaveSystem.Editor
     {
         private int _slotIndex = 0; // Default slot index
         private bool _showDebugTools = true;
+        private bool _showFileKeys = true;
 
         public override void OnInspectorGUI()
         {
@@ -23,31 +25,90 @@ namespace Studio23.SS2.SaveSystem.Editor
             {
                 EditorGUILayout.BeginVertical(EditorStyles.helpBox);
 
+                GUI.backgroundColor = Color.blue;
+                if (GUILayout.Button("Initialize Save System"))
+                {
+                    saveSystem.Initialize().Forget();
+                }
+
+                GUI.backgroundColor = Color.green;
+                if (GUILayout.Button("Select Last Selected Slot"))
+                {
+                    _ = saveSystem.SelectLastSelectedSlot();
+                }
+
                 EditorGUILayout.BeginHorizontal();
 
-                // Add an integer input field for slot index
+                GUI.backgroundColor = Color.white;
                 _slotIndex = EditorGUILayout.IntField("Slot Index", _slotIndex);
 
 
                 if (GUILayout.Button("Select Slot"))
                 {
-                    saveSystem.SelectSlot(_slotIndex).Forget();
+                    _=saveSystem.SelectSlot(_slotIndex);
                 }
+
+
 
                 EditorGUILayout.EndHorizontal();
 
+
                 EditorGUILayout.BeginVertical();
 
-                // Set the button color to green
+
+
+                SaveSlot _selectedSlot = saveSystem._slotProcessor._selectedSlot;
+
+
+                if (_selectedSlot != null)
+                {
+
+                    EditorGUILayout.LabelField("Selected Slot Information", EditorStyles.boldLabel);
+                    EditorGUILayout.LabelField($"Name: {_selectedSlot.Name}");
+                    EditorGUILayout.LabelField($"Description: {_selectedSlot.Description}");
+                    EditorGUILayout.LabelField($"TimeStamp: {_selectedSlot.TimeStamp}");
+                    EditorGUILayout.LabelField($"BackupStamp: {_selectedSlot.BackupStamp}");
+                    EditorGUILayout.LabelField($"HasBackup: {_selectedSlot.HasBackup}");
+
+                    EditorGUILayout.Space();
+
+
+                    _showFileKeys = GUILayout.Toggle(_showFileKeys, "Show File Details");
+                    int fileCount = 0;
+                    if (_selectedSlot.FileKeys != null && _showFileKeys)
+                    {
+                        foreach (var fileKey in _selectedSlot.FileKeys)
+                        {
+                            EditorGUILayout.LabelField($"{++fileCount})File: {fileKey.Key}( Size: {fileKey.Value} Bytes)");
+                        }
+
+                        EditorGUILayout.Space();
+                        EditorGUILayout.LabelField($"{fileCount} Files in the meta");
+                    }
+
+                }
+
                 GUI.backgroundColor = Color.green;
-                if (GUILayout.Button("Save"))
+                if (GUILayout.Button("Save All"))
                 {
                     saveSystem.Save().Forget();
                 }
+
+                if (GUILayout.Button("Save Dirty"))
+                {
+                    saveSystem.Save(true).Forget();
+                }
+
+
                 GUI.backgroundColor = Color.white; // Reset color
 
-                // Set the button color to red
+      
                 GUI.backgroundColor = Color.red;
+                if (GUILayout.Button("Sync Selected Slot Data"))
+                {
+                    saveSystem.SyncSelectedSlotData().Forget();
+                }
+
                 if (GUILayout.Button("Load"))
                 {
                     saveSystem.Load().Forget();
@@ -78,7 +139,7 @@ namespace Studio23.SS2.SaveSystem.Editor
             EditorGUILayout.EndFoldoutHeaderGroup();
         }
 
-       
+
 
     }
 }

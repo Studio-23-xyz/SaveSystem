@@ -1,5 +1,51 @@
 # Changelog
 
+## [v2.0.1] - 2024-01-22
+
+### Added
+
++ Added Cloud Save Core Package as Dependency
++ Added FileProcessor.cs , replacing the deleted SaveProcessor.cs.
++ Added SaveSlotProcessor.cs.
++ Added new samples for demonstration and their configurations.
++ Added Archiver directory and ArchiverBase.cs, ZipUtilityArchiver.cs.
++ Added Encryptor directory and EncryptorBase.cs, AESEncryptor.cs , and deleted Stitcher.cs.
++ Added ItemDataBehaviour.cs and PlayerDataBehaviour.cs scripts for demo.
+
+
+## [v2.0.0] - 2024-01-16
+
+### Updated
+
++ Updated GitHub Actions workflow .github/workflows/UPMBranchUpdate.yml.
++ Modified SaveSystemInstallerWindow.cs script.
++ Updated SaveSystem.cs and SaveSlot.cs.
++ Updated ISaveable.cs interface.
++ Moved FakeData.cs from Tests/PlayMode/Data to Samples/Demo/Scripts and updated metadata.
++ Deleted test scripts BasicSaveLoadTests.cs, EncryptionTest.cs, and SlotMetaDataTest.cs.
+
+### Added
+
++ Added SlotConfiguration.cs.
++ Added FileProcessor.cs , replacing the deleted SaveProcessor.cs.
++ Added SaveSlotProcessor.cs.
++ Added new samples for demonstration and their configurations.
++ Added Archiver directory and ArchiverBase.cs, ZipUtilityArchiver.cs.
++ Added Encryptor directory and EncryptorBase.cs, AESEncryptor.cs , and deleted Stitcher.cs.
++ Added ItemDataBehaviour.cs and PlayerDataBehaviour.cs scripts for demo.
+
+
+
+## [v1.2.0] - 2023-12-14
+
+### Added
+
++  Added Cloud Save Provider
++  Cloud Save Provider Has methods to upload and download files and events to be subscribed
+
+### Updated
++  New API added: Delete Selected Slot
++  New Test added for the new API
 
 ## [v1.1.8] - 2023-12-13
 

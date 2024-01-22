@@ -4,9 +4,27 @@ using UnityEngine;
 
 public class ItemDataBehaviour : MonoBehaviour, ISaveable
 {
+    [SerializeField]
+    private string _uniqueID;
 
-    public string _uniqueID;
+    [SerializeField]
+    private bool _isDirty;
+
+    public bool IsDirty
+    {
+        get
+        {
+            return _isDirty;
+        }
+        set
+        {
+            _isDirty = value;
+        }
+    }
+
     public ItemData itemData;
+
+    
 
     public string GetUniqueID()
     {

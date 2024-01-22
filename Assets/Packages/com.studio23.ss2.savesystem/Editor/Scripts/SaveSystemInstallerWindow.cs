@@ -1,3 +1,5 @@
+using Studio23.SS2.SaveSystem.Utilities;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -5,41 +7,61 @@ namespace Studio23.SS2.SaveSystem.Editor
 {
     public class SaveSystemInstallerWindow : EditorWindow
     {
-       
 
-
-        private Texture _header;
-
-
-        [MenuItem("Studio-23/Save System/Installer")]
-        public static void ShowWindow()
+        [MenuItem("Studio-23/Save System/Install")]
+        static void CreateDefaultProvider()
         {
-           
-            SaveSystemInstallerWindow window = GetWindow<SaveSystemInstallerWindow>("Save System Installer");
-            window.minSize = new Vector2(400, 200);
-        }
-
-        private void OnEnable()
-        {
-            _header = Resources.Load<Texture>("SaveSystem/SaveSystemHeader");
+            GameObject saveSystemObject = Resources.Load<GameObject>("SaveSystem/SaveSystem");
+            Instantiate(saveSystemObject);
         }
 
 
-        private void OnGUI()
+
+        [MenuItem("Studio-23/Save System/Encryptors/AES")]
+        static void CreateAESEncryptor()
         {
+            AESEncryptor providerSettings = ScriptableObject.CreateInstance<AESEncryptor>();
 
-            GUILayout.Box(_header, GUILayout.Height(200), GUILayout.ExpandWidth(true));
+            // Create the resource folder path
+            string resourceFolderPath = "Assets/Resources/SaveSystem/Encryptors";
 
-            GUILayout.Label("Save System Setup Wizard", EditorStyles.boldLabel);
-
-          
-
-            if (GUILayout.Button("Install SaveSystem"))
+            if (!Directory.Exists(resourceFolderPath))
             {
-
-                GameObject saveSystemObject = Resources.Load<GameObject>("SaveSystem/SaveSystem");
-                Instantiate(saveSystemObject);
+                Directory.CreateDirectory(resourceFolderPath);
             }
+
+            // Create the ScriptableObject asset in the resource folder
+            string assetPath = resourceFolderPath + "/AESEncryptor.asset";
+            AssetDatabase.CreateAsset(providerSettings, assetPath);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            Debug.Log("AES Encryptor created at: " + assetPath);
         }
+
+
+        [MenuItem("Studio-23/Save System/Archiver/ZipUtility")]
+        static void CreateZipUtilityArchiver()
+        {
+            ZipUtilityArchiver providerSettings = ScriptableObject.CreateInstance<ZipUtilityArchiver>();
+
+            // Create the resource folder path
+            string resourceFolderPath = "Assets/Resources/SaveSystem/Archivers";
+
+            if (!Directory.Exists(resourceFolderPath))
+            {
+                Directory.CreateDirectory(resourceFolderPath);
+            }
+
+            // Create the ScriptableObject asset in the resource folder
+            string assetPath = resourceFolderPath + "/ZipUtility.asset";
+            AssetDatabase.CreateAsset(providerSettings, assetPath);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            Debug.Log("ZipUtility Archiver created at: " + assetPath);
+        }
+
+
     }
 }

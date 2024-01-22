@@ -1,5 +1,18 @@
 # Changelog
 
+## [v2.0.1] - 2024-01-22
+
+### Added
+
++ Added Cloud Save Core Package as Dependency
++ Added FileProcessor.cs , replacing the deleted SaveProcessor.cs.
++ Added SaveSlotProcessor.cs.
++ Added new samples for demonstration and their configurations.
++ Added Archiver directory and ArchiverBase.cs, ZipUtilityArchiver.cs.
++ Added Encryptor directory and EncryptorBase.cs, AESEncryptor.cs , and deleted Stitcher.cs.
++ Added ItemDataBehaviour.cs and PlayerDataBehaviour.cs scripts for demo.
+
+
 ## [v2.0.0] - 2024-01-16
 
 ### Updated

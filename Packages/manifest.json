@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.cysharp.unitask": "2.5.0",
+    "com.studio23.ss2.cloudsave": "2.0.0",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.feature.development": "1.0.1",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
