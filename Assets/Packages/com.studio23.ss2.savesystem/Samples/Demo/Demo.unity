@@ -135,14 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 4119365039723816293, guid: 6293dd07ab1b27c42837dba27ee34c0c, type: 3}
-      propertyPath: _encryptor
+    - target: {fileID: 4227098497653628982, guid: 6293dd07ab1b27c42837dba27ee34c0c, type: 3}
+      propertyPath: _provider
       value: 
-      objectReference: {fileID: 11400000, guid: 2f062481109ba4340a29b03f8d6089fc, type: 2}
-    - target: {fileID: 6347601490776773402, guid: 6293dd07ab1b27c42837dba27ee34c0c, type: 3}
-      propertyPath: _slotConfiguration
-      value: 
-      objectReference: {fileID: 11400000, guid: 689e14cf99d18c3498b11d6065308b0f, type: 2}
+      objectReference: {fileID: 11400000, guid: ed27e28403ced2344897c590a6f3d1ab, type: 2}
     - target: {fileID: 8593265685411450474, guid: 6293dd07ab1b27c42837dba27ee34c0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -232,7 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c14a1390c2e504ab1a0c26049916c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uniqueID: 1
+  _uniqueID: RFXADDD.99
+  _isDirty: 0
   itemData:
     itemName: sadd
     itemQuantity: 123
