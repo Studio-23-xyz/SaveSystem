@@ -92,7 +92,7 @@
 
   <h1 id="Studio23_SS2_SaveSystem_Core_SaveSystem" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem" class="text-break">
     Class SaveSystem
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -133,7 +133,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_Instance" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Instance">
   Instance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -160,6 +160,66 @@
 
 
 
+
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_OnLoadComplete" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.OnLoadComplete">
+  OnLoadComplete
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnityEvent OnLoadComplete</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UnityEvent</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_OnSaveComplete" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.OnSaveComplete">
+  OnSaveComplete
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnityEvent OnSaveComplete</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UnityEvent</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -168,7 +228,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_ClearAllSlots" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.ClearAllSlots">
   ClearAllSlots()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Clears All Slots</p>
@@ -200,7 +260,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_ClearSelectedSlot" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlot">
   ClearSelectedSlot()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Clears Selected Slot</p>
@@ -232,7 +292,7 @@
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_GetSlotMeta_System_Int32_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.GetSlotMeta(System.Int32)">
   GetSlotMeta(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns Slot metadata for the given index.
@@ -268,11 +328,42 @@ If it doesn't exists creates a new slot meta and returns that</p>
 
 
 
+  <a id="Studio23_SS2_SaveSystem_Core_SaveSystem_Initialize_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize*"></a>
+
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_Initialize" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize">
+  Initialize()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniTask Initialize()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTask</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Studio23_SS2_SaveSystem_Core_SaveSystem_Load_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Load*"></a>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_Load" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Load">
   Load()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads All ISavable</p>
@@ -304,10 +395,13 @@ If it doesn't exists creates a new slot meta and returns that</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_RestoreBackup" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.RestoreBackup">
   RestoreBackup()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Restores Backup if available</p>
+  <div class="markdown level1 summary"><p>Restores Backup if available
+If not available locally attempts to restore from cloud
+if still fails then throws error
+Wrap in try catch and show proper UI</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -334,17 +428,59 @@ If it doesn't exists creates a new slot meta and returns that</p>
 
   <a id="Studio23_SS2_SaveSystem_Core_SaveSystem_Save_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Save*"></a>
 
-  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_Save" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Save">
-  Save()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_Save_System_Boolean_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.Save(System.Boolean)">
+  Save(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Saves All ISavable</p>
+  <div class="markdown level1 summary"><p>By Default it saves all savable regardless of it's state
+If DirtyOnly is passed then it only saves Those who's state is dirty
+On Save All ISavable's IsDirty is set to false
+And attempts to save the files to cloud accordingly with the given provider</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UniTask Save()</code></pre>
+    <pre><code class="lang-csharp hljs">public UniTask Save(bool dirtyOnly = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dirtyOnly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>default is false</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTask</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Studio23_SS2_SaveSystem_Core_SaveSystem_SelectLastSelectedSlot_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot*"></a>
+
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_SelectLastSelectedSlot" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot">
+  SelectLastSelectedSlot()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selects Last Selected Slot from PlayerPrefs.
+If not found selects 0 index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniTask SelectLastSelectedSlot()</code></pre>
   </div>
 
 
@@ -368,7 +504,7 @@ If it doesn't exists creates a new slot meta and returns that</p>
 
   <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_SelectSlot_System_Int32_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(System.Int32)">
   SelectSlot(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Selects Save Slot</p>
@@ -385,6 +521,37 @@ If it doesn't exists creates a new slot meta and returns that</p>
     <dd><p>Starts from 0</p>
 </dd>
   </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTask</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Studio23_SS2_SaveSystem_Core_SaveSystem_SyncSelectedSlotData_" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData*"></a>
+
+  <h3 id="Studio23_SS2_SaveSystem_Core_SaveSystem_SyncSelectedSlotData" data-uid="Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData">
+  SyncSelectedSlotData()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Core/SaveSystem.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniTask SyncSelectedSlotData()</code></pre>
+  </div>
+
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">

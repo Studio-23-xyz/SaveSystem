@@ -87,13 +87,55 @@
         <article data-uid="">
 <h1 id="changelog">Changelog</h1>
 
-<h2 id="v118---2023-12-13">[v1.1.8] - 2023-12-13</h2>
+<h2 id="v201---2024-01-22">[v2.0.1] - 2024-01-22</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Added Cloud Save Core Package as Dependency</li>
+<li>Added FileProcessor.cs , replacing the deleted SaveProcessor.cs.</li>
+<li>Added SaveSlotProcessor.cs.</li>
+<li>Added new samples for demonstration and their configurations.</li>
+<li>Added Archiver directory and ArchiverBase.cs, ZipUtilityArchiver.cs.</li>
+<li>Added Encryptor directory and EncryptorBase.cs, AESEncryptor.cs , and deleted Stitcher.cs.</li>
+<li>Added ItemDataBehaviour.cs and PlayerDataBehaviour.cs scripts for demo.</li>
+</ul>
+<h2 id="v200---2024-01-16">[v2.0.0] - 2024-01-16</h2>
 <h3 id="updated">Updated</h3>
+<ul>
+<li>Updated GitHub Actions workflow .github/workflows/UPMBranchUpdate.yml.</li>
+<li>Modified SaveSystemInstallerWindow.cs script.</li>
+<li>Updated SaveSystem.cs and SaveSlot.cs.</li>
+<li>Updated ISaveable.cs interface.</li>
+<li>Moved FakeData.cs from Tests/PlayMode/Data to Samples/Demo/Scripts and updated metadata.</li>
+<li>Deleted test scripts BasicSaveLoadTests.cs, EncryptionTest.cs, and SlotMetaDataTest.cs.</li>
+</ul>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Added SlotConfiguration.cs.</li>
+<li>Added FileProcessor.cs , replacing the deleted SaveProcessor.cs.</li>
+<li>Added SaveSlotProcessor.cs.</li>
+<li>Added new samples for demonstration and their configurations.</li>
+<li>Added Archiver directory and ArchiverBase.cs, ZipUtilityArchiver.cs.</li>
+<li>Added Encryptor directory and EncryptorBase.cs, AESEncryptor.cs , and deleted Stitcher.cs.</li>
+<li>Added ItemDataBehaviour.cs and PlayerDataBehaviour.cs scripts for demo.</li>
+</ul>
+<h2 id="v120---2023-12-14">[v1.2.0] - 2023-12-14</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Added Cloud Save Provider</li>
+<li>Cloud Save Provider Has methods to upload and download files and events to be subscribed</li>
+</ul>
+<h3 id="updated-1">Updated</h3>
+<ul>
+<li>New API added: Delete Selected Slot</li>
+<li>New Test added for the new API</li>
+</ul>
+<h2 id="v118---2023-12-13">[v1.1.8] - 2023-12-13</h2>
+<h3 id="updated-2">Updated</h3>
 <ul>
 <li>Made two internal paths public for extention libraries</li>
 </ul>
 <h2 id="v117---2023-12-7">[v1.1.7] - 2023-12-7</h2>
-<h3 id="updated-1">Updated</h3>
+<h3 id="updated-3">Updated</h3>
 <ul>
 <li>Now Bundling and Unbundling is based on SharpZipLib from unity</li>
 </ul>
@@ -103,45 +145,45 @@
 <li>Fixed a bug regarding enabling encryption</li>
 </ul>
 <h2 id="v115---2023-10-26">[v1.1.5] - 2023-10-26</h2>
-<h3 id="updated-2">Updated</h3>
+<h3 id="updated-4">Updated</h3>
 <ul>
 <li>Save Method will now check if directory exists otherwise create it.</li>
 </ul>
 <h2 id="v113---2023-10-26">[v1.1.3] - 2023-10-26</h2>
-<h3 id="updated-3">Updated</h3>
+<h3 id="updated-5">Updated</h3>
 <ul>
 <li>Updated How Save and Load Methods work.</li>
 </ul>
 <h2 id="v112---2023-10-22">[v1.1.2] - 2023-10-22</h2>
-<h3 id="added">Added</h3>
+<h3 id="added-3">Added</h3>
 <ul>
 <li>Added a new public property called SaveBundle Path. Which can be used by extentions to manage cloud save.</li>
 </ul>
 <h2 id="v112---2023-10-22-1">[v1.1.2] - 2023-10-22</h2>
-<h3 id="added-1">Added</h3>
+<h3 id="added-4">Added</h3>
 <ul>
 <li>New Method added to get save metadata to show UI.</li>
 <li>New Test Cases Added</li>
 </ul>
 <h2 id="v111---2023-10-22">[v1.1.1] - 2023-10-22</h2>
-<h3 id="added-2">Added</h3>
+<h3 id="added-5">Added</h3>
 <ul>
 <li>Added SaveEvent delegate and corresponding events for tracking save and load operations.</li>
 <li>Added methods to handle all components implementing the ISaveable interface, bundle save files into a single file, and extract bundled save files.</li>
 </ul>
-<h3 id="updated-4">Updated</h3>
+<h3 id="updated-6">Updated</h3>
 <ul>
 <li>Modified SaveSystem class to include new events and methods.</li>
 <li>Updated SaveData and LoadData methods to invoke events and return loaded data respectively.</li>
 <li>Updated bundleVersion field in the PlayerSettings structure from 1.1.0 to 1.1.1.</li>
 </ul>
 <h2 id="v110---2023-10-21">[v1.1.0] - 2023-10-21</h2>
-<h3 id="added-3">Added</h3>
+<h3 id="added-6">Added</h3>
 <ul>
 <li>New SaveSystem Class added which will be the new entrypoint of using this  library</li>
 <li>New Test Cases to ensure the library works as intented.</li>
 </ul>
-<h3 id="updated-5">Updated</h3>
+<h3 id="updated-7">Updated</h3>
 <ul>
 <li>Updated how Bundling and unbundeling works.</li>
 </ul>

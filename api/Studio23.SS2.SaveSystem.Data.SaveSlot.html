@@ -158,8 +158,8 @@ public class SaveSlot</code></pre>
 
   <a id="Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor*"></a>
 
-  <h3 id="Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_System_String_" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.String)">
-  SaveSlot(string)
+  <h3 id="Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_System_Int32_" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.Int32)">
+  SaveSlot(int)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/SaveSlot.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -167,12 +167,12 @@ public class SaveSlot</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SaveSlot(string name)</code></pre>
+    <pre><code class="lang-csharp hljs">public SaveSlot(int index)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -252,6 +252,36 @@ public class SaveSlot</code></pre>
 
 
 
+  <h3 id="Studio23_SS2_SaveSystem_Data_SaveSlot_FileKeys" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.FileKeys">
+  FileKeys
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/SaveSlot.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, int&gt; FileKeys</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Studio23_SS2_SaveSystem_Data_SaveSlot_HasBackup" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.HasBackup">
   HasBackup
   <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/SaveSlot.cs/#L20"><i class="bi bi-code-slash"></i></a>
@@ -282,8 +312,8 @@ public class SaveSlot</code></pre>
 
 
 
-  <h3 id="Studio23_SS2_SaveSystem_Data_SaveSlot_Id" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.Id">
-  Id
+  <h3 id="Studio23_SS2_SaveSystem_Data_SaveSlot_Index" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.Index">
+  Index
   <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/SaveSlot.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -291,7 +321,7 @@ public class SaveSlot</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Id</code></pre>
+    <pre><code class="lang-csharp hljs">public int Index</code></pre>
   </div>
 
 
@@ -360,36 +390,6 @@ public class SaveSlot</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Studio23_SS2_SaveSystem_Data_SaveSlot_fileKeys" data-uid="Studio23.SS2.SaveSystem.Data.SaveSlot.fileKeys">
-  fileKeys
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/SaveSystem/blob/main/Assets/Packages/com.studio23.ss2.savesystem/Runtime/Data/SaveSlot.cs/#L22"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; fileKeys</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 

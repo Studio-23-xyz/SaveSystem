@@ -4,62 +4,6 @@ references:
 - uid: Global
   name: ''
   href: api/Global.html
-- uid: Global.AbstractCloudSaveProvider
-  name: AbstractCloudSaveProvider
-  href: api/Global.AbstractCloudSaveProvider.html
-  commentId: T:Global.AbstractCloudSaveProvider
-  fullName: AbstractCloudSaveProvider
-  nameWithType: AbstractCloudSaveProvider
-- uid: Global.AbstractCloudSaveProvider.CloudSaveEvent
-  name: AbstractCloudSaveProvider.CloudSaveEvent
-  href: api/Global.AbstractCloudSaveProvider.CloudSaveEvent.html
-  commentId: T:Global.AbstractCloudSaveProvider.CloudSaveEvent
-  fullName: AbstractCloudSaveProvider.CloudSaveEvent
-  nameWithType: AbstractCloudSaveProvider.CloudSaveEvent
-- uid: Global.AbstractCloudSaveProvider.DownloadFromCloud(System.String,System.String)
-  name: DownloadFromCloud(string, string)
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_DownloadFromCloud_System_String_System_String_
-  commentId: M:Global.AbstractCloudSaveProvider.DownloadFromCloud(System.String,System.String)
-  name.vb: DownloadFromCloud(String, String)
-  fullName: AbstractCloudSaveProvider.DownloadFromCloud(string, string)
-  fullName.vb: AbstractCloudSaveProvider.DownloadFromCloud(String, String)
-  nameWithType: AbstractCloudSaveProvider.DownloadFromCloud(string, string)
-  nameWithType.vb: AbstractCloudSaveProvider.DownloadFromCloud(String, String)
-- uid: Global.AbstractCloudSaveProvider.DownloadFromCloud*
-  name: DownloadFromCloud
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_DownloadFromCloud_
-  commentId: Overload:Global.AbstractCloudSaveProvider.DownloadFromCloud
-  isSpec: "True"
-  fullName: AbstractCloudSaveProvider.DownloadFromCloud
-  nameWithType: AbstractCloudSaveProvider.DownloadFromCloud
-- uid: Global.AbstractCloudSaveProvider.OnDownloadSuccess
-  name: OnDownloadSuccess
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_OnDownloadSuccess
-  commentId: F:Global.AbstractCloudSaveProvider.OnDownloadSuccess
-  fullName: AbstractCloudSaveProvider.OnDownloadSuccess
-  nameWithType: AbstractCloudSaveProvider.OnDownloadSuccess
-- uid: Global.AbstractCloudSaveProvider.OnUploadSuccess
-  name: OnUploadSuccess
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_OnUploadSuccess
-  commentId: F:Global.AbstractCloudSaveProvider.OnUploadSuccess
-  fullName: AbstractCloudSaveProvider.OnUploadSuccess
-  nameWithType: AbstractCloudSaveProvider.OnUploadSuccess
-- uid: Global.AbstractCloudSaveProvider.UploadToCloud(System.String,System.String)
-  name: UploadToCloud(string, string)
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_UploadToCloud_System_String_System_String_
-  commentId: M:Global.AbstractCloudSaveProvider.UploadToCloud(System.String,System.String)
-  name.vb: UploadToCloud(String, String)
-  fullName: AbstractCloudSaveProvider.UploadToCloud(string, string)
-  fullName.vb: AbstractCloudSaveProvider.UploadToCloud(String, String)
-  nameWithType: AbstractCloudSaveProvider.UploadToCloud(string, string)
-  nameWithType.vb: AbstractCloudSaveProvider.UploadToCloud(String, String)
-- uid: Global.AbstractCloudSaveProvider.UploadToCloud*
-  name: UploadToCloud
-  href: api/Global.AbstractCloudSaveProvider.html#Global_AbstractCloudSaveProvider_UploadToCloud_
-  commentId: Overload:Global.AbstractCloudSaveProvider.UploadToCloud
-  isSpec: "True"
-  fullName: AbstractCloudSaveProvider.UploadToCloud
-  nameWithType: AbstractCloudSaveProvider.UploadToCloud
 - uid: Global.ItemData
   name: ItemData
   href: api/Global.ItemData.html
@@ -126,12 +70,19 @@ references:
   isSpec: "True"
   fullName: ItemDataBehaviour.GetUniqueID
   nameWithType: ItemDataBehaviour.GetUniqueID
-- uid: Global.ItemDataBehaviour._uniqueID
-  name: _uniqueID
-  href: api/Global.ItemDataBehaviour.html#Global_ItemDataBehaviour__uniqueID
-  commentId: F:Global.ItemDataBehaviour._uniqueID
-  fullName: ItemDataBehaviour._uniqueID
-  nameWithType: ItemDataBehaviour._uniqueID
+- uid: Global.ItemDataBehaviour.IsDirty
+  name: IsDirty
+  href: api/Global.ItemDataBehaviour.html#Global_ItemDataBehaviour_IsDirty
+  commentId: P:Global.ItemDataBehaviour.IsDirty
+  fullName: ItemDataBehaviour.IsDirty
+  nameWithType: ItemDataBehaviour.IsDirty
+- uid: Global.ItemDataBehaviour.IsDirty*
+  name: IsDirty
+  href: api/Global.ItemDataBehaviour.html#Global_ItemDataBehaviour_IsDirty_
+  commentId: Overload:Global.ItemDataBehaviour.IsDirty
+  isSpec: "True"
+  fullName: ItemDataBehaviour.IsDirty
+  nameWithType: ItemDataBehaviour.IsDirty
 - uid: Global.ItemDataBehaviour.itemData
   name: itemData
   href: api/Global.ItemDataBehaviour.html#Global_ItemDataBehaviour_itemData
@@ -204,6 +155,19 @@ references:
   isSpec: "True"
   fullName: PlayerDataBehaviour.GetUniqueID
   nameWithType: PlayerDataBehaviour.GetUniqueID
+- uid: Global.PlayerDataBehaviour.IsDirty
+  name: IsDirty
+  href: api/Global.PlayerDataBehaviour.html#Global_PlayerDataBehaviour_IsDirty
+  commentId: P:Global.PlayerDataBehaviour.IsDirty
+  fullName: PlayerDataBehaviour.IsDirty
+  nameWithType: PlayerDataBehaviour.IsDirty
+- uid: Global.PlayerDataBehaviour.IsDirty*
+  name: IsDirty
+  href: api/Global.PlayerDataBehaviour.html#Global_PlayerDataBehaviour_IsDirty_
+  commentId: Overload:Global.PlayerDataBehaviour.IsDirty
+  isSpec: "True"
+  fullName: PlayerDataBehaviour.IsDirty
+  nameWithType: PlayerDataBehaviour.IsDirty
 - uid: Global.PlayerDataBehaviour._uniqueID
   name: _uniqueID
   href: api/Global.PlayerDataBehaviour.html#Global_PlayerDataBehaviour__uniqueID
@@ -308,6 +272,19 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.GetSlotMeta
   nameWithType: SaveSystem.GetSlotMeta
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize
+  name: Initialize()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Initialize
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize()
+  nameWithType: SaveSystem.Initialize()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize*
+  name: Initialize
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Initialize_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Initialize
+  nameWithType: SaveSystem.Initialize
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Instance
   name: Instance
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Instance
@@ -327,6 +304,18 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Load
   nameWithType: SaveSystem.Load
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.OnLoadComplete
+  name: OnLoadComplete
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_OnLoadComplete
+  commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.OnLoadComplete
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.OnLoadComplete
+  nameWithType: SaveSystem.OnLoadComplete
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.OnSaveComplete
+  name: OnSaveComplete
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_OnSaveComplete
+  commentId: F:Studio23.SS2.SaveSystem.Core.SaveSystem.OnSaveComplete
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.OnSaveComplete
+  nameWithType: SaveSystem.OnSaveComplete
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.RestoreBackup
   name: RestoreBackup()
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_RestoreBackup
@@ -340,12 +329,15 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.RestoreBackup
   nameWithType: SaveSystem.RestoreBackup
-- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Save
-  name: Save()
-  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Save
-  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.Save
-  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Save()
-  nameWithType: SaveSystem.Save()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Save(System.Boolean)
+  name: Save(bool)
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Save_System_Boolean_
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.Save(System.Boolean)
+  name.vb: Save(Boolean)
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Save(bool)
+  fullName.vb: Studio23.SS2.SaveSystem.Core.SaveSystem.Save(Boolean)
+  nameWithType: SaveSystem.Save(bool)
+  nameWithType.vb: SaveSystem.Save(Boolean)
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.Save*
   name: Save
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_Save_
@@ -353,6 +345,19 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.Save
   nameWithType: SaveSystem.Save
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot
+  name: SelectLastSelectedSlot()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SelectLastSelectedSlot
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot()
+  nameWithType: SaveSystem.SelectLastSelectedSlot()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot*
+  name: SelectLastSelectedSlot
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SelectLastSelectedSlot_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectLastSelectedSlot
+  nameWithType: SaveSystem.SelectLastSelectedSlot
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot(System.Int32)
   name: SelectSlot(int)
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SelectSlot_System_Int32_
@@ -369,6 +374,19 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SelectSlot
   nameWithType: SaveSystem.SelectSlot
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData
+  name: SyncSelectedSlotData()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SyncSelectedSlotData
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData()
+  nameWithType: SaveSystem.SyncSelectedSlotData()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData*
+  name: SyncSelectedSlotData
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_SyncSelectedSlotData_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.SyncSelectedSlotData
+  nameWithType: SaveSystem.SyncSelectedSlotData
 - uid: Studio23.SS2.SaveSystem.Data
   name: Studio23.SS2.SaveSystem.Data
   href: api/Studio23.SS2.SaveSystem.Data.html
@@ -381,15 +399,15 @@ references:
   commentId: T:Studio23.SS2.SaveSystem.Data.SaveSlot
   fullName: Studio23.SS2.SaveSystem.Data.SaveSlot
   nameWithType: SaveSlot
-- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.String)
-  name: SaveSlot(string)
-  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_System_String_
-  commentId: M:Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.String)
-  name.vb: New(String)
-  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.SaveSlot(string)
-  fullName.vb: Studio23.SS2.SaveSystem.Data.SaveSlot.New(String)
-  nameWithType: SaveSlot.SaveSlot(string)
-  nameWithType.vb: SaveSlot.New(String)
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.Int32)
+  name: SaveSlot(int)
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_System_Int32_
+  commentId: M:Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.SaveSlot(int)
+  fullName.vb: Studio23.SS2.SaveSystem.Data.SaveSlot.New(Integer)
+  nameWithType: SaveSlot.SaveSlot(int)
+  nameWithType.vb: SaveSlot.New(Integer)
 - uid: Studio23.SS2.SaveSystem.Data.SaveSlot.#ctor*
   name: SaveSlot
   href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot__ctor_
@@ -412,18 +430,24 @@ references:
   commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.Description
   fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.Description
   nameWithType: SaveSlot.Description
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.FileKeys
+  name: FileKeys
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_FileKeys
+  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.FileKeys
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.FileKeys
+  nameWithType: SaveSlot.FileKeys
 - uid: Studio23.SS2.SaveSystem.Data.SaveSlot.HasBackup
   name: HasBackup
   href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_HasBackup
   commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.HasBackup
   fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.HasBackup
   nameWithType: SaveSlot.HasBackup
-- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.Id
-  name: Id
-  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_Id
-  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.Id
-  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.Id
-  nameWithType: SaveSlot.Id
+- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.Index
+  name: Index
+  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_Index
+  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.Index
+  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.Index
+  nameWithType: SaveSlot.Index
 - uid: Studio23.SS2.SaveSystem.Data.SaveSlot.Name
   name: Name
   href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_Name
@@ -449,12 +473,6 @@ references:
   commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.TimeStamp
   fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.TimeStamp
   nameWithType: SaveSlot.TimeStamp
-- uid: Studio23.SS2.SaveSystem.Data.SaveSlot.fileKeys
-  name: fileKeys
-  href: api/Studio23.SS2.SaveSystem.Data.SaveSlot.html#Studio23_SS2_SaveSystem_Data_SaveSlot_fileKeys
-  commentId: F:Studio23.SS2.SaveSystem.Data.SaveSlot.fileKeys
-  fullName: Studio23.SS2.SaveSystem.Data.SaveSlot.fileKeys
-  nameWithType: SaveSlot.fileKeys
 - uid: Studio23.SS2.SaveSystem.Data.SlotConfiguration
   name: SlotConfiguration
   href: api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html
@@ -566,19 +584,6 @@ references:
   commentId: T:Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow
   fullName: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow
   nameWithType: SaveSystemInstallerWindow
-- uid: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
-  name: ShowWindow()
-  href: api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html#Studio23_SS2_SaveSystem_Editor_SaveSystemInstallerWindow_ShowWindow
-  commentId: M:Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
-  fullName: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow()
-  nameWithType: SaveSystemInstallerWindow.ShowWindow()
-- uid: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow*
-  name: ShowWindow
-  href: api/Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.html#Studio23_SS2_SaveSystem_Editor_SaveSystemInstallerWindow_ShowWindow_
-  commentId: Overload:Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Editor.SaveSystemInstallerWindow.ShowWindow
-  nameWithType: SaveSystemInstallerWindow.ShowWindow
 - uid: Studio23.SS2.SaveSystem.Interfaces
   name: Studio23.SS2.SaveSystem.Interfaces
   href: api/Studio23.SS2.SaveSystem.Interfaces.html
@@ -633,6 +638,19 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.GetUniqueID
   nameWithType: ISaveable.GetUniqueID
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.IsDirty
+  name: IsDirty
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_IsDirty
+  commentId: P:Studio23.SS2.SaveSystem.Interfaces.ISaveable.IsDirty
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.IsDirty
+  nameWithType: ISaveable.IsDirty
+- uid: Studio23.SS2.SaveSystem.Interfaces.ISaveable.IsDirty*
+  name: IsDirty
+  href: api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html#Studio23_SS2_SaveSystem_Interfaces_ISaveable_IsDirty_
+  commentId: Overload:Studio23.SS2.SaveSystem.Interfaces.ISaveable.IsDirty
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Interfaces.ISaveable.IsDirty
+  nameWithType: ISaveable.IsDirty
 - uid: Studio23.SS2.SaveSystem.Utilities
   name: Studio23.SS2.SaveSystem.Utilities
   href: api/Studio23.SS2.SaveSystem.Utilities.html
