@@ -7,12 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
 
-[assembly:InternalsVisibleTo("com.studio23.ss2.savesystem.editor")]
+[assembly: InternalsVisibleTo("com.studio23.ss2.savesystem.editor")]
 namespace Studio23.SS2.SaveSystem.Core
 {
 
@@ -34,7 +33,6 @@ namespace Studio23.SS2.SaveSystem.Core
             CreateSlotFolders();
             await _cloudSaveManager.Initialize();
             await GetAllCloudMeta();
-            await SelectSlot(0);
         }
 
         internal async UniTask SelectSlot(int index)
