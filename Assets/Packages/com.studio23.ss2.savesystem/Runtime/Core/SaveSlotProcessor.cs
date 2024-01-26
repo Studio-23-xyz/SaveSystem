@@ -116,7 +116,7 @@ namespace Studio23.SS2.SaveSystem.Core
 
         private async UniTask SaveSelectedSlotMetadata()
         {
-            _selectedSlot.TimeStamp = DateTime.Now;
+            _selectedSlot.TimeStamp = DateTime.UtcNow;
             string slotPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotMetafileName);
             await _fileProcessor.Save(_selectedSlot, slotPath);
             _cloudSaveManager.UploadToCloud(_selectedSlot.Name, _slotConfiguration.SlotMetafileName, slotPath).Forget();
@@ -213,7 +213,7 @@ namespace Studio23.SS2.SaveSystem.Core
             _cloudSaveManager.UploadToCloud(_selectedSlot.Name, $"{_slotConfiguration.SlotDataBackupFileName}", backupFilePath).Forget();
 
             _selectedSlot.HasBackup = true;
-            _selectedSlot.BackupStamp = DateTime.Now;
+            _selectedSlot.BackupStamp = DateTime.UtcNow;
 
             await SaveSelectedSlotMetadata();
 

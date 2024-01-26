@@ -9,10 +9,12 @@ namespace Studio23.SS2.SaveSystem.Editor
     {
 
         [MenuItem("Studio-23/Save System/Install")]
-        static void CreateDefaultProvider()
+        static void CreateSaveSystem()
         {
             GameObject saveSystemObject = Resources.Load<GameObject>("SaveSystem/SaveSystem");
-            Instantiate(saveSystemObject);
+            
+            Instantiate(saveSystemObject).name="SaveSystem";
+
         }
 
 

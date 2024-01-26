@@ -5,6 +5,7 @@
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.feature.development": "1.0.1",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.project-auditor": "0.10.0",
     "com.unity.sharp-zip-lib": "1.3.5-preview",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.6",

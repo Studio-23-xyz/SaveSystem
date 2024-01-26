@@ -24,7 +24,7 @@ namespace Studio23.SS2.SaveSystem.Data
         public SaveSlot(int index)
         {
             Index = index;
-            TimeStamp = DateTime.Now;
+            TimeStamp = DateTime.UtcNow;
             FileKeys = new Dictionary<string,int>();
         }
 
