@@ -94,10 +94,15 @@
 <p>Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves for Steam or Xbox and other platforms via extensions.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
-<li><a href="#installation">Installation</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#git-url">Git URL</a></li>
+<li><a href="#package-manager">Package Manager</a></li>
+</ul>
+</li>
 <li><a href="#getting-started">Getting Started</a>
 <ul>
-<li><a href="#initialization">Initialization</a></li>
+<li><a href="#setup">Setup</a></li>
 <li><a href="#creating-save-slots">Creating Save Slots</a></li>
 </ul>
 </li>
@@ -113,24 +118,46 @@
 <li><a href="#clearing-slots">Clearing Slots</a></li>
 </ul>
 </li>
-<li><a href="#cloud-save-and-restore">Cloud Save and Restore</a>
+<li><a href="#advance-features">Advance Features</a>
 <ul>
-<li><a href="#bundle-save-files">Bundle Save Files</a></li>
-<li><a href="#unbundle-save-files">Unbundle Save Files</a></li>
+<li><a href="#debug-tools">Debug Tools</a></li>
+<li><a href="#slot-configuration">Slot Configuration</a></li>
+<li><a href="#archiver">Archiver</a></li>
+<li><a href="#encryptors">Encryptors</a></li>
+<li><a href="#cloud-save">Cloud Save</a></li>
 </ul>
 </li>
 </ol>
 <h2 id="installation">Installation</h2>
-<h3 id="install-via-git-url">Install via Git URL</h3>
+<h3 id="git-url">Git URL</h3>
 <p>You can also use the &quot;Install from Git URL&quot; option from Unity Package Manager to install the package.</p>
 <pre><code>https://github.com/Studio-23-xyz/SaveSystem.git#upm
 </code></pre>
+<h3 id="package-manager">Package Manager</h3>
+<ol>
+<li>open Edit/Project Settings/Package Manager</li>
+<li>add a new Scoped Registry (or edit the existing OpenUPM entry)</li>
+</ol>
+<pre><code>Name 	package.openupm.com
+URL 	 https://package.openupm.com
+Scope(s) com.cysharp.unitask
+			com.studio23.ss2.cloudsave
+			com.studio23.ss2.savesystem
+</code></pre>
+<ol start="3">
+<li>click Save or Apply</li>
+<li>open Window/Package Manager</li>
+<li>click +</li>
+<li>select Add package by name... or Add package from git URL...</li>
+<li>paste com.studio23.ss2.savesystem into name</li>
+<li>click Add</li>
+</ol>
 <h2 id="getting-started">Getting Started</h2>
-<h3 id="initialization">Initialization</h3>
-<p>Create An Empty GameObject and attach the SaveSystem MonoBehaviour to it. And you are all set to use the Save System.
-Or You can use the Installer From Top tool bar Studio-23/Save System/ Installer</p>
-<h3 id="creating-save-slots">Creating Save Slots</h3>
-<p>Save slots are used to organize saved game data. You can create and manage save slots as follows:</p>
+<h3 id="setup">Setup</h3>
+<p>From Top tool bar Studio-23-&gt;Save System-&gt;Installer</p>
+<h3 id="initialize">Initialize</h3>
+<p>Before you do anything with savesystem. You must call the initialization method. When should you call this method? Each platform provider should have it's own AuthSystem. Once AuthSystem has done initializing, Save System should attempt to initialize.</p>
+<p>You can  call Initialize method via script like this</p>
 <pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
 using Cysharp.Threading.Tasks;
 
@@ -138,44 +165,26 @@ public class YourGameManager : MonoBehaviour
 {
     private async void Start()
     {
-        // Create save slots
-        await SaveSystem.Instance.CreateSlotsAsync();
+        await SaveSystem.Instance.Initialize();
     }
 }
 </code></pre>
+<p>Ideally this method should be called from an event after the AuthSystem has been initialized</p>
 <h2 id="saving-and-loading-data">Saving and Loading Data</h2>
 <h3 id="saving-data">Saving Data</h3>
-<p>To save data using the SaveSystem library, you can use the <code>SaveData</code> method. Here's how to use it:</p>
-<pre><code class="lang-Csharp">// Example code for saving data
-YourDataType yourData = // Your data here;
-string saveFileName = &quot;example_data&quot;; // Choose a unique name for your data
-string savefilePath = &quot;Your/Save/Path&quot;; // Choose a save directory path
-string extention = &quot;.dat&quot;; // Choose a file extension for your data
+<p>To save data using the SaveSystem library, you need to implement <code>ISavable</code> interface for each monobehaviour that you wish to save. You can find example in the samples folder.</p>
+<p>This is how you can call the save method. By default it will save all ISavable items.</p>
+<pre><code class="lang-Csharp">await SaveSystem.Instance.Save();
 
-await SaveSystem.Instance.SaveData(yourData, saveFileName, savefilePath, extention);
 </code></pre>
-<ul>
-<li><code>yourData</code>: Replace this with the data you want to save.</li>
-<li><code>saveFileName</code>: Choose a unique name for your saved data.</li>
-<li><code>savefilePath</code>: Specify the directory path where you want to save the data.</li>
-<li><code>extention</code>: Choose a file extension for your data.</li>
-</ul>
+<p>If a true is passed, then it will only save those ISavables that are dirty.</p>
+<pre><code class="lang-Csharp">await SaveSystem.Instance.Save(true);
+</code></pre>
+<p><code>Note: You must implement IsDirty property for ISavables</code></p>
 <h3 id="loading-data">Loading Data</h3>
-<p>To load data using the SaveSystem library, you can use the <code>LoadData</code> method. Here's how to use it:</p>
-<pre><code class="lang-Csharp">// Example code for loading data
-string saveFileName = &quot;example_data&quot;; // The same name used when saving
-string savefilePath = &quot;Your/Save/Path&quot;; // The directory where the data was saved
-string extention = &quot;.dat&quot;; // The file extension used for the saved data
-
-YourDataType loadedData = await SaveSystem.Instance.LoadData&lt;YourDataType&gt;(saveFileName, savefilePath, extention);
+<p>Loading data is as simple as calling the LoadMethod.</p>
+<pre><code class="lang-Csharp">await SaveSystem.Instance.LoadData();
 </code></pre>
-<ul>
-<li><code>saveFileName</code>: Use the same name that was used when saving the data.</li>
-<li><code>savefilePath</code>: Specify the directory path where the data was saved.</li>
-<li><code>extention</code>: Use the same file extension that was used for saving the data.</li>
-<li><code>YourDataType</code>: Replace with the actual data type you're expecting to load.</li>
-</ul>
-<p>These methods allow you to save and load custom data types using the SaveSystem library.</p>
 <h2 id="managing-save-slots">Managing Save Slots</h2>
 <h3 id="selecting-a-slot">Selecting a Slot</h3>
 <p>You can switch between save slots by using the <code>SelectSlot</code> method:</p>
@@ -185,12 +194,17 @@ public class YourGameManager : MonoBehaviour
 {
     private void SwitchSaveSlot(int slotIndex)
     {
+    	//Selects the slot at index.
         SaveSystem.Instance.SelectSlot(slotIndex);
+        
+        //Selects the Last Selected slot. Saves the selected index in playerprefs.
+        SaveSystem.Instance.SelectLastSelectedSlot();
     }
 }
 </code></pre>
+<p><code>Slot index starts from 0</code></p>
 <h3 id="clearing-slots">Clearing Slots</h3>
-<p>To clear all save slots, you can use the <code>ClearSlotsAsync</code> method:</p>
+<p>To clear all save slots, you can use these methods</p>
 <pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
 using Cysharp.Threading.Tasks;
 
@@ -199,40 +213,54 @@ public class YourGameManager : MonoBehaviour
     private async void ClearAllSlots()
     {
         // Clear all save slots
-        await SaveSystem.Instance.ClearSlotsAsync();
+        await SaveSystem.Instance.ClearAllSlots();
+        
+        // Clear Selected Slot only
+        await SaveSystem.Instance.ClearSelectedSlot();
+        
     }
 }
 </code></pre>
-<h2 id="cloud-save-and-restore">Cloud Save and Restore</h2>
-<h3 id="bundle-save-files">Bundle Save Files</h3>
-<p>You can bundle save files for cloud storage with the <code>BundleSaveFiles</code> method:</p>
-<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
-using Cysharp.Threading.Tasks;
+<h1 id="advance-features">Advance Features</h1>
+<h2 id="debug-tools">Debug Tools</h2>
+<p><img src="./Screenshots%7E/DebugTools.png" alt=""></p>
+<p>A set if tools to make developers life easy. Run the public methods from editor directly.</p>
+<h2 id="slot-configuration">Slot Configuration</h2>
+<p>You can change how the files are saved or how many slots will be there.</p>
+<p><img src="./Screenshots%7E/SlotConfig.png" alt=""></p>
+<ul>
+<li><code>Slot Count</code> : The number of slots that will be allocated. <em>(Basically number of folders)</em></li>
+<li><code>Enable Backups</code> : When enabled, Save system will create backups of selected slot if Loading is successful. If loading is sucessful, The integrity is validated.By default this is enabled</li>
+<li><code>Slot Data Folder Name</code> : Name of the folder that keeps the saved data files.</li>
+<li><code>Backup File Name</code> : Name of the backup file. If created.</li>
+<li><code>Metafile Name</code> : Name of the meta file.</li>
+<li><code>Save File Extention</code> : extention for savefiles.</li>
+<li><code>Root Folder Name</code> : Name of the root folder of SaveSystem.</li>
+</ul>
+<p><strong>Changing anything from here is not recommended after your game has been shipped as it will impact how the files and folders are managed and loaded</strong></p>
+<h2 id="archiver">Archiver</h2>
+<p>SaveSystem comes with <code>ZipUtilityArchiver</code>.This is used to create backups.You can create your own Encryptor by inheriting the <code>ArchiverBase</code> Class.</p>
+<p><strong>Valid Archiver is required for creating backup</strong></p>
+<h2 id="encryptors">Encryptors</h2>
+<p>If you assign an encryptor scriptable object to the savesystem monobehaviour it will encrypt before saving files and decrypt before loading files. SaveSystem comes with <code>AESEncryptor</code>. You can create your own Encryptor by inheriting the <code>EncryptorBase</code> Class.</p>
+<p><strong>If you don't wish to use any encryption simply remove the scriptable object from the monobehaviour.</strong></p>
+<h2 id="cloud-save">Cloud Save</h2>
+<p>Cloud save functionalities require installing platform dependent packages such as Steam &amp; XBOX. For development the SaveSystem Package comes with DummyProviders. You can later swap out with appropiate packages or implement your own.</p>
+<p>The way it works is on successful save the system sends all the saved files to the assigned provider to upload to the cloud.</p>
+<p>Given that a valid provider is assigned you can utilize the following cloud methods.</p>
+<pre><code class="lang-csharp">// Sync with the cloud data
+await SaveSystem.Instance.SyncSelectedSlotData();
 
-public class YourGameManager : MonoBehaviour
-{
-    private async void BundleSaveFilesForCloud()
-    {
-        // Bundle save files for cloud storage
-        await SaveSystem.Instance.BundleSaveFiles();
-    }
-}
+// Attempts to restore local backup. If fails attempts to restore from cloud. if still fails it throws exception. This shouldn't happen.
+await SaveSystem.Instance.RestoreBackup();
 </code></pre>
-<h3 id="unbundle-save-files">Unbundle Save Files</h3>
-<p>To restore save files from cloud storage, use the <code>UnBundleSaveFiles</code> method:</p>
-<pre><code class="lang-csharp">using Studio23.SS2.SaveSystem.Core;
-using Cysharp.Threading.Tasks;
-
-public class YourGameManager : MonoBehaviour
-{
-    private async void RestoreSaveFilesFromCloud()
-    {
-        // Restore save files from cloud storage
-        await SaveSystem.Instance.UnBundleSaveFiles();
-    }
-}
-</code></pre>
+<blockquote>
 <p>That's it! You now have the basic information you need to use the <strong>SaveSystem</strong> library in your Unity project. Explore the library's features and customize it according to your game's needs.</p>
+</blockquote>
+<hr>
+<h2 id="other-links">Other Links</h2>
+<p><a href="https://studio-23-xyz.github.io/SaveSystem/api/index.html">Scripting API Documentation</a>
+<a href="https://openupm.com/packages/com.studio23.ss2.savesystem/">OpenUPM Page</a></p>
 
 </article>
 
