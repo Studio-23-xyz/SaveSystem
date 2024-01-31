@@ -1,5 +1,7 @@
 using Cysharp.Threading.Tasks;
 using Studio23.SS2.SaveSystem.Data;
+using System.Diagnostics;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -62,7 +64,12 @@ namespace Studio23.SS2.SaveSystem.Editor
 
                 if (_selectedSlot != null)
                 {
+                    GUI.backgroundColor = Color.black;
 
+                    EditorGUILayout.Space();
+                    EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+
+                    GUI.backgroundColor = Color.white;
                     EditorGUILayout.LabelField("Selected Slot Information", EditorStyles.boldLabel);
                     EditorGUILayout.LabelField($"Name: {_selectedSlot.Name}");
                     EditorGUILayout.LabelField($"Description: {_selectedSlot.Description}");
@@ -85,7 +92,8 @@ namespace Studio23.SS2.SaveSystem.Editor
                         EditorGUILayout.Space();
                         EditorGUILayout.LabelField($"{fileCount} Files in the meta");
                     }
-
+                    EditorGUILayout.EndVertical();
+                    EditorGUILayout.Space();
                 }
 
                 GUI.backgroundColor = Color.green;
@@ -103,7 +111,7 @@ namespace Studio23.SS2.SaveSystem.Editor
                 GUI.backgroundColor = Color.white; // Reset color
 
       
-                GUI.backgroundColor = Color.red;
+                GUI.backgroundColor = Color.yellow;
                 if (GUILayout.Button("Sync Selected Slot Data"))
                 {
                     saveSystem.SyncSelectedSlotData().Forget();
@@ -120,14 +128,28 @@ namespace Studio23.SS2.SaveSystem.Editor
                     saveSystem.RestoreBackup().Forget();
                 }
 
+                GUI.backgroundColor = Color.red; // Reset color
                 if (GUILayout.Button("Clear Selected Slot"))
                 {
                     saveSystem.ClearSelectedSlot().Forget();
                 }
+                
+                if (GUILayout.Button("Clear Selected Slot From Cloud"))
+                {
+                    saveSystem.ClearSelectedSlotCloud().Forget();
+                }
+
 
                 if (GUILayout.Button("Clear All Slots"))
                 {
                     saveSystem.ClearAllSlots().Forget();
+                }
+
+                GUI.backgroundColor = Color.cyan;
+                if (GUILayout.Button("Open Save Directory"))
+                {
+                    string saveFolderPath = Path.Combine(Application.persistentDataPath);
+                    OpenInFileExplorer(saveFolderPath);
                 }
 
                 EditorGUILayout.EndVertical();
@@ -139,7 +161,11 @@ namespace Studio23.SS2.SaveSystem.Editor
             EditorGUILayout.EndFoldoutHeaderGroup();
         }
 
-
+        private void OpenInFileExplorer(string path)
+        {
+            path = path.Replace(@"/", @"\");   // Replaces slashes with backslashes
+            Process.Start("explorer.exe", "/select," + path);   // Opens file explorer with the specified path selected
+        }
 
     }
 }

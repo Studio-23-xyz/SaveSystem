@@ -8,7 +8,7 @@
       "url": "https://package.openupm.com"
     },
     "com.studio23.ss2.cloudsave": {
-      "version": "2.0.0",
+      "version": "2.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

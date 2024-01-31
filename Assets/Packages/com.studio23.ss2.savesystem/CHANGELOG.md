@@ -1,5 +1,14 @@
 # Changelog
 
+## [v2.0.3] - 2024-01-31
+
+### Updated
+- Code Cleanup and refactor
+- New editor tools for debugging
+- Documentation Update
+- Archive method is now more robust
+
+
 ## [v2.0.2] - 2024-01-26
 
 ### Updated

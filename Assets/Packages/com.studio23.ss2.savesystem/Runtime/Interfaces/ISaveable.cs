@@ -1,3 +1,6 @@
+using Cysharp.Threading.Tasks;
+using UnityEngine;
+
 namespace Studio23.SS2.SaveSystem.Interfaces
 {
     public interface ISaveable
@@ -24,5 +27,15 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         /// <param name="data">String data</param>
         public void AssignSerializedData(string data);
 
+#if UNITY_EDITOR
+        /// <summary>
+        /// Debug only Method. Do not use for any other reason
+        /// </summary>
+        public void DeleteLocalFile()
+        {
+           Core.SaveSystem.Instance.DeleteKeyFromSelectedSlot(GetUniqueID()).Forget();
+        }
+
+#endif
     }
 }

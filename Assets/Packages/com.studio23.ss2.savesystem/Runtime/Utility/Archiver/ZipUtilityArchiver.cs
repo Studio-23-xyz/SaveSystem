@@ -22,6 +22,10 @@ namespace Studio23.SS2.SaveSystem.Utilities
         {
             await UniTask.RunOnThreadPool(() =>
             {
+                if(!Directory.Exists(extractDirectory))
+                {
+                    Directory.CreateDirectory(extractDirectory);
+                }
                 if (cleanDirectory)
                 {
                     Directory.Delete(extractDirectory, true);

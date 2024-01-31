@@ -26,54 +26,18 @@ namespace Studio23.SS2.SaveSystem.Core
         [SerializeField] internal FileProcessor _fileProcessor;
         [SerializeField] internal ArchiverBase _archiverBase;
         [SerializeField] internal SlotConfiguration _slotConfiguration;
+        [SerializeField] internal string SavePathRoot;
 
-        public async UniTask Initialize()
-        {
-            _fileProcessor = GetComponent<FileProcessor>();
-            CreateSlotFolders();
-            await _cloudSaveManager.Initialize();
-            await GetAllCloudMeta();
-        }
-
-        internal async UniTask SelectSlot(int index)
-        {
-            _selectedSlot= await GetSaveSlotMetaDataLocal(index);
-            PlayerPrefs.SetInt(LastSelectedSaveSlotPrefsKey, index);
-        }
-
-        internal async UniTask SelectLastSelectedSlot()
-        {
-            int index=PlayerPrefs.GetInt(LastSelectedSaveSlotPrefsKey,0);
-            await SelectSlot(index);
-        }
-
+        #region Setup
         internal string GetSelectedSlotPath()
         {
-            return Path.Combine(_slotConfiguration.SavePathRoot, _selectedSlot.Name);
+            return Path.Combine(SavePathRoot, _selectedSlot.Name);
         }
-
-        internal void CreateSlotFolders()
-        {
-
-            for (int i = 0; i < _slotConfiguration.SlotCount; i++)
-            {
-                SaveSlot slot = new SaveSlot(i);
-
-                string slotPath = Path.Combine(_slotConfiguration.SavePathRoot, slot.Name,_slotConfiguration.SlotDatafolderName);
-                if (Directory.Exists(slotPath))
-                {
-                    continue;
-                }
-                Directory.CreateDirectory(slotPath);
-
-            }
-        }
-
         internal async UniTask<SaveSlot> GetSaveSlotMetaDataLocal(int index)
         {
-            SaveSlot slotMeta=new SaveSlot(index);
+            SaveSlot slotMeta = new SaveSlot(index);
 
-            string slotMetaPath = Path.Combine(_slotConfiguration.SavePathRoot, slotMeta.Name, _slotConfiguration.SlotMetafileName);
+            string slotMetaPath = Path.Combine(SavePathRoot, slotMeta.Name, _slotConfiguration.SlotMetafileName);
             if (File.Exists(slotMetaPath))
             {
                 slotMeta = await _fileProcessor.Load<SaveSlot>(slotMetaPath);
@@ -82,68 +46,85 @@ namespace Studio23.SS2.SaveSystem.Core
             return slotMeta;
 
         }
-
-        internal async UniTask GetAllCloudMeta()
+        public async UniTask Initialize()
         {
-            List<UniTask> cloudMetaDownloadTaskList = new List<UniTask>();
+            SavePathRoot = Path.Combine(Application.persistentDataPath, _slotConfiguration.SaveRootFolderName);
+            _fileProcessor = GetComponent<FileProcessor>();
+            CreateSlotFolders();
+            await _cloudSaveManager.Initialize();
+            await GetAllCloudMeta();
+        }
+        internal void CreateSlotFolders()
+        {
 
-            for(int i=0;i< _slotConfiguration.SlotCount; i++)
+            for (int i = 0; i < _slotConfiguration.SlotCount; i++)
             {
-                SaveSlot slotMeta = new SaveSlot(i);
-                string slotMetaPath = Path.Combine(_slotConfiguration.SavePathRoot, slotMeta.Name, _slotConfiguration.SlotMetafileName);
-                UniTask metafileTask = _cloudSaveManager.DownloadFromCloud(slotMeta.Name, _slotConfiguration.SlotMetafileName, slotMetaPath);
-              
-                cloudMetaDownloadTaskList.Add(metafileTask);
+                SaveSlot slot = new SaveSlot(i);
+
+                string slotPath = Path.Combine(SavePathRoot, slot.Name, _slotConfiguration.SlotDatafolderName);
+                if (Directory.Exists(slotPath))
+                {
+                    continue;
+                }
+                Directory.CreateDirectory(slotPath);
+
             }
-
-            await UniTask.WhenAll(cloudMetaDownloadTaskList);
         }
+        #endregion
 
-        internal async UniTask SyncSelectedSlotData()
+        internal async UniTask SelectSlot(int index)
         {
-            List<UniTask> datafileDownloadTaskList=new List<UniTask>();
-
-            foreach(string key in _selectedSlot.FileKeys.Keys)
-            {
-                string filePath = Path.Combine(_slotConfiguration.SavePathRoot, _selectedSlot.Name, _slotConfiguration.SlotDatafolderName,$"{key}{_slotConfiguration.SaveFileExtention}");
-                UniTask fileTask = _cloudSaveManager.DownloadFromCloud(_selectedSlot.Name, key, filePath);
-                datafileDownloadTaskList.Add(fileTask);
-            }
-
-            await UniTask.WhenAll(datafileDownloadTaskList);
+            _selectedSlot = await GetSaveSlotMetaDataLocal(index);
+            PlayerPrefs.SetInt(LastSelectedSaveSlotPrefsKey, index);
         }
-
-
-        private async UniTask SaveSelectedSlotMetadata()
+        internal async UniTask SelectLastSelectedSlot()
         {
-            _selectedSlot.TimeStamp = DateTime.UtcNow;
-            string slotPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotMetafileName);
-            await _fileProcessor.Save(_selectedSlot, slotPath);
-            _cloudSaveManager.UploadToCloud(_selectedSlot.Name, _slotConfiguration.SlotMetafileName, slotPath).Forget();
+            int index = PlayerPrefs.GetInt(LastSelectedSaveSlotPrefsKey, 0);
+            await SelectSlot(index);
         }
 
+        #region Delete
         internal async UniTask ClearAllSlotsAsync()
         {
 
             for (int i = 0; i < _slotConfiguration.SlotCount; i++)
             {
-                string filepath = Path.Combine(_slotConfiguration.SavePathRoot, $"Save_Slot_{i}");
-                if(Directory.Exists(filepath))
+                string filepath = Path.Combine(SavePathRoot, $"Save_Slot_{i}");
+                if (Directory.Exists(filepath))
                 {
                     await UniTask.RunOnThreadPool(() => Directory.Delete(filepath, true));
                 }
-              
+
             }
             CreateSlotFolders();
         }
-
         internal async UniTask ClearSelectedSlotAsync()
         {
             string filepath = GetSelectedSlotPath();
             await UniTask.RunOnThreadPool(() => Directory.Delete(filepath, true));
             CreateSlotFolders();
         }
+        internal async UniTask ClearSelectedSlotCloudAsync()
+        {
+            await _cloudSaveManager.DeleteContainerFromCloud(_selectedSlot.Name);
+        }
 
+
+#if UNITY_EDITOR
+        /// <summary>
+        /// Should only be used for debug purposes. This does not update meta file keys
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        internal async UniTask DeleteKeyFromSelectedSlot(string key)
+        {
+            string filepath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName, $"{key}{_slotConfiguration.SaveFileExtention}");
+            await UniTask.RunOnThreadPool(() => File.Delete(filepath));
+        }
+#endif
+        #endregion
+
+        #region Save
         internal async UniTask SaveAllSavable(bool dirtyOnly)
         {
             IEnumerable<ISaveable> savableComponents = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>();
@@ -153,9 +134,8 @@ namespace Studio23.SS2.SaveSystem.Core
             }
             await SaveISavables(savableComponents);
 
-        
-        }
 
+        }
         private async UniTask SaveISavables(IEnumerable<ISaveable> savableComponents)
         {
 
@@ -168,15 +148,23 @@ namespace Studio23.SS2.SaveSystem.Core
 
                 await _fileProcessor.Save(data, filepath);
 
-                _cloudSaveManager.UploadToCloud(_selectedSlot.Name, $"{key}{_slotConfiguration.SaveFileExtention}", filepath).Forget();
+                _cloudSaveManager.UploadToCloud(_selectedSlot.Name, $"{key}", filepath).Forget();
 
-                _selectedSlot.FileKeys[$"{key}{_slotConfiguration.SaveFileExtention}"]= Encoding.Unicode.GetByteCount(data);
+                _selectedSlot.FileKeys[$"{key}"] = Encoding.Unicode.GetByteCount(data);
 
                 savableComponent.IsDirty = false;
             }
 
             await SaveSelectedSlotMetadata();
         }
+        private async UniTask SaveSelectedSlotMetadata()
+        {
+            _selectedSlot.TimeStamp = DateTime.UtcNow;
+            string slotPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotMetafileName);
+            await _fileProcessor.Save(_selectedSlot, slotPath);
+            _cloudSaveManager.UploadToCloud(_selectedSlot.Name, _slotConfiguration.SlotMetafileName, slotPath).Forget();
+        }
+        #endregion
 
         internal async UniTask LoadAllSavable()
         {
@@ -185,7 +173,7 @@ namespace Studio23.SS2.SaveSystem.Core
             foreach (var savableComponent in savableComponents)
             {
                 string key = savableComponent.GetUniqueID();
-                string filepath = Path.Combine(GetSelectedSlotPath(),_slotConfiguration.SlotDatafolderName, $"{key}{_slotConfiguration.SaveFileExtention}");
+                string filepath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName, $"{key}{_slotConfiguration.SaveFileExtention}");
                 if (!File.Exists(filepath))
                 {
                     throw new Exception($"{key} Not found");
@@ -197,16 +185,45 @@ namespace Studio23.SS2.SaveSystem.Core
             if (_slotConfiguration.EnableBackups)
             {
                 Debug.Log($"Save Integrity Validated,<color=yellow> Creating Backup </color>");
-                CreateBackup().Forget();  
+                CreateBackup().Forget();
             }
 
         }
 
+        #region Cloud Methods
+        internal async UniTask GetAllCloudMeta()
+        {
+            List<UniTask> cloudMetaDownloadTaskList = new List<UniTask>();
+
+            for (int i = 0; i < _slotConfiguration.SlotCount; i++)
+            {
+                SaveSlot slotMeta = new SaveSlot(i);
+                string slotMetaPath = Path.Combine(SavePathRoot, slotMeta.Name, _slotConfiguration.SlotMetafileName);
+                UniTask metafileTask = _cloudSaveManager.DownloadFromCloud(slotMeta.Name, _slotConfiguration.SlotMetafileName, slotMetaPath);
+
+                cloudMetaDownloadTaskList.Add(metafileTask);
+            }
+
+            await UniTask.WhenAll(cloudMetaDownloadTaskList);
+        }
+        internal async UniTask SyncSelectedSlotData()
+        {
+            List<UniTask> datafileDownloadTaskList = new List<UniTask>();
+
+            foreach (string key in _selectedSlot.FileKeys.Keys)
+            {
+                string filePath = Path.Combine(SavePathRoot, _selectedSlot.Name, _slotConfiguration.SlotDatafolderName, $"{key}{_slotConfiguration.SaveFileExtention}");
+                UniTask fileTask = _cloudSaveManager.DownloadFromCloud(_selectedSlot.Name, key, filePath);
+                datafileDownloadTaskList.Add(fileTask);
+            }
+
+            await UniTask.WhenAll(datafileDownloadTaskList);
+        }
         internal async UniTask CreateBackup()
         {
             string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName);
             string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDataBackupFileName);
-           
+
 
             await _archiverBase.ArchiveFiles(backupFilePath, dataFolderPath);
             Debug.Log($"<color=green>Backup</color> Created at {backupFilePath}");
@@ -218,15 +235,12 @@ namespace Studio23.SS2.SaveSystem.Core
             await SaveSelectedSlotMetadata();
 
         }
-
-
-
         internal async UniTask RestoreBackup()
         {
             string dataFolderPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName);
             string backupFilePath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDataBackupFileName);
 
-            if(!File.Exists(backupFilePath))
+            if (!File.Exists(backupFilePath))
             {
                 Debug.Log("Backup File not found, Attempting to restore from cloud");
                 await _cloudSaveManager.DownloadFromCloud(_selectedSlot.Name, $"{_slotConfiguration.SlotDataBackupFileName}", backupFilePath);
@@ -238,10 +252,12 @@ namespace Studio23.SS2.SaveSystem.Core
                 throw new Exception("Cloud Save doesn't exist, Provide proper UI");
             }
 
-            await _archiverBase.ExtractFiles(backupFilePath, dataFolderPath,true);
+
+
+            await _archiverBase.ExtractFiles(backupFilePath, dataFolderPath, true);
 
         }
-
+        #endregion
 
 
 

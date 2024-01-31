@@ -17,7 +17,7 @@ namespace Studio23.SS2.SaveSystem.Data
 
 
         public string SaveRootFolderName = "SaveData";
-        public string SavePathRoot => Path.Combine(Application.persistentDataPath, SaveRootFolderName);
+        
 
     }
 }

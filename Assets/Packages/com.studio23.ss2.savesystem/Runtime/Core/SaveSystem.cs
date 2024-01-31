@@ -100,12 +100,21 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
         /// <summary>
-        /// Clears Selected Slot
+        /// Clears selected slot from local
         /// </summary>
         /// <returns></returns>
         public async UniTask ClearSelectedSlot()
         {
             await _slotProcessor.ClearSelectedSlotAsync();
+        }
+
+        /// <summary>
+        ///  Clears selected slot from cloud
+        /// </summary>
+        /// <returns></returns>
+        public async UniTask ClearSelectedSlotCloud()
+        {
+            await _slotProcessor.ClearSelectedSlotCloudAsync();
         }
 
         /// <summary>
@@ -117,9 +126,12 @@ namespace Studio23.SS2.SaveSystem.Core
             await _slotProcessor.ClearAllSlotsAsync();
         }
 
-
-
-
+#if UNITY_EDITOR
+        public async UniTask DeleteKeyFromSelectedSlot(string key)
+        {
+            await _slotProcessor.DeleteKeyFromSelectedSlot(key);
+        }
+#endif
 
 
     }

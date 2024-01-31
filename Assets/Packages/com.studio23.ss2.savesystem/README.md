@@ -165,14 +165,14 @@ public class YourGameManager : MonoBehaviour
 # Advance Features
 
 ## Debug Tools
-![](./Screenshots~/DebugTools.png)
+![](https://raw.githubusercontent.com/Studio-23-xyz/SaveSystem/9b596bc83e93f5a954f035b647cf6e6984cc8218/Screenshots%7E/DebugTools.png)
 
 A set if tools to make developers life easy. Run the public methods from editor directly.
 
 ## Slot Configuration
 You can change how the files are saved or how many slots will be there.
 
-![](./Screenshots~/SlotConfig.png)
+![](https://raw.githubusercontent.com/Studio-23-xyz/SaveSystem/main/Screenshots%7E/SlotConfig.png)
 - `Slot Count` : The number of slots that will be allocated. *(Basically number of folders)*
 - `Enable Backups` : When enabled, Save system will create backups of selected slot if Loading is successful. If loading is sucessful, The integrity is validated.By default this is enabled
 - `Slot Data Folder Name` : Name of the folder that keeps the saved data files.
