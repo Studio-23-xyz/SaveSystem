@@ -32,7 +32,7 @@
   "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.SaveSystem.html",
     "title": "Class SaveSystem | |",
-    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem OnLoadComplete public UnityEvent OnLoadComplete Field Value UnityEvent OnSaveComplete public UnityEvent OnSaveComplete Field Value UnityEvent Methods ClearAllSlots() Clears All Slots public UniTask ClearAllSlots() Returns UniTask ClearSelectedSlot() Clears Selected Slot public UniTask ClearSelectedSlot() Returns UniTask GetSlotMeta(int) Returns Slot metadata for the given index. If it exists locally then returns that. If it doesn't exists creates a new slot meta and returns that public UniTask<SaveSlot> GetSlotMeta(int index) Parameters index int Index starts from 0 Returns UniTask<SaveSlot> Initialize() public UniTask Initialize() Returns UniTask Load() Loads All ISavable public UniTask Load() Returns UniTask RestoreBackup() Restores Backup if available If not available locally attempts to restore from cloud if still fails then throws error Wrap in try catch and show proper UI public UniTask RestoreBackup() Returns UniTask Save(bool) By Default it saves all savable regardless of it's state If DirtyOnly is passed then it only saves Those who's state is dirty On Save All ISavable's IsDirty is set to false And attempts to save the files to cloud accordingly with the given provider public UniTask Save(bool dirtyOnly = false) Parameters dirtyOnly bool default is false Returns UniTask SelectLastSelectedSlot() Selects Last Selected Slot from PlayerPrefs. If not found selects 0 index public UniTask SelectLastSelectedSlot() Returns UniTask SelectSlot(int) Selects Save Slot public UniTask SelectSlot(int index) Parameters index int Starts from 0 Returns UniTask SyncSelectedSlotData() public UniTask SyncSelectedSlotData() Returns UniTask"
+    "keywords": "Class SaveSystem Namespace Studio23.SS2.SaveSystem.Core public class SaveSystem : MonoBehaviour Inheritance object SaveSystem Fields Instance public static SaveSystem Instance Field Value SaveSystem OnLoadComplete public UnityEvent OnLoadComplete Field Value UnityEvent OnSaveComplete public UnityEvent OnSaveComplete Field Value UnityEvent Methods ClearAllSlots() Clears All Slots public UniTask ClearAllSlots() Returns UniTask ClearSelectedSlot() Clears selected slot from local public UniTask ClearSelectedSlot() Returns UniTask ClearSelectedSlotCloud() Clears selected slot from cloud public UniTask ClearSelectedSlotCloud() Returns UniTask GetSlotMeta(int) Returns Slot metadata for the given index. If it exists locally then returns that. If it doesn't exists creates a new slot meta and returns that public UniTask<SaveSlot> GetSlotMeta(int index) Parameters index int Index starts from 0 Returns UniTask<SaveSlot> Initialize() public UniTask Initialize() Returns UniTask Load() Loads All ISavable public UniTask Load() Returns UniTask RestoreBackup() Restores Backup if available If not available locally attempts to restore from cloud if still fails then throws error Wrap in try catch and show proper UI public UniTask RestoreBackup() Returns UniTask Save(bool) By Default it saves all savable regardless of it's state If DirtyOnly is passed then it only saves Those who's state is dirty On Save All ISavable's IsDirty is set to false And attempts to save the files to cloud accordingly with the given provider public UniTask Save(bool dirtyOnly = false) Parameters dirtyOnly bool default is false Returns UniTask SelectLastSelectedSlot() Selects Last Selected Slot from PlayerPrefs. If not found selects 0 index public UniTask SelectLastSelectedSlot() Returns UniTask SelectSlot(int) Selects Save Slot public UniTask SelectSlot(int index) Parameters index int Starts from 0 Returns UniTask SyncSelectedSlotData() public UniTask SyncSelectedSlotData() Returns UniTask"
   },
   "api/Studio23.SS2.SaveSystem.Core.html": {
     "href": "api/Studio23.SS2.SaveSystem.Core.html",
@@ -47,12 +47,17 @@
   "api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html": {
     "href": "api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html",
     "title": "Class SlotConfiguration | |",
-    "keywords": "Class SlotConfiguration Namespace Studio23.SS2.SaveSystem.Data public class SlotConfiguration : ScriptableObject Inheritance object SlotConfiguration Fields EnableBackups public bool EnableBackups Field Value bool SaveFileExtention public string SaveFileExtention Field Value string SaveRootFolderName public string SaveRootFolderName Field Value string SlotCount public int SlotCount Field Value int SlotDataBackupFileName public string SlotDataBackupFileName Field Value string SlotDatafolderName public string SlotDatafolderName Field Value string SlotMetafileName public string SlotMetafileName Field Value string Properties SavePathRoot public string SavePathRoot { get; } Property Value string"
+    "keywords": "Class SlotConfiguration Namespace Studio23.SS2.SaveSystem.Data public class SlotConfiguration : ScriptableObject Inheritance object SlotConfiguration Fields EnableBackups public bool EnableBackups Field Value bool SaveFileExtention public string SaveFileExtention Field Value string SaveRootFolderName public string SaveRootFolderName Field Value string SlotCount public int SlotCount Field Value int SlotDataBackupFileName public string SlotDataBackupFileName Field Value string SlotDatafolderName public string SlotDatafolderName Field Value string SlotMetafileName public string SlotMetafileName Field Value string"
   },
   "api/Studio23.SS2.SaveSystem.Data.html": {
     "href": "api/Studio23.SS2.SaveSystem.Data.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Data | |",
     "keywords": "Namespace Studio23.SS2.SaveSystem.Data Classes SaveSlot SlotConfiguration"
+  },
+  "api/Studio23.SS2.SaveSystem.Editor.ISavableEditor.html": {
+    "href": "api/Studio23.SS2.SaveSystem.Editor.ISavableEditor.html",
+    "title": "Class ISavableEditor | |",
+    "keywords": "Class ISavableEditor Namespace Studio23.SS2.SaveSystem.Editor public class ISavableEditor : UnityEditor.Editor Inheritance object ISavableEditor Methods OnInspectorGUI() public override void OnInspectorGUI()"
   },
   "api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.html": {
     "href": "api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.html",
@@ -72,7 +77,7 @@
   "api/Studio23.SS2.SaveSystem.Editor.html": {
     "href": "api/Studio23.SS2.SaveSystem.Editor.html",
     "title": "Namespace Studio23.SS2.SaveSystem.Editor | |",
-    "keywords": "Namespace Studio23.SS2.SaveSystem.Editor Classes SaveSlotProcessorEditor SaveSystemEditor SaveSystemInstallerWindow"
+    "keywords": "Namespace Studio23.SS2.SaveSystem.Editor Classes ISavableEditor SaveSlotProcessorEditor SaveSystemEditor SaveSystemInstallerWindow"
   },
   "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html": {
     "href": "api/Studio23.SS2.SaveSystem.Interfaces.ISaveable.html",

@@ -256,6 +256,19 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlot
   nameWithType: SaveSystem.ClearSelectedSlot
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlotCloud
+  name: ClearSelectedSlotCloud()
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_ClearSelectedSlotCloud
+  commentId: M:Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlotCloud
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlotCloud()
+  nameWithType: SaveSystem.ClearSelectedSlotCloud()
+- uid: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlotCloud*
+  name: ClearSelectedSlotCloud
+  href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_ClearSelectedSlotCloud_
+  commentId: Overload:Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlotCloud
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Core.SaveSystem.ClearSelectedSlotCloud
+  nameWithType: SaveSystem.ClearSelectedSlotCloud
 - uid: Studio23.SS2.SaveSystem.Core.SaveSystem.GetSlotMeta(System.Int32)
   name: GetSlotMeta(int)
   href: api/Studio23.SS2.SaveSystem.Core.SaveSystem.html#Studio23_SS2_SaveSystem_Core_SaveSystem_GetSlotMeta_System_Int32_
@@ -491,19 +504,6 @@ references:
   commentId: F:Studio23.SS2.SaveSystem.Data.SlotConfiguration.SaveFileExtention
   fullName: Studio23.SS2.SaveSystem.Data.SlotConfiguration.SaveFileExtention
   nameWithType: SlotConfiguration.SaveFileExtention
-- uid: Studio23.SS2.SaveSystem.Data.SlotConfiguration.SavePathRoot
-  name: SavePathRoot
-  href: api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html#Studio23_SS2_SaveSystem_Data_SlotConfiguration_SavePathRoot
-  commentId: P:Studio23.SS2.SaveSystem.Data.SlotConfiguration.SavePathRoot
-  fullName: Studio23.SS2.SaveSystem.Data.SlotConfiguration.SavePathRoot
-  nameWithType: SlotConfiguration.SavePathRoot
-- uid: Studio23.SS2.SaveSystem.Data.SlotConfiguration.SavePathRoot*
-  name: SavePathRoot
-  href: api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html#Studio23_SS2_SaveSystem_Data_SlotConfiguration_SavePathRoot_
-  commentId: Overload:Studio23.SS2.SaveSystem.Data.SlotConfiguration.SavePathRoot
-  isSpec: "True"
-  fullName: Studio23.SS2.SaveSystem.Data.SlotConfiguration.SavePathRoot
-  nameWithType: SlotConfiguration.SavePathRoot
 - uid: Studio23.SS2.SaveSystem.Data.SlotConfiguration.SaveRootFolderName
   name: SaveRootFolderName
   href: api/Studio23.SS2.SaveSystem.Data.SlotConfiguration.html#Studio23_SS2_SaveSystem_Data_SlotConfiguration_SaveRootFolderName
@@ -540,6 +540,25 @@ references:
   commentId: N:Studio23.SS2.SaveSystem.Editor
   fullName: Studio23.SS2.SaveSystem.Editor
   nameWithType: Studio23.SS2.SaveSystem.Editor
+- uid: Studio23.SS2.SaveSystem.Editor.ISavableEditor
+  name: ISavableEditor
+  href: api/Studio23.SS2.SaveSystem.Editor.ISavableEditor.html
+  commentId: T:Studio23.SS2.SaveSystem.Editor.ISavableEditor
+  fullName: Studio23.SS2.SaveSystem.Editor.ISavableEditor
+  nameWithType: ISavableEditor
+- uid: Studio23.SS2.SaveSystem.Editor.ISavableEditor.OnInspectorGUI
+  name: OnInspectorGUI()
+  href: api/Studio23.SS2.SaveSystem.Editor.ISavableEditor.html#Studio23_SS2_SaveSystem_Editor_ISavableEditor_OnInspectorGUI
+  commentId: M:Studio23.SS2.SaveSystem.Editor.ISavableEditor.OnInspectorGUI
+  fullName: Studio23.SS2.SaveSystem.Editor.ISavableEditor.OnInspectorGUI()
+  nameWithType: ISavableEditor.OnInspectorGUI()
+- uid: Studio23.SS2.SaveSystem.Editor.ISavableEditor.OnInspectorGUI*
+  name: OnInspectorGUI
+  href: api/Studio23.SS2.SaveSystem.Editor.ISavableEditor.html#Studio23_SS2_SaveSystem_Editor_ISavableEditor_OnInspectorGUI_
+  commentId: Overload:Studio23.SS2.SaveSystem.Editor.ISavableEditor.OnInspectorGUI
+  isSpec: "True"
+  fullName: Studio23.SS2.SaveSystem.Editor.ISavableEditor.OnInspectorGUI
+  nameWithType: ISavableEditor.OnInspectorGUI
 - uid: Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor
   name: SaveSlotProcessorEditor
   href: api/Studio23.SS2.SaveSystem.Editor.SaveSlotProcessorEditor.html
