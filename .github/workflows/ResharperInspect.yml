@@ -12,6 +12,6 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v2
      - name: Inspect
-       uses: florius0/resharper-unity-ci
+       uses: florius0/resharper-unity-ci@v0.2.3
        with:
           solution: './SaveSystem.sln'
