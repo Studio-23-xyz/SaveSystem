@@ -23,11 +23,9 @@ jobs:
           solution: ./SaveSystem.sln
           format: Html
           output: ./Report/index.html
-    permissions:
-      security-events: write
-      
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: Coverage results
-          path: ./Report/index.html
+          name: Coverage results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.coveragePath }}
