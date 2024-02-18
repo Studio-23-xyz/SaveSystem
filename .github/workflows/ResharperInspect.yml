@@ -1,17 +1,27 @@
-name: InspectMaster
+name: InspectCode
 
 on:
   push:
-    branches: [ main ]
-
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened]
+  workflow_dispatch:
+  
 jobs:
-  self-test:
-   runs-on: ubuntu-latest
-   name: Self Test
-   steps:
-     - name: Checkout
-       uses: actions/checkout@v2
-     - name: Inspect
-       uses: florius0/resharper-unity-ci@v0.2.3
-       with:
-          solution: './SaveSystem.sln'
+  inspect-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Annotate
+        # You may pin to the exact commit or the version.
+        uses: JetBrains/ReSharper-InspectCode@v0.3
+        with:
+          solution: ./SaveSystem.sln
+          format: Html
+
+    permissions:
+      security-events: write
