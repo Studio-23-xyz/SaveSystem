@@ -16,7 +16,14 @@ namespace Studio23.SS2.SaveSystem.Core
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
         }
 
 
