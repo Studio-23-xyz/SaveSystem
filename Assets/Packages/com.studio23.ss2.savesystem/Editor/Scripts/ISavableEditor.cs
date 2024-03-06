@@ -12,19 +12,21 @@ namespace Studio23.SS2.SaveSystem.Editor
         {
             base.OnInspectorGUI();
 
-            MonoBehaviour monoBehaviour = (MonoBehaviour)target;
+            var monoBehaviour = (MonoBehaviour)target;
 
             if (monoBehaviour is ISaveable)
             {
                 EditorGUILayout.Space();
                 GUI.backgroundColor = Color.red;
 
-                if (GUILayout.Button(new GUIContent("Delete Local", "Only Works if Save System has been initialized and a slot is selected"), GUILayout.ExpandWidth(true)))
+                if (GUILayout.Button(
+                        new GUIContent("Delete Local",
+                            "Only Works if Save System has been initialized and a slot is selected"),
+                        GUILayout.ExpandWidth(true)))
                 {
-                    string key = (monoBehaviour as ISaveable).GetUniqueID();
+                    var key = (monoBehaviour as ISaveable).GetUniqueID();
                     Core.SaveSystem.Instance.DeleteKeyFromSelectedSlot(key).Forget();
                 }
-               
             }
         }
     }

@@ -1,24 +1,12 @@
 using Studio23.SS2.SaveSystem.Interfaces;
 using UnityEngine;
 
-public class PlayerDataBehaviour : MonoBehaviour,ISaveable
+public class PlayerDataBehaviour : MonoBehaviour, ISaveable
 {
-
     public string _uniqueID;
     public PlayerData playerData;
 
-    private bool _isDirty;
-
-    public bool IsDirty { 
-        get 
-        { 
-            return _isDirty;
-        } 
-        set 
-        {
-            _isDirty = value;
-        } 
-    }
+    public bool IsDirty { get; set; }
 
     public string GetUniqueID()
     {
@@ -34,6 +22,4 @@ public class PlayerDataBehaviour : MonoBehaviour,ISaveable
     {
         return JsonUtility.ToJson(playerData);
     }
-
-
 }

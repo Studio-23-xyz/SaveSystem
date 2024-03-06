@@ -7,28 +7,24 @@ namespace Studio23.SS2.SaveSystem.Data
     [Serializable]
     public class SaveSlot
     {
-        public int Index;
-
-        public string Name => $"Save_Slot_{Index}";
-        public Texture Thumbnail;
+        public DateTime BackupStamp;
         public string Description;
 
-        public DateTime TimeStamp;
-        public DateTime BackupStamp;
+        public Dictionary<string, int> FileKeys;
 
         public bool HasBackup;
+        public int Index;
+        public Texture Thumbnail;
 
-        public Dictionary<string,int> FileKeys;
+        public DateTime TimeStamp;
 
         public SaveSlot(int index)
         {
             Index = index;
             TimeStamp = DateTime.UtcNow;
-            FileKeys = new Dictionary<string,int>();
+            FileKeys = new Dictionary<string, int>();
         }
 
+        public string Name => $"Save_Slot_{Index}";
     }
-
-
-
 }
