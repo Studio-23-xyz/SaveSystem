@@ -3,8 +3,8 @@ using System;
 [Serializable]
 public class PlayerData
 {
-    public string playerName;
     public int playerLevel;
+    public string playerName;
 }
 
 [Serializable]
@@ -13,4 +13,3 @@ public class ItemData
     public string itemName;
     public int itemQuantity;
 }
-

@@ -1,5 +1,21 @@
 # Changelog
 
+## [v2.0.3] - 2024-01-31
+
+### Updated
+- Code Cleanup and refactor
+- New editor tools for debugging
+- Documentation Update
+- Archive method is now more robust
+
+
+## [v2.0.2] - 2024-01-26
+
+### Updated
+- Readme Updated with proper documentation
+- Bugfix for direct installation via Top Tool Bar
+- Changed use of DateTime.Now to DateTime.UtcNow for performance.
+
 ## [v2.0.1] - 2024-01-22
 
 ### Added

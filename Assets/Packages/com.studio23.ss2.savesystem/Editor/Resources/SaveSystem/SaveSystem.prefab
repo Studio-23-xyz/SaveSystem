@@ -61,11 +61,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectedSlot:
-    Id: 0
+    Index: 0
     Thumbnail: {fileID: 0}
     Description: 
     HasBackup: 0
-    fileKeys: []
   _cloudSaveManager: {fileID: 4227098497653628982}
   _fileProcessor: {fileID: 4119365039723816293}
   _archiverBase: {fileID: 11400000, guid: 90dbcd5f5197d1d43ab3f564c4beeed1, type: 2}
