@@ -1,9 +1,11 @@
 <h1 align="center">SaveSystem</h1>
 <p align="center">
 <a href="https://openupm.com/packages/com.studio23.ss2.savesystem/"><img src="https://img.shields.io/npm/v/com.studio23.ss2.savesystem?label=openupm&amp;registry_uri=https://package.openupm.com" /></a>
+[![Qodana](https://github.com/Studio-23-xyz/SaveSystem/actions/workflows/code_quality.yml/badge.svg)](https://github.com/Studio-23-xyz/SaveSystem/actions/workflows/code_quality.yml)
 </p>
 
-# Save System for Unity
+
+
 
 Save System is a framework to manage local and cloud saves. It provides simple interface to save files and configure cloud saves for Steam or Xbox and other platforms via extensions.
 
