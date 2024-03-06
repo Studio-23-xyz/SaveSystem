@@ -7,7 +7,7 @@ on:
 
 jobs:
   qodana:
-    runs-on: self-hosted
+    runs-on: [self-hosted , Linux]
     permissions:
       contents: write
       pull-requests: write
