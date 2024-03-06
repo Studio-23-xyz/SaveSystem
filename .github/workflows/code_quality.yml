@@ -7,7 +7,7 @@ on:
 
 jobs:
   qodana:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted,Linux,X64]
     permissions:
       contents: write
       pull-requests: write
@@ -19,6 +19,10 @@ jobs:
           fetch-depth: 0  # a full history is required for pull request analysis
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2023.3
+        with:
+          pr-mode: false
+          args: --apply-fixes
+          push-fixes: pull-request
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
-      
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
