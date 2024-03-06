@@ -1,0 +1,12 @@
+version: "1.0"
+ide: QDNET
+include:
+  - name: MemberCanBePrivate.Global
+  - name: ClassNeverInstantiated.Global
+  - name: NotAccessedField.Global
+  - name: UnassignedField.Global
+  - name: UnusedType.Global
+  - name: UnusedMember.Global
+  - name: ArrangeTypeMemberModifiers
+exclude:
+  - name: CheckNamespace

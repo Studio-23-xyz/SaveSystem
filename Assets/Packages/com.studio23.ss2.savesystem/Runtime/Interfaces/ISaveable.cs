@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Interfaces
 {

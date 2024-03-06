@@ -10,10 +10,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3B0DEECD-CBDA-01FE-26F6-AEB7498085C8}</ProjectGuid>
+    <ProjectGuid>{889A781B-485D-CC8E-E2D6-C10160584105}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>com.studio23.ss2.savesystem</AssemblyName>
+    <AssemblyName>com.studio23.ss2.savesystem.playmodetest</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -60,19 +60,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SaveSlotProcessor.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Encryptor\EncryptorBase.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\FileProcessor.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SaveSlot.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ZipUtilityArchiver.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ArchiverBase.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Interfaces\ISaveable.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SaveSystem.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SlotConfiguration.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Encryptor\AESEncryptor.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Tests\PlayMode\TestSuite_1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\com.studio23.ss2.savesystem.asmdef" />
+    <None Include="Assets\Packages\com.studio23.ss2.savesystem\Tests\PlayMode\com.studio23.ss2.savesystem.playmodetest.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -407,16 +398,8 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -907,16 +890,16 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UniTask">
       <HintPath>Library\ScriptAssemblies\UniTask.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.SharpZipLib.Utils">
-      <HintPath>Library\ScriptAssemblies\Unity.SharpZipLib.Utils.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="com.studio23.ss2.cloudsave">
-      <HintPath>Library\ScriptAssemblies\com.studio23.ss2.cloudsave.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">
@@ -929,6 +912,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="com.studio23.ss2.savesystem.csproj">
+      <Project>{3B0DEECD-CBDA-01FE-26F6-AEB7498085C8}</Project>
+      <Name>com.studio23.ss2.savesystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
