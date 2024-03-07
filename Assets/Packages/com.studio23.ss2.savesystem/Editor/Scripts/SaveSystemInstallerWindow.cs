@@ -1,5 +1,5 @@
-using System.IO;
 using Studio23.SS2.SaveSystem.Utilities;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,8 +11,9 @@ namespace Studio23.SS2.SaveSystem.Editor
         private static void CreateSaveSystem()
         {
             var saveSystemObject = Resources.Load<GameObject>("SaveSystem/SaveSystem");
+            GameObject savesystemobject = Instantiate(saveSystemObject);
+            EditorUtility.SetDirty(savesystemobject);
 
-            Instantiate(saveSystemObject).name = "SaveSystem";
         }
 
 

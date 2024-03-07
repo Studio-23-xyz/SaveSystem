@@ -10,6 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 079d0412f6fcb0a41a50d4fb28dd8daf, type: 3}
-  m_Name: DefaultProvider
+  m_Name: DummyCloudSaveProvider
   m_EditorClassIdentifier: 
-  _platformProvider: 0

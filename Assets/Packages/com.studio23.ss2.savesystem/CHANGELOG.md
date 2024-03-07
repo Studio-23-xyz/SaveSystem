@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.0.4] - 2024-03-07
+
+### Updated
+- Adjusted a dependency update
+
+
 ## [v2.0.3] - 2024-01-31
 
 ### Updated
