@@ -27,6 +27,19 @@ namespace Studio23.SS2.SaveSystem.Editor
                     var key = (monoBehaviour as ISaveable).GetUniqueID();
                     Core.SaveSystem.Instance.DeleteKeyFromSelectedSlot(key).Forget();
                 }
+
+                GUI.backgroundColor = Color.green;
+
+                if (GUILayout.Button(
+                        new GUIContent("Save",
+                            "Only Works if Save System has been initialized and a slot is selected"),
+                        GUILayout.ExpandWidth(true)))
+                {
+                   (monoBehaviour as ISaveable).SaveSelf().Forget();
+                }
+
+
+
             }
         }
     }

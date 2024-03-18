@@ -145,6 +145,8 @@ namespace Studio23.SS2.SaveSystem.Core
 
         #region Save
 
+        
+
         internal async UniTask SaveAllSavable(bool dirtyOnly)
         {
             var savableComponents = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>();
@@ -152,7 +154,7 @@ namespace Studio23.SS2.SaveSystem.Core
             await SaveISavables(savableComponents);
         }
 
-        private async UniTask SaveISavables(IEnumerable<ISaveable> savableComponents)
+        internal async UniTask SaveISavables(IEnumerable<ISaveable> savableComponents)
         {
             foreach (var savableComponent in savableComponents)
             {

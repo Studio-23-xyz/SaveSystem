@@ -26,6 +26,17 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         /// <param name="data">String data</param>
         public UniTask AssignSerializedData(string data);
 
+
+        /// <summary>
+        /// Ideally you shouldn't be using this. However, this is for managing edge cases
+        /// </summary>
+        /// <returns></returns>
+        public async UniTask SaveSelf()
+        {
+            await Core.SaveSystem.Instance.Save(this);
+        }
+
+
 #if UNITY_EDITOR
         /// <summary>
         ///     Debug only Method. Do not use for any other reason
