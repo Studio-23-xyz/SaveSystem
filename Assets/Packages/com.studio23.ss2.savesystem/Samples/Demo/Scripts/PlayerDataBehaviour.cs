@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Studio23.SS2.SaveSystem.Interfaces;
 using UnityEngine;
 
@@ -13,13 +14,15 @@ public class PlayerDataBehaviour : MonoBehaviour, ISaveable
         return _uniqueID;
     }
 
-    public void AssignSerializedData(string data)
+    public UniTask AssignSerializedData(string data)
     {
         playerData = JsonUtility.FromJson<PlayerData>(data);
+        return UniTask.CompletedTask;
     }
 
-    public string GetSerializedData()
+    public UniTask<string> GetSerializedData()
     {
-        return JsonUtility.ToJson(playerData);
+        string data= JsonUtility.ToJson(playerData);
+        return new UniTask<string>(data);
     }
 }

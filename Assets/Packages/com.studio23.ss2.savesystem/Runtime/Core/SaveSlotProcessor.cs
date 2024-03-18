@@ -157,7 +157,7 @@ namespace Studio23.SS2.SaveSystem.Core
             foreach (var savableComponent in savableComponents)
             {
                 var key = savableComponent.GetUniqueID();
-                var data = savableComponent.GetSerializedData();
+                string data = await savableComponent.GetSerializedData();
 
                 var filepath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName,
                     $"{key}{_slotConfiguration.SaveFileExtention}");
