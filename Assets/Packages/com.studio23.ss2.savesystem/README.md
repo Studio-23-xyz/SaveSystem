@@ -48,9 +48,9 @@ https://github.com/Studio-23-xyz/SaveSystem.git#upm
 ```
 Name 	package.openupm.com
 URL 	 https://package.openupm.com
-Scope(s) com.cysharp.unitask
-		 com.studio23.ss2.cloudsave
-		 com.studio23.ss2.savesystem
+Scope(s) com.cysharp.unitask 
+         com.studio23.ss2.cloudsave 
+         com.studio23.ss2.savesystem
 ```
 3. click Save or Apply
 4. open Window/Package Manager

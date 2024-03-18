@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.0.6] - 2024-03-18
+
+### Updated
+- ISavable now Requires Unitask for Load And Save implementation
+
 ## [v2.0.4] - 2024-03-07
 
 ### Updated

@@ -18,13 +18,13 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         ///     Return a serialized string for the save system to save
         /// </summary>
         /// <returns>String Data</returns>
-        public string GetSerializedData();
+        public UniTask<string> GetSerializedData();
 
         /// <summary>
         ///     Implement how your component will adjust on data load
         /// </summary>
         /// <param name="data">String data</param>
-        public void AssignSerializedData(string data);
+        public UniTask AssignSerializedData(string data);
 
 #if UNITY_EDITOR
         /// <summary>
