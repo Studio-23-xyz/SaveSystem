@@ -51,7 +51,7 @@ namespace Studio23.SS2.SaveSystem.Core
                     $"{key}{_slotConfiguration.SaveFileExtention}");
                 if (!File.Exists(filepath)) throw new Exception($"{key} Not found");
                 var data = await _fileProcessor.Load<string>(filepath);
-                savableComponent.AssignSerializedData(data);
+                await savableComponent.AssignSerializedData(data);
             }
 
             if (_slotConfiguration.EnableBackups)
