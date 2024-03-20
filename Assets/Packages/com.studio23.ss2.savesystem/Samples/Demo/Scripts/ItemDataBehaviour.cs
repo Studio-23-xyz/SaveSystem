@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Studio23.SS2.SaveSystem.Interfaces;
 using UnityEngine;
@@ -26,6 +27,11 @@ public class ItemDataBehaviour : MonoBehaviour, ISaveable
     {
         itemData = JsonUtility.FromJson<ItemData>(data);
         return UniTask.CompletedTask;
+    }
+
+    public UniTask ManageSaveLoadException(Exception exception)
+    {
+        throw new NotImplementedException();
     }
 
     public UniTask<string> GetSerializedData()

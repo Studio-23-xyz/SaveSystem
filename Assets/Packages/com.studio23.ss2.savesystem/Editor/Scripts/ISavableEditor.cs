@@ -17,16 +17,7 @@ namespace Studio23.SS2.SaveSystem.Editor
             if (monoBehaviour is ISaveable)
             {
                 EditorGUILayout.Space();
-                GUI.backgroundColor = Color.red;
-
-                if (GUILayout.Button(
-                        new GUIContent("Delete Local",
-                            "Only Works if Save System has been initialized and a slot is selected"),
-                        GUILayout.ExpandWidth(true)))
-                {
-                    var key = (monoBehaviour as ISaveable).GetUniqueID();
-                    Core.SaveSystem.Instance.DeleteKeyFromSelectedSlot(key).Forget();
-                }
+                
 
                 GUI.backgroundColor = Color.green;
 
@@ -36,6 +27,28 @@ namespace Studio23.SS2.SaveSystem.Editor
                         GUILayout.ExpandWidth(true)))
                 {
                    (monoBehaviour as ISaveable).SaveSelf().Forget();
+                }
+
+                GUI.backgroundColor = Color.blue;
+
+                if (GUILayout.Button(
+                        new GUIContent("Load",
+                            "Only Works if Save System has been initialized and a slot is selected"),
+                        GUILayout.ExpandWidth(true)))
+                {
+                    (monoBehaviour as ISaveable).LoadSelf().Forget();
+                }
+
+
+                GUI.backgroundColor = Color.red;
+
+                if (GUILayout.Button(
+                        new GUIContent("Delete Local",
+                            "Only Works if Save System has been initialized and a slot is selected"),
+                        GUILayout.ExpandWidth(true)))
+                {
+                    var key = (monoBehaviour as ISaveable).GetUniqueID();
+                    Core.SaveSystem.Instance.DeleteKeyFromSelectedSlot(key).Forget();
                 }
 
 

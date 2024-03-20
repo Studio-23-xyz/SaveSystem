@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.1.1] - 2024-03-20
+
+### Added
+- ISavable Can now call Load self to save itself
+- New Editor feature added ISavable components has a new button that enables loading
+- Saveprocessor is now based on concurrency. Save and Load will now be called from a task queue
+
+
 ## [v2.1.0] - 2024-03-18
 
 ### Added

@@ -1,9 +1,13 @@
+using System;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Interfaces
 {
     public interface ISaveable
     {
+
+        
         /// <summary>
         ///     Save System Would Only save files that are Dirty in short has changes to submit
         /// </summary>
@@ -26,6 +30,17 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         /// <param name="data">String data</param>
         public UniTask AssignSerializedData(string data);
 
+        /// <summary>
+        /// This should never happen. If anything comes here, You probably need to check the flow of loading.
+        /// Override to manage this in edge case scenario. Strongly discouraged.
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public UniTask ManageSaveLoadException(Exception exception)
+        {
+            Debug.Log($"{exception.Message}");
+            return UniTask.CompletedTask;
+        }
 
         /// <summary>
         /// Ideally you shouldn't be using this. However, this is for managing edge cases
@@ -35,6 +50,12 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         {
             await Core.SaveSystem.Instance.Save(this);
         }
+
+        public async UniTask LoadSelf()
+        {
+            await Core.SaveSystem.Instance.Load(this);
+        }
+
 
 
 #if UNITY_EDITOR

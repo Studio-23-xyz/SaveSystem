@@ -28,6 +28,13 @@ namespace Studio23.SS2.SaveSystem.Core
         [SerializeField] internal SlotConfiguration _slotConfiguration;
         [SerializeField] internal string SavePathRoot;
 
+
+
+        private readonly Queue<UniTask> _taskQueue = new Queue<UniTask>();
+        private readonly object _taskLock = new object();
+        private bool _isworking;
+
+
         internal async UniTask SelectSlot(int index)
         {
             _selectedSlot = await GetSaveSlotMetaDataLocal(index);
@@ -40,16 +47,33 @@ namespace Studio23.SS2.SaveSystem.Core
             await SelectSlot(index);
         }
 
+        #region Load
+
         internal async UniTask LoadAllSavable()
         {
             var savableComponents = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>();
 
+            await LoadISavables(savableComponents);
+        }
+
+        internal async UniTask LoadISavables(IEnumerable<ISaveable> savableComponents)
+        {
+            await QueueTask(LoadTask(savableComponents));
+        }
+
+        private async UniTask LoadTask(IEnumerable<ISaveable> savableComponents)
+        {
             foreach (var savableComponent in savableComponents)
             {
                 var key = savableComponent.GetUniqueID();
                 var filepath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotDatafolderName,
                     $"{key}{_slotConfiguration.SaveFileExtention}");
-                if (!File.Exists(filepath)) throw new Exception($"{key} Not found");
+                if (!File.Exists(filepath))
+                {
+                    await savableComponent.ManageSaveLoadException(new FileNotFoundException(
+                        $"ISavable <color=white>Key: {key}</color> Method: <color=yellow>LoadAllSavable()</color>"));
+                }
+
                 var data = await _fileProcessor.Load<string>(filepath);
                 await savableComponent.AssignSerializedData(data);
             }
@@ -60,6 +84,10 @@ namespace Studio23.SS2.SaveSystem.Core
                 CreateBackup().Forget();
             }
         }
+
+        #endregion
+
+
 
         #region Setup
 
@@ -145,7 +173,7 @@ namespace Studio23.SS2.SaveSystem.Core
 
         #region Save
 
-        
+
 
         internal async UniTask SaveAllSavable(bool dirtyOnly)
         {
@@ -155,6 +183,11 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
         internal async UniTask SaveISavables(IEnumerable<ISaveable> savableComponents)
+        {
+            await QueueTask(SaveTask(savableComponents));
+        }
+
+        private async UniTask SaveTask(IEnumerable<ISaveable> savableComponents)
         {
             foreach (var savableComponent in savableComponents)
             {
@@ -261,5 +294,41 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
         #endregion
+
+
+        //TODO : Create Unit Tests
+
+        #region Concurrency
+
+        private async UniTask QueueTask(UniTask task)
+        {
+            _taskQueue.Enqueue(task);
+            if (!_isworking)
+            {
+                _isworking = true;
+                await ProcessSaveQueue();
+            }
+        }
+
+
+        private async UniTask ProcessSaveQueue()
+        {
+            while (_taskQueue.Count>0)
+            {
+                await _taskQueue.Dequeue();
+            }
+
+            _isworking = false;
+
+        }
+
+       
+
+      #endregion
+
+
+
+
+        
     }
 }
