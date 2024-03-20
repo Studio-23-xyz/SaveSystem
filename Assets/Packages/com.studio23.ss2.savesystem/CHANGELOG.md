@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.1.0] - 2024-03-18
+
+### Added
+- ISavable Can now call save self to save itself
+- New Editor feature added ISavable components has a new button that enables saving
+
+
+
 ## [v2.0.6] - 2024-03-18
 
 ### Updated

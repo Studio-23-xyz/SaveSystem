@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Studio23.SS2.SaveSystem.Data;
+using Studio23.SS2.SaveSystem.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,6 +45,17 @@ namespace Studio23.SS2.SaveSystem.Core
         public async UniTask Save(bool dirtyOnly = false)
         {
             await _slotProcessor.SaveAllSavable(dirtyOnly);
+            OnSaveComplete?.Invoke();
+        }
+
+        /// <summary>
+        /// This is for saving ISavable components externally
+        /// </summary>
+        /// <param name="savableComponent"></param>
+        /// <returns></returns>
+        public async UniTask Save(ISaveable savableComponent)
+        {
+            await _slotProcessor.SaveISavables(new List<ISaveable>(){savableComponent});
             OnSaveComplete?.Invoke();
         }
 
