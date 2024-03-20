@@ -70,6 +70,17 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
         /// <summary>
+        /// This is for Loading a component Externally
+        /// </summary>
+        /// <param name="savableComponent"></param>
+        /// <returns></returns>
+        public async UniTask Load(ISaveable savableComponent)
+        {
+            await _slotProcessor.LoadISavables(new List<ISaveable>() { savableComponent });
+            OnLoadComplete?.Invoke();
+        }
+
+        /// <summary>
         ///     Restores Backup if available
         ///     If not available locally attempts to restore from cloud
         ///     if still fails then throws error
