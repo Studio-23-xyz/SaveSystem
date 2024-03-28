@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.1.3] - 2024-03-28
+
+### Added
+- OnSaveBegin And OnLoadBegin Events Added
+- When files are saved now they are printed in the debug console + You can directly open file from console.
+
 ## [v2.1.1] - 2024-03-20
 
 ### Added

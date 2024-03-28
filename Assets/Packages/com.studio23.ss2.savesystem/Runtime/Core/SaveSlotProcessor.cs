@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Needle;
 using UnityEngine;
 
 [assembly: InternalsVisibleTo("com.studio23.ss2.savesystem.editor")]
@@ -31,7 +32,6 @@ namespace Studio23.SS2.SaveSystem.Core
 
 
         private readonly Queue<UniTask> _taskQueue = new Queue<UniTask>();
-        private readonly object _taskLock = new object();
         private bool _isworking;
 
 
@@ -86,8 +86,6 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
         #endregion
-
-
 
         #region Setup
 
@@ -173,8 +171,6 @@ namespace Studio23.SS2.SaveSystem.Core
 
         #region Save
 
-
-
         internal async UniTask SaveAllSavable(bool dirtyOnly)
         {
             var savableComponents = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>();
@@ -198,7 +194,7 @@ namespace Studio23.SS2.SaveSystem.Core
                     $"{key}{_slotConfiguration.SaveFileExtention}");
 
                 await _fileProcessor.Save(data, filepath);
-
+                Debug.Log($"<color=green>Saved</color> With Key: {key} {"<color=white>Open File</color>".LinkTo(filepath)}");
                 _cloudSaveManager.UploadToCloud(_selectedSlot.Name, $"{key}", filepath).Forget();
 
                 _selectedSlot.FileKeys[$"{key}"] = Encoding.Unicode.GetByteCount(data);
@@ -260,7 +256,7 @@ namespace Studio23.SS2.SaveSystem.Core
 
 
             await _archiverBase.ArchiveFiles(backupFilePath, dataFolderPath);
-            Debug.Log($"<color=green>Backup</color> Created at {backupFilePath}");
+            Debug.Log($"<color=green>Backup</color> Created at {backupFilePath.LinkTo(backupFilePath)}");
             _cloudSaveManager
                 .UploadToCloud(_selectedSlot.Name, $"{_slotConfiguration.SlotDataBackupFileName}", backupFilePath)
                 .Forget();
