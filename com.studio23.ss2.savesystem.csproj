@@ -70,6 +70,7 @@
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SaveSystem.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SlotConfiguration.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Encryptor\AESEncryptor.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\ConsoleHyperLink\ConsoleLinkTool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\com.studio23.ss2.savesystem.asmdef" />
@@ -917,6 +918,10 @@
     </Reference>
     <Reference Include="com.studio23.ss2.cloudsave">
       <HintPath>Library\ScriptAssemblies\com.studio23.ss2.cloudsave.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="needle.ConsoleHyperlinks.Editor">
+      <HintPath>Library\ScriptAssemblies\needle.ConsoleHyperlinks.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">

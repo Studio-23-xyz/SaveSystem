@@ -12,8 +12,9 @@ namespace Studio23.SS2.SaveSystem.Core
         public static SaveSystem Instance;
 
         [SerializeField] internal SaveSlotProcessor _slotProcessor;
+        public UnityEvent OnLoadBegin;
         public UnityEvent OnLoadComplete;
-
+        public UnityEvent OnSaveBegin;
         public UnityEvent OnSaveComplete;
 
         private void Awake()
@@ -44,6 +45,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns></returns>
         public async UniTask Save(bool dirtyOnly = false)
         {
+            OnSaveBegin?.Invoke();
             await _slotProcessor.SaveAllSavable(dirtyOnly);
             OnSaveComplete?.Invoke();
         }
@@ -55,6 +57,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns></returns>
         public async UniTask Save(ISaveable savableComponent)
         {
+            OnSaveBegin?.Invoke();
             await _slotProcessor.SaveISavables(new List<ISaveable>(){savableComponent});
             OnSaveComplete?.Invoke();
         }
@@ -65,6 +68,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns></returns>
         public async UniTask Load()
         {
+            OnLoadBegin?.Invoke();
             await _slotProcessor.LoadAllSavable();
             OnLoadComplete?.Invoke();
         }
@@ -76,6 +80,7 @@ namespace Studio23.SS2.SaveSystem.Core
         /// <returns></returns>
         public async UniTask Load(ISaveable savableComponent)
         {
+            OnLoadBegin?.Invoke();
             await _slotProcessor.LoadISavables(new List<ISaveable>() { savableComponent });
             OnLoadComplete?.Invoke();
         }

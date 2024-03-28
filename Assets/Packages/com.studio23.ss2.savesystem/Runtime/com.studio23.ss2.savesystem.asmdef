@@ -4,7 +4,8 @@
     "references": [
         "UniTask",
         "Unity.SharpZipLib.Utils",
-        "com.studio23.ss2.cloudsave"
+        "com.studio23.ss2.cloudsave",
+        "needle.ConsoleHyperlinks.Editor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
