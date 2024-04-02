@@ -9,7 +9,9 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+#if UNITY_EDITOR
 using Needle;
+#endif
 using UnityEngine;
 
 [assembly: InternalsVisibleTo("com.studio23.ss2.savesystem.editor")]
@@ -194,7 +196,10 @@ namespace Studio23.SS2.SaveSystem.Core
                     $"{key}{_slotConfiguration.SaveFileExtention}");
 
                 await _fileProcessor.Save(data, filepath);
-                Debug.Log($"<color=green>Saved</color> With Key: {key} {"<color=white>Open File</color>".LinkTo(filepath)}");
+                Debug.Log($"<color=green>Saved</color> With Key: {key} ");
+#if UNITY_EDITOR
+                Debug.Log($"{"<color=white>Open File</color>".LinkTo(filepath)}");
+#endif
                 _cloudSaveManager.UploadToCloud(_selectedSlot.Name, $"{key}", filepath).Forget();
 
                 _selectedSlot.FileKeys[$"{key}"] = Encoding.Unicode.GetByteCount(data);
@@ -256,7 +261,11 @@ namespace Studio23.SS2.SaveSystem.Core
 
 
             await _archiverBase.ArchiveFiles(backupFilePath, dataFolderPath);
-            Debug.Log($"<color=green>Backup</color> Created at {backupFilePath.LinkTo(backupFilePath)}");
+            Debug.Log($"<color=green>Backup</color> Created at {backupFilePath}");
+#if UNITY_EDITOR
+            Debug.Log($"Open File {backupFilePath.LinkTo(backupFilePath)}");
+#endif
+
             _cloudSaveManager
                 .UploadToCloud(_selectedSlot.Name, $"{_slotConfiguration.SlotDataBackupFileName}", backupFilePath)
                 .Forget();

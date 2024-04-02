@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.1.5] - 2024-04-02
+
+### Added
+- Editor Wrapped Feature
+
 ## [v2.1.3] - 2024-03-28
 
 ### Added
