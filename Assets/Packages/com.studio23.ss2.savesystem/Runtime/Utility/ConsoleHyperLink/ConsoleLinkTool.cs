@@ -1,9 +1,9 @@
-using System;
 using System.Diagnostics;
 using System.IO;
 
 public class ConsoleLinkTool 
 {
+#if UNITY_EDITOR
     [Needle.HyperlinkCallback]
     private static bool OnHyperlinkClicked(string path, string line)
     {
@@ -19,6 +19,6 @@ public class ConsoleLinkTool
         }
         return true;
     }
-
+#endif
 
 }
