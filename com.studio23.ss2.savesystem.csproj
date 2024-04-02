@@ -60,17 +60,17 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SaveSlot.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Interfaces\ISaveable.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\ConsoleHyperLink\ConsoleLinkTool.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ZipUtilityArchiver.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SaveSlotProcessor.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Encryptor\EncryptorBase.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\FileProcessor.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SaveSlot.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ZipUtilityArchiver.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ArchiverBase.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Interfaces\ISaveable.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SaveSystem.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\FileProcessor.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SlotConfiguration.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ArchiverBase.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Encryptor\AESEncryptor.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\ConsoleHyperLink\ConsoleLinkTool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\com.studio23.ss2.savesystem.asmdef" />
