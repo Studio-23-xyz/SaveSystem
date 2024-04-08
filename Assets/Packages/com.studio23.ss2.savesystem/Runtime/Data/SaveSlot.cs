@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Studio23.SS2.SaveSystem.Data
@@ -26,5 +27,11 @@ namespace Studio23.SS2.SaveSystem.Data
         }
 
         public string Name => $"Save_Slot_{Index}";
+
+        public bool IsEmpty=>FileKeys.Count==0;
+
+        public int TotalSize => FileKeys.Sum(r => r.Value);
+
+
     }
 }

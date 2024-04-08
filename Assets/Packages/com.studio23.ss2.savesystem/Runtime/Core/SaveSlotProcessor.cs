@@ -21,15 +21,21 @@ namespace Studio23.SS2.SaveSystem.Core
     [RequireComponent(typeof(FileProcessor))]
     internal class SaveSlotProcessor : MonoBehaviour
     {
-        public static readonly string LastSelectedSaveSlotPrefsKey = "lasSelectedSlotIndex";
-        [SerializeField] internal ArchiverBase _archiverBase;
+        private static readonly string LastSelectedSaveSlotPrefsKey = "lasSelectedSlotIndex";
+        
+        [SerializeField] 
+        internal ArchiverBase _archiverBase;
 
-        [SerializeField] internal CloudSaveManager _cloudSaveManager;
-        [SerializeField] internal FileProcessor _fileProcessor;
+        [SerializeField] 
+        internal CloudSaveManager _cloudSaveManager;
+        [SerializeField] 
+        internal FileProcessor _fileProcessor;
 
-        [SerializeField] internal SaveSlot _selectedSlot;
-        [SerializeField] internal SlotConfiguration _slotConfiguration;
-        [SerializeField] internal string SavePathRoot;
+        [SerializeField] 
+        internal SaveSlot _selectedSlot;
+        [SerializeField] 
+        internal SlotConfiguration _slotConfiguration;
+        internal string SavePathRoot;
 
 
 
@@ -318,7 +324,7 @@ namespace Studio23.SS2.SaveSystem.Core
 
         private async UniTask ProcessSaveQueue()
         {
-            while (_taskQueue.Count>0)
+            while (_taskQueue.Count > 0)
             {
                 await _taskQueue.Dequeue();
             }
@@ -327,13 +333,13 @@ namespace Studio23.SS2.SaveSystem.Core
 
         }
 
-       
-
-      #endregion
 
 
+        #endregion
 
 
-        
+
+
+
     }
 }

@@ -1,15 +1,18 @@
 using System;
 
-[Serializable]
-public class PlayerData
+namespace Studio23.SS2.SaveSystem.Samples
 {
-    public int playerLevel;
-    public string playerName;
-}
+    [Serializable]
+    public class PlayerData
+    {
+        public int playerLevel;
+        public string playerName;
+    }
 
-[Serializable]
-public class ItemData
-{
-    public string itemName;
-    public int itemQuantity;
+    [Serializable]
+    public class ItemData
+    {
+        public string itemName;
+        public int itemQuantity;
+    }
 }
