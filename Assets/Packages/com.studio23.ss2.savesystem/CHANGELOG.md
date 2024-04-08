@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.1.6] - 2024-04-08
+
+### Added
+- A new property to know if the slot is empty
+
 ## [v2.1.5] - 2024-04-02
 
 ### Added

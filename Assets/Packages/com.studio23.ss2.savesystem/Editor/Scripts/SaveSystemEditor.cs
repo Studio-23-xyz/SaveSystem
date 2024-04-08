@@ -66,7 +66,7 @@ namespace Studio23.SS2.SaveSystem.Editor
                     EditorGUILayout.LabelField($"HasBackup: {_selectedSlot.HasBackup}");
 
                     EditorGUILayout.Space();
-
+                   
 
                     _showFileKeys = GUILayout.Toggle(_showFileKeys, "Show File Details");
                     var fileCount = 0;
@@ -78,6 +78,8 @@ namespace Studio23.SS2.SaveSystem.Editor
 
                         EditorGUILayout.Space();
                         EditorGUILayout.LabelField($"{fileCount} Files in the meta");
+                        EditorGUILayout.LabelField($"Slot is Empty : {_selectedSlot.IsEmpty}");
+                        EditorGUILayout.LabelField($"Slot Size : {_selectedSlot.TotalSize} Bytes");
                     }
 
                     EditorGUILayout.EndVertical();
