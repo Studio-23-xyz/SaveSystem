@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.1.8] - 2024-04-18
+
+### Added
+- An empty constructor is created in save slot data class
+- Added JsonIgore for texture thumbnail in slot data class
+
 ## [v2.1.6] - 2024-04-08
 
 ### Added
