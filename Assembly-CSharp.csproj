@@ -897,107 +897,107 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.studio23.ss2.cloudsave.editor">
+      <HintPath>Library\ScriptAssemblies\com.studio23.ss2.cloudsave.editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UniTask.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\UniTask.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="needle.ConsoleHyperlinks.Editor">
+      <HintPath>Library\ScriptAssemblies\needle.ConsoleHyperlinks.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UniTask.DOTween">
+      <HintPath>Library\ScriptAssemblies\UniTask.DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UniTask.Addressables">
+      <HintPath>Library\ScriptAssemblies\UniTask.Addressables.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>Library\ScriptAssemblies\UniTask.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UniTask.Linq">
+      <HintPath>Library\ScriptAssemblies\UniTask.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.SharpZipLib.Utils">
+      <HintPath>Library\ScriptAssemblies\Unity.SharpZipLib.Utils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.SharpZipLib.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.SharpZipLib.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.studio23.ss2.cloudsave">
+      <HintPath>Library\ScriptAssemblies\com.studio23.ss2.cloudsave.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="com.studio23.ss2.savesystem.editor.csproj">
       <Project>{0F73A667-A0FF-2653-0F3C-80674DB730D1}</Project>
       <Name>com.studio23.ss2.savesystem.editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj">
-      <Project>{7C2E742E-C09D-37B4-8EC8-1B0F21C455D8}</Project>
-      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
-      <Project>{0A8EAF17-0BB7-65E2-3284-FE07C61F5838}</Project>
-      <Name>Unity.EditorCoroutines.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.studio23.ss2.cloudsave.editor.csproj">
-      <Project>{3E602A19-5258-1EFA-6CB4-5431BBF3DCE1}</Project>
-      <Name>com.studio23.ss2.cloudsave.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Performance.Profile-Analyzer.Editor.csproj">
-      <Project>{0BD4E87D-14C7-3A79-F046-310380E19CE6}</Project>
-      <Name>Unity.Performance.Profile-Analyzer.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
-      <Project>{C8D656FF-1CB7-ABA8-BD68-7B7D191ADC91}</Project>
-      <Name>Unity.TestTools.CodeCoverage.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
-      <Project>{99E65B0F-51C6-9444-3D7E-0B0A88D602C0}</Project>
-      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.TextMeshPro.csproj">
-      <Project>{CD290915-30B9-BF93-FFE6-E64BA3FB948A}</Project>
-      <Name>UniTask.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{0822C7ED-5C1C-520A-1101-6320B6E53DB4}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="needle.ConsoleHyperlinks.Editor.csproj">
-      <Project>{B0E54958-FA89-81E5-4281-4F01A107790F}</Project>
-      <Name>needle.ConsoleHyperlinks.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.DOTween.csproj">
-      <Project>{7F73AF90-CCFD-E43E-8964-6B40F58C6C32}</Project>
-      <Name>UniTask.DOTween</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Addressables.csproj">
-      <Project>{072E584C-C1E7-1E1E-3CA5-37B7A7A23213}</Project>
-      <Name>UniTask.Addressables</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
-      <Project>{0B735AB9-4CCB-BFEA-6672-312336A740E7}</Project>
-      <Name>Unity.VisualStudio.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{45C6A7A6-7FC9-D10E-FB37-43B069BDF5C1}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{5A06053E-F081-43D2-E86B-D3C189382315}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{71D86702-8402-7D1B-AD17-839A5AA30404}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{617433A8-3093-F5DD-5905-FD186811452C}</Project>
-      <Name>Unity.Rider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.csproj">
-      <Project>{28E60EAE-3002-B841-7DDF-003F695D1436}</Project>
-      <Name>UniTask</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{01DCEAF6-E05B-3940-573B-35C45AA10D2D}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{56948507-0046-2652-C7F7-D6F32C131962}</Project>
-      <Name>Unity.VSCode.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Linq.csproj">
-      <Project>{2982F898-8017-ACE1-37B9-53D6901C50DE}</Project>
-      <Name>UniTask.Linq</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.SharpZipLib.Utils.csproj">
-      <Project>{8672ECCB-9F94-F408-D794-CC24FBCAE3AA}</Project>
-      <Name>Unity.SharpZipLib.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.SharpZipLib.Editor.csproj">
-      <Project>{2E74D53B-0A38-0E85-0466-3C44BE278969}</Project>
-      <Name>Unity.SharpZipLib.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="com.studio23.ss2.savesystem.csproj">
       <Project>{3B0DEECD-CBDA-01FE-26F6-AEB7498085C8}</Project>
       <Name>com.studio23.ss2.savesystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.studio23.ss2.cloudsave.csproj">
-      <Project>{01132288-4BE6-991A-7D8F-E3A3D58001F4}</Project>
-      <Name>com.studio23.ss2.cloudsave</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

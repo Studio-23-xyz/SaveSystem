@@ -85,6 +85,20 @@ namespace Studio23.SS2.SaveSystem.Core
             OnLoadComplete?.Invoke();
         }
 
+
+        /// <summary>
+        /// Loads Savables in the order they are given in the list
+        /// </summary>
+        /// <param name="orderedList"></param>
+        /// <returns></returns>
+        public async UniTask Load(List<ISaveable> orderedList)
+        {
+            OnLoadBegin?.Invoke();
+            await _slotProcessor.LoadISavables(orderedList);
+            OnLoadComplete?.Invoke();
+        }
+
+
         /// <summary>
         ///     Restores Backup if available
         ///     If not available locally attempts to restore from cloud
