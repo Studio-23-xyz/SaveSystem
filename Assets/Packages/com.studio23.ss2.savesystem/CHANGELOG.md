@@ -1,10 +1,18 @@
 # Changelog
 
+
+## [v2.1.9] - 2024-05-13
+
+### Added
+- A new new load method that takes a list of ISavable to grant more control over how the game is loaded
+
+
 ## [v2.1.8] - 2024-04-18
 
 ### Added
 - An empty constructor is created in save slot data class
 - Added JsonIgore for texture thumbnail in slot data class
+
 
 ## [v2.1.6] - 2024-04-08
 
