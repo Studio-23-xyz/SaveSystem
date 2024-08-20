@@ -179,19 +179,19 @@ namespace Studio23.SS2.SaveSystem.Core
 
         #region Save
 
-        internal async UniTask SaveAllSavable(bool dirtyOnly)
+        internal async UniTask SaveAllSavable(bool dirtyOnly,string description)
         {
             var savableComponents = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>();
             if (dirtyOnly) savableComponents = savableComponents.Where(r => r.IsDirty);
-            await SaveISavables(savableComponents);
+            await SaveISavables(savableComponents, description);
         }
 
-        internal async UniTask SaveISavables(IEnumerable<ISaveable> savableComponents)
+        internal async UniTask SaveISavables(IEnumerable<ISaveable> savableComponents,string description)
         {
-            await QueueTask(SaveTask(savableComponents));
+            await QueueTask(SaveTask(savableComponents,description));
         }
 
-        private async UniTask SaveTask(IEnumerable<ISaveable> savableComponents)
+        private async UniTask SaveTask(IEnumerable<ISaveable> savableComponents,string description)
         {
             foreach (var savableComponent in savableComponents)
             {
@@ -213,11 +213,12 @@ namespace Studio23.SS2.SaveSystem.Core
                 savableComponent.IsDirty = false;
             }
 
-            await SaveSelectedSlotMetadata();
+            await SaveSelectedSlotMetadata(description);
         }
 
-        private async UniTask SaveSelectedSlotMetadata()
+        private async UniTask SaveSelectedSlotMetadata(string description)
         {
+            _selectedSlot.Description= description;
             _selectedSlot.TimeStamp = DateTime.UtcNow;
             var slotPath = Path.Combine(GetSelectedSlotPath(), _slotConfiguration.SlotMetafileName);
             await _fileProcessor.Save(_selectedSlot, slotPath);
@@ -279,7 +280,7 @@ namespace Studio23.SS2.SaveSystem.Core
             _selectedSlot.HasBackup = true;
             _selectedSlot.BackupStamp = DateTime.UtcNow;
 
-            await SaveSelectedSlotMetadata();
+            await SaveSelectedSlotMetadata(_selectedSlot.Description);
         }
 
         internal async UniTask RestoreBackup()

@@ -36,29 +36,31 @@ namespace Studio23.SS2.SaveSystem.Core
         }
 
         /// <summary>
-        ///     By Default it saves all savable regardless of it's state
-        ///     If DirtyOnly is passed then it only saves Those who's state is dirty
-        ///     On Save All ISavable's IsDirty is set to false
-        ///     And attempts to save the files to cloud accordingly with the given provider
+        ///  By Default it saves all savable regardless of it's state
+        ///  If DirtyOnly is passed then it only saves Those who's state is dirty
+        ///  On Save All ISavable's IsDirty is set to false
+        ///  And attempts to save the files to cloud accordingly with the given provider
         /// </summary>
-        /// <param name="dirtyOnly">default is false</param>
+        /// <param name="description">Optional Description to be shown in game</param>
+        /// <param name="dirtyOnly"></param>
         /// <returns></returns>
-        public async UniTask Save(bool dirtyOnly = false)
+        public async UniTask Save(string description = "", bool dirtyOnly = false)
         {
             OnSaveBegin?.Invoke();
-            await _slotProcessor.SaveAllSavable(dirtyOnly);
+            await _slotProcessor.SaveAllSavable(dirtyOnly, description);
             OnSaveComplete?.Invoke();
         }
 
         /// <summary>
-        /// This is for saving ISavable components externally
+        /// 
         /// </summary>
-        /// <param name="savableComponent"></param>
+        /// <param name="savableComponent">This is for saving ISavable components externally</param>
+        /// <param name="description">Optional Description to be shown in game</param>
         /// <returns></returns>
-        public async UniTask Save(ISaveable savableComponent)
+        public async UniTask Save(ISaveable savableComponent, string description)
         {
             OnSaveBegin?.Invoke();
-            await _slotProcessor.SaveISavables(new List<ISaveable>(){savableComponent});
+            await _slotProcessor.SaveISavables(new List<ISaveable>(){savableComponent}, description);
             OnSaveComplete?.Invoke();
         }
 

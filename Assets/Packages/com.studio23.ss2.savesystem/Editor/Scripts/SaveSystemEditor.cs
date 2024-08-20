@@ -12,6 +12,7 @@ namespace Studio23.SS2.SaveSystem.Editor
         private bool _showDebugTools = true;
         private bool _showFileKeys = true;
         private int _slotIndex; // Default slot index
+        private string _slotDescription;
 
         public override void OnInspectorGUI()
         {
@@ -32,9 +33,12 @@ namespace Studio23.SS2.SaveSystem.Editor
                 GUI.backgroundColor = Color.green;
                 if (GUILayout.Button("Select Last Selected Slot")) _ = saveSystem.SelectLastSelectedSlot();
 
+                GUI.backgroundColor = Color.white;
+                _slotDescription = EditorGUILayout.TextField("Description", _slotDescription);
+
                 EditorGUILayout.BeginHorizontal();
 
-                GUI.backgroundColor = Color.white;
+             
                 _slotIndex = EditorGUILayout.IntField("Slot Index", _slotIndex);
 
 
@@ -87,9 +91,9 @@ namespace Studio23.SS2.SaveSystem.Editor
                 }
 
                 GUI.backgroundColor = Color.green;
-                if (GUILayout.Button("Save All")) saveSystem.Save().Forget();
+                if (GUILayout.Button("Save All")) saveSystem.Save($"Editor: {_slotDescription}").Forget();
 
-                if (GUILayout.Button("Save Dirty")) saveSystem.Save(true).Forget();
+                if (GUILayout.Button("Save Dirty")) saveSystem.Save($"Editor: {_slotDescription}", true).Forget();
 
 
                 GUI.backgroundColor = Color.white; // Reset color

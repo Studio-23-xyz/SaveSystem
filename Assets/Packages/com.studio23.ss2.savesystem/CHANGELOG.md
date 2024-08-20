@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.2.0] - 2024-08-20
+
+### Updated
+- Save system now implements optional description to be added
 
 ## [v2.1.9] - 2024-05-13
 

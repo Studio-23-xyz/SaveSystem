@@ -48,7 +48,7 @@ namespace Studio23.SS2.SaveSystem.Interfaces
         /// <returns></returns>
         public async UniTask SaveSelf()
         {
-            await Core.SaveSystem.Instance.Save(this);
+            await Core.SaveSystem.Instance.Save(this,$"Saved by {GetUniqueID()}");
         }
 
         public async UniTask LoadSelf()

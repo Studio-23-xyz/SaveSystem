@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
-using UnityEngine;
+
 
 namespace Studio23.SS2.SaveSystem.Data
 {
@@ -16,8 +15,7 @@ namespace Studio23.SS2.SaveSystem.Data
 
         public bool HasBackup;
         public int Index;
-        [JsonIgnore]
-        public Texture Thumbnail;
+
 
         public DateTime TimeStamp;
 

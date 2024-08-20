@@ -204,7 +204,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slotProcessor: {fileID: 846910476}
+  OnLoadBegin:
+    m_PersistentCalls:
+      m_Calls: []
   OnLoadComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSaveBegin:
     m_PersistentCalls:
       m_Calls: []
   OnSaveComplete:
@@ -226,12 +232,10 @@ MonoBehaviour:
   _cloudSaveManager: {fileID: 2118616956}
   _fileProcessor: {fileID: 846910477}
   _selectedSlot:
-    Description: 
+    Description: 'Editor: Test'
     HasBackup: 0
     Index: 0
-    Thumbnail: {fileID: 0}
   _slotConfiguration: {fileID: 11400000, guid: 689e14cf99d18c3498b11d6065308b0f, type: 2}
-  SavePathRoot: 
 --- !u!114 &846910477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cf22e4dfe8d2e48925214371a474c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _provider: {fileID: 0}
+  _provider: {fileID: 11400000, guid: f87ebc428b851aa41a27e5c1de279442, type: 2}
   OnInitializationSucess:
     m_PersistentCalls:
       m_Calls: []
