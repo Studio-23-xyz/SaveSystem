@@ -157,7 +157,7 @@ namespace Studio23.SS2.SaveSystem.Core
 
         internal async UniTask ClearSelectedSlotCloudAsync()
         {
-            await _cloudSaveManager.DeleteContainerFromCloud(_selectedSlot.Name);
+            await _cloudSaveManager.DeleteContainerFromCloud(_selectedSlot.Name,_slotConfiguration.SlotMetafileName,_slotConfiguration.SlotDataBackupFileName);
         }
 
 
@@ -236,7 +236,7 @@ namespace Studio23.SS2.SaveSystem.Core
             for (var i = 0; i < _slotConfiguration.SlotCount; i++)
             {
                 var slotMeta = new SaveSlot(i);
-                var slotMetaPath = Path.Combine(SavePathRoot, slotMeta.Name, _slotConfiguration.SlotMetafileName);
+                string slotMetaPath = Path.Combine(SavePathRoot, slotMeta.Name, _slotConfiguration.SlotMetafileName);
                 var metafileTask = _cloudSaveManager.DownloadFromCloud(slotMeta.Name,
                     _slotConfiguration.SlotMetafileName, slotMetaPath);
 
@@ -245,6 +245,9 @@ namespace Studio23.SS2.SaveSystem.Core
 
             await UniTask.WhenAll(cloudMetaDownloadTaskList);
         }
+
+
+        
 
         internal async UniTask SyncSelectedSlotData()
         {

@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.2.1] - 2024-08-30
+
+### Updated
+- Cloud Delete method updated for better managment
+
 ## [v2.2.0] - 2024-08-20
 
 ### Updated
