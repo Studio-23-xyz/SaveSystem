@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 846910477}
   - component: {fileID: 846910476}
   - component: {fileID: 846910475}
+  - component: {fileID: 846910479}
   m_Layer: 0
   m_Name: SaveSystem(Clone)
   m_TagString: Untagged
@@ -265,6 +266,21 @@ Transform:
   - {fileID: 2118616958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &846910479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846910474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f85f4141202a04aa5f2361d687093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fileProcessor: {fileID: 0}
+  _seedGenerator: {fileID: 0}
+  _seed: 
 --- !u!1 &1104358025
 GameObject:
   m_ObjectHideFlags: 0
