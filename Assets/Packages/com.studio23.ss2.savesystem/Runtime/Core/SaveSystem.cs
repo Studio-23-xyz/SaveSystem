@@ -12,6 +12,7 @@ namespace Studio23.SS2.SaveSystem.Core
         public static SaveSystem Instance;
 
         [SerializeField] internal SaveSlotProcessor _slotProcessor;
+
         public UnityEvent OnLoadBegin;
         public UnityEvent OnLoadComplete;
         public UnityEvent OnSaveBegin;
@@ -33,6 +34,15 @@ namespace Studio23.SS2.SaveSystem.Core
         public async UniTask Initialize()
         {
             await _slotProcessor.Initialize();
+        }
+
+        /// <summary>
+        /// Get the seed from selected slot. Reminder It's only saved when the game is saved for the first time.
+        /// </summary>
+        /// <returns></returns>
+        public string GetSelectedSlotSeed()
+        {
+            return _slotProcessor._selectedSlot.Seed;
         }
 
         /// <summary>

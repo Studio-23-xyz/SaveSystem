@@ -1,5 +1,11 @@
 # Changelog
 
+
+## [v2.2.2] - 2024-09-18
+
+### Updated
+- Saveslots now have a seed value. You can write your own seed generator. There's a default Guid Seed Generator.
+
 ## [v2.2.1] - 2024-08-30
 
 ### Updated

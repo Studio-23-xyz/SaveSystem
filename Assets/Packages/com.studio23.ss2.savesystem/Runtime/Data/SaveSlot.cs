@@ -8,6 +8,7 @@ namespace Studio23.SS2.SaveSystem.Data
     [Serializable]
     public class SaveSlot
     {
+        public string Seed;
         public DateTime BackupStamp;
         public string Description;
 

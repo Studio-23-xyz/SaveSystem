@@ -229,10 +229,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _archiverBase: {fileID: 11400000, guid: 90dbcd5f5197d1d43ab3f564c4beeed1, type: 2}
+  _seedGeneratorBase: {fileID: 11400000, guid: f677ef20d260cb046a65c7217b8ab435, type: 2}
   _cloudSaveManager: {fileID: 2118616956}
   _fileProcessor: {fileID: 846910477}
   _selectedSlot:
-    Description: 'Editor: Test'
+    Seed: 00a778a9-e365-4f61-9873-974a30a0f9a1
+    Description: 'Editor: '
     HasBackup: 0
     Index: 0
   _slotConfiguration: {fileID: 11400000, guid: 689e14cf99d18c3498b11d6065308b0f, type: 2}

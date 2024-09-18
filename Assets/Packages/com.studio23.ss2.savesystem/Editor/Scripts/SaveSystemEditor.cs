@@ -64,6 +64,7 @@ namespace Studio23.SS2.SaveSystem.Editor
                     GUI.backgroundColor = Color.white;
                     EditorGUILayout.LabelField("Selected Slot Information", EditorStyles.boldLabel);
                     EditorGUILayout.LabelField($"Name: {_selectedSlot.Name}");
+                    EditorGUILayout.LabelField($"Seed: {_selectedSlot.Seed}");
                     EditorGUILayout.LabelField($"Description: {_selectedSlot.Description}");
                     EditorGUILayout.LabelField($"TimeStamp: {_selectedSlot.TimeStamp}");
                     EditorGUILayout.LabelField($"BackupStamp: {_selectedSlot.BackupStamp}");

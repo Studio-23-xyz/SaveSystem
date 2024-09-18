@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SaveSlot.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Interfaces\ISaveable.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\SeedSystem\SeedGeneratorBase.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\ConsoleHyperLink\ConsoleLinkTool.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ZipUtilityArchiver.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SaveSlotProcessor.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SaveSystem.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\FileProcessor.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Data\SlotConfiguration.cs" />
+    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\SeedSystem\GuidBasedSeedGenerator.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ArchiverBase.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Encryptor\AESEncryptor.cs" />
   </ItemGroup>
