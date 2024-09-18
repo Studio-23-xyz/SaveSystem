@@ -25,11 +25,14 @@ namespace Studio23.SS2.SaveSystem.Core
         
         [SerializeField] 
         internal ArchiverBase _archiverBase;
+        [SerializeField]
+        internal SeedGeneratorBase _seedGeneratorBase;
 
         [SerializeField] 
         internal CloudSaveManager _cloudSaveManager;
         [SerializeField] 
         internal FileProcessor _fileProcessor;
+ 
 
         [SerializeField] 
         internal SaveSlot _selectedSlot;
@@ -105,7 +108,7 @@ namespace Studio23.SS2.SaveSystem.Core
         internal async UniTask<SaveSlot> GetSaveSlotMetaDataLocal(int index)
         {
             var slotMeta = new SaveSlot(index);
-
+            slotMeta.Seed = _seedGeneratorBase.GenerateSeed();
             var slotMetaPath = Path.Combine(SavePathRoot, slotMeta.Name, _slotConfiguration.SlotMetafileName);
             if (File.Exists(slotMetaPath)) slotMeta = await _fileProcessor.Load<SaveSlot>(slotMetaPath);
 
@@ -114,6 +117,10 @@ namespace Studio23.SS2.SaveSystem.Core
 
         public async UniTask Initialize()
         {
+            if (_seedGeneratorBase == null)
+            {
+                Debug.LogError("Seed Generator is null, Please assign one in the inspector");
+            }
             SavePathRoot = Path.Combine(Application.persistentDataPath, _slotConfiguration.SaveRootFolderName);
             _fileProcessor = GetComponent<FileProcessor>();
             CreateSlotFolders();
@@ -126,7 +133,6 @@ namespace Studio23.SS2.SaveSystem.Core
             for (var i = 0; i < _slotConfiguration.SlotCount; i++)
             {
                 var slot = new SaveSlot(i);
-
                 var slotPath = Path.Combine(SavePathRoot, slot.Name, _slotConfiguration.SlotDatafolderName);
                 if (Directory.Exists(slotPath)) continue;
                 Directory.CreateDirectory(slotPath);

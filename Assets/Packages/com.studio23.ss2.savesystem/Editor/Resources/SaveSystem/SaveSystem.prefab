@@ -60,14 +60,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89dc61f8c7f31bd408d79ed6e84959ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedSlot:
-    Index: 0
-    Thumbnail: {fileID: 0}
-    Description: 
-    HasBackup: 0
+  _archiverBase: {fileID: 11400000, guid: 90dbcd5f5197d1d43ab3f564c4beeed1, type: 2}
+  _seedGeneratorBase: {fileID: 11400000, guid: f677ef20d260cb046a65c7217b8ab435, type: 2}
   _cloudSaveManager: {fileID: 4227098497653628982}
   _fileProcessor: {fileID: 4119365039723816293}
-  _archiverBase: {fileID: 11400000, guid: 90dbcd5f5197d1d43ab3f564c4beeed1, type: 2}
+  _generatedContentProcessor: {fileID: 0}
+  _selectedSlot:
+    Seed: 
+    Description: 
+    HasBackup: 0
+    Index: 0
   _slotConfiguration: {fileID: 11400000, guid: 689e14cf99d18c3498b11d6065308b0f, type: 2}
 --- !u!114 &3412743476427674911
 MonoBehaviour:
@@ -82,10 +84,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slotProcessor: {fileID: 6347601490776773402}
-  OnSaveComplete:
+  OnLoadBegin:
     m_PersistentCalls:
       m_Calls: []
   OnLoadComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSaveBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSaveComplete:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &5302052611704106116
@@ -145,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cf22e4dfe8d2e48925214371a474c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _platformProvider: 0
   _provider: {fileID: 0}
   OnInitializationSucess:
     m_PersistentCalls:

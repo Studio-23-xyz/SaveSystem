@@ -73,7 +73,6 @@
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\SeedSystem\GuidBasedSeedGenerator.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Archiver\ArchiverBase.cs" />
     <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Utility\Encryptor\AESEncryptor.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\Core\SeedSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packages\com.studio23.ss2.savesystem\Runtime\com.studio23.ss2.savesystem.asmdef" />
