@@ -32,17 +32,17 @@ jobs:
         run: find . -name "*.csproj" -type f -delete
 
       - name: Deploy with DocFX
-        uses: sator-imaging/docfx-pages@v1
+        uses: sator-imaging/docfx-pages@v1.7.1
         id: deployment
         with:
           app_name: 'Save System For Unity'
           site_title: 'Save System For Unity'
-          site_footer: '<big>&times; Is HTML accepted?</big>'
+          site_footer: '<big>&times;Maintained By Studio-23</big>'
           class_members: 'separatePages'
           google_analytics: ''
           define_symbols: ''
-          site_logo: '<logo>.svg'
-          site_favicon: '<favicon>.svg'
+          site_logo: 'https://raw.githubusercontent.com/Studio-23-xyz/studio23-website/refs/heads/main/public/assets/studio_23_logo.svg'
+          site_favicon: 'https://raw.githubusercontent.com/Studio-23-xyz/studio23-website/refs/heads/main/public/assets/studio_23_logo.svg'
           main_js: |
             export default {
                 defaultTheme: 'light',
