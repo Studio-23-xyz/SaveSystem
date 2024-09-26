@@ -1,0 +1,19 @@
+{
+    "name": "com.studio23.ss2.savesystem.editor",
+    "rootNamespace": "",
+    "references": [
+        "com.studio23.ss2.savesystem",
+        "UniTask"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
