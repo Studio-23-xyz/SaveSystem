@@ -161,6 +161,15 @@ namespace Studio23.SS2.SaveSystem.Core
             CreateSlotFolders();
         }
 
+        internal async UniTask ClearAllSlotCloudAsync()
+        {
+            for (var i = 0; i < _slotConfiguration.SlotCount; i++)
+            {
+                var slotName = $"Save_Slot_{i}";
+                await _cloudSaveManager.DeleteContainerFromCloud(slotName, _slotConfiguration.SlotMetafileName, _slotConfiguration.SlotDataBackupFileName);
+            }
+        }
+
         internal async UniTask ClearSelectedSlotCloudAsync()
         {
             await _cloudSaveManager.DeleteContainerFromCloud(_selectedSlot.Name,_slotConfiguration.SlotMetafileName,_slotConfiguration.SlotDataBackupFileName);

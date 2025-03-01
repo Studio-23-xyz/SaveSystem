@@ -186,6 +186,14 @@ namespace Studio23.SS2.SaveSystem.Core
         {
             await _slotProcessor.ClearAllSlotsAsync();
         }
+        /// <summary>
+        ///     Clears All Cloud Slots
+        /// </summary>
+        /// <returns></returns>
+        public async UniTask ClearAllCloudSlots()
+        {
+            await _slotProcessor.ClearAllSlotCloudAsync();
+        }
 
 #if UNITY_EDITOR
         public async UniTask DeleteKeyFromSelectedSlot(string key)

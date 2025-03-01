@@ -910,32 +910,32 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UniTask">
-      <HintPath>Library\ScriptAssemblies\UniTask.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.SharpZipLib.Utils">
-      <HintPath>Library\ScriptAssemblies\Unity.SharpZipLib.Utils.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="com.studio23.ss2.cloudsave">
-      <HintPath>Library\ScriptAssemblies\com.studio23.ss2.cloudsave.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="needle.ConsoleHyperlinks.Editor">
-      <HintPath>Library\ScriptAssemblies\needle.ConsoleHyperlinks.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{28E60EAE-3002-B841-7DDF-003F695D1436}</Project>
+      <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.SharpZipLib.Utils.csproj">
+      <Project>{8672ECCB-9F94-F408-D794-CC24FBCAE3AA}</Project>
+      <Name>Unity.SharpZipLib.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.studio23.ss2.cloudsave.csproj">
+      <Project>{01132288-4BE6-991A-7D8F-E3A3D58001F4}</Project>
+      <Name>com.studio23.ss2.cloudsave</Name>
+    </ProjectReference>
+    <ProjectReference Include="needle.ConsoleHyperlinks.Editor.csproj">
+      <Project>{B0E54958-FA89-81E5-4281-4F01A107790F}</Project>
+      <Name>needle.ConsoleHyperlinks.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{5A06053E-F081-43D2-E86B-D3C189382315}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{01DCEAF6-E05B-3940-573B-35C45AA10D2D}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

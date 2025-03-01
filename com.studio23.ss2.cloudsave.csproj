@@ -60,13 +60,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.2\Runtime\Data\AbstractCloudSaveProvider.cs" />
-    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.2\Runtime\Core\CloudSaveManager.cs" />
-    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.2\Runtime\Data\DummyCloudSaveProvider.cs" />
-    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.2\Runtime\Core\CloudSaveProviderFactory.cs" />
+    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.3\Runtime\Data\AbstractCloudSaveProvider.cs" />
+    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.3\Runtime\Core\CloudSaveManager.cs" />
+    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.3\Runtime\Data\DummyCloudSaveProvider.cs" />
+    <Compile Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.3\Runtime\Core\CloudSaveProviderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.2\Runtime\com.studio23.ss2.cloudsave.asmdef" />
+    <None Include="Library\PackageCache\com.studio23.ss2.cloudsave@2.0.3\Runtime\com.studio23.ss2.cloudsave.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

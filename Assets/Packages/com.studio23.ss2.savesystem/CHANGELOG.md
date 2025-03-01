@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.2.3] - 2025-03-01
+
+### Updated
+- Added funtionality for clearing all cloud save
 
 ## [v2.2.2] - 2024-09-18
 
